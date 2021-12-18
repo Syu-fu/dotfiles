@@ -1,0 +1,105 @@
+# filer{{{
+ 
+# ファイラープラグイン
+[[plugins]]
+repo = 'lambdalisue/fern.vim'
+hook_source = 'source $XDG_CONFIG_HOME/nvim/plugins/settings/fern.vim'
+on_path = '.*'
+
+# ファイルのアイコン付け
+[[plugins]]
+repo = 'lambdalisue/fern-renderer-nerdfont.vim'
+on_path= '.*'
+
+# ファイルのアイコンに色付け
+[[plugins]]
+repo = 'lambdalisue/glyph-palette.vim'
+on_path = '.*'
+
+# ファイルアイコンの依存プラグイン
+[[plugins]]
+repo = 'lambdalisue/nerdfont.vim'
+on_path = '.*'
+
+# ファイルのプレビュー
+[[plugins]]
+repo = 'yuki-yano/fern-preview.vim'
+on_path = '.*'
+
+# git statusを表示
+[[plugins]]
+repo = 'lambdalisue/fern-git-status.vim'
+on_path = '.*'
+
+# }}}
+
+# man {{{
+
+# helpの表示を日本語に
+[[plugins]]
+repo = 'vim-jp/vimdoc-ja'
+on_path = '.*'
+hook_add = '''
+   set helplang=ja,en
+'''
+
+# cheatsheet 
+[[plugins]]
+repo = 'reireias/vim-cheatsheet'
+on_path = '.*'
+hook_add = '''
+    let g:cheatsheet#cheat_file = '$XDG_CONFIG_HOME/nvim/plugins/settings/cheatsheet.md'
+    let g:cheatsheet#float_window = 1
+'''
+# }}}
+
+# snippets{{{
+
+[[plugins]]
+repo = 'SirVer/ultisnips'
+on_path = '.*'
+hook_add = '''
+    let g:UltiSnipsExpandTrigger="<c-k>"
+    let g:UltiSnippetDirectries = '$XDG_CONFIG_HOME/nvim/snippets'
+    '''
+
+[[plugins]]
+repo = 'honza/vim-snippets'
+on_path = '.*'
+
+# }}}
+
+# fzf{{{
+[[plugins]]
+repo = 'junegunn/fzf'
+depends = 'fzf'
+on_path = '.*'
+
+[[plugins]]
+repo = 'junegunn/fzf.vim'
+on_path = '.*'
+hook_add = 'source $XDG_CONFIG_HOME/nvim/plugins/settings/fzf.vim'
+
+# }}}
+
+# git {{{
+[[plugins]]
+repo = 'lambdalisue/gina.vim'
+on_path = '.*'
+# }}}
+
+# dir {{{
+# .gitをもつディレクトリをルートディレクトリとして扱う
+[[plugins]]
+repo = 'mattn/vim-findroot'
+on_path = '.*'
+
+# }}}
+
+# languages{{{
+# cocだとうまくハイライトあたらないので個別で
+[[plugins]]
+repo = 'cespare/vim-toml'
+on_path = '.toml'
+#}}}
+

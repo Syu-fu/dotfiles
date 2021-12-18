@@ -1,0 +1,93 @@
+name: benchmark
+on: 
+  push:
+    branches:  
+      - main  
+  workflow_dispatch: 
+
+permissions:
+  # deployments permission to deploy GitHub pages website
+  deployments: write
+  # contents permission to update benchmark contents in gh-pages branch
+  contents: write
+
+
+jobs:
+  benchmark:  
+    runs-on: ubuntu-20.04    
+    container: ubuntu:20.04
+    steps:
+    - uses: actions/checkout@v1
+
+    - name: Update packages  
+      run: apt update  
+
+    - name: Install required tzdata
+      run: apt-get install -y tzdata  
+      env:
+        TZ: 'Asia/Tokyo'
+
+    - name: Install required packages
+      run: apt-get install -y git time zsh curl sudo python3 python3-pip luajit
+      
+    - name: Install pynvim
+      run: pip3 install pynvim      
+
+    - name: Install dotfiles
+      run: ./install.sh      
+
+    - name: Install zsh plugins
+      run: zsh 
+      shell: zsh -li --rcs {0}
+
+    - name: Install Dein
+      run: |
+        mkdir -p /github/home/.cache/dein  
+        cd /github/home/.cache/dein
+        curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > installer.sh
+        sh ./installer.sh /github/home/.cache/dein
+
+    - name: Install node
+      run: |
+        cd ~
+        curl -sL https://deb.nodesource.com/setup_16.13.1 -o | sudo -E bash -
+        apt-get install -y nodejs
+
+    - name: Install Neovim
+      uses: actions/checkout@v2
+      with:
+        repository: neovim/neovim
+        path: neovim
+        ref: v0.5.0
+
+    - name: Neovim Build
+      run: |
+        cd ./neovim
+        apt-get install -y cmake automake libtool libtool-bin ninja-build gettext g++ pkg-config unzip make
+        make CMAKE_BUILD_TYPE=RelWithDebInfo
+        sudo make install
+
+    - name: Install Neovim plugins
+      run:  nvim -c q
+      shell: zsh -li --rcs {0}
+
+    - name: Run benchmark
+      run:  ./bin/benchmark.sh | tee /tmp/result-benchmark.json
+      shell: zsh -li --rcs {0}
+      env:
+        TERM: screen-256color
+
+    - name: cat results
+      run: cat /tmp/result-benchmark.json  
+
+    - name: Upload benchmark
+      uses: benchmark-action/github-action-benchmark@v1
+      with:
+        tool: customSmallerIsBetter  
+        output-file-path: /tmp/result-benchmark.json
+        github-token: ${{ secrets.GITHUB_TOKEN }}
+        auto-push: true
+        comment-on-alert: true
+        fail-on-alert: true
+        alert-threshold: '3000%'
+        alert-comment-cc-users: '@Syu-fu'

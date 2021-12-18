@@ -1,0 +1,6 @@
+tap "homebrew/bundle"
+tap "homebrew/core"
+brew "bat"
+brew "fzf"
+brew "lsd"
+brew "ripgrep"

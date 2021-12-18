@@ -1,0 +1,96 @@
+### all ignore ###
+/*
+/**
+
+### not ignore ###
+# root {{{
+!/.gitignore
+!/.gitconfig
+!/.p10k.zsh
+!/.tmux.conf
+!/.zshenv
+!/Brewfile
+!/README.md
+!/Dockerfile
+!/install.sh
+# }}}
+
+# .config {{{
+!/.config/
+!/.config/alacritty/
+!/.config/alacritty/alacritty.yml
+!/.config/git/
+!/.config/git/ignore
+!/.config/i3/
+!/.config/i3/config
+!/.config/i3/wallpaper.jpg
+!/.config/i3/wallpaper_lock.jpg
+!/.config/i3blocks/
+!/.config/i3blocks/**
+!/.config/rofi/
+!/.config/rofi/**
+# nvim {{{
+!/.config/nvim/
+!/.config/nvim/coc-settings.json
+!/.config/nvim/init.vim
+!/.config/nvim/colors/
+!/.config/nvim/colors/**
+!/.config/nvim/dein/
+!/.config/nvim/dein/dein.toml
+!/.config/nvim/dein/lazy.toml
+!/.config/nvim/plugins/
+!/.config/nvim/plugins/settings/
+!/.config/nvim/plugins/settings/coc.rc.vim
+!/.config/nvim/plugins/settings/fern.vim
+!/.config/nvim/plugins/settings/fzf.vim
+!/.config/nvim/plugins/settings/lightline.vim
+/.config/nvim/plugins/UltiSnips/
+/.config/nvim/plugins/UltiSnips/**
+# }}}
+# }}}
+
+# github {{{
+!/.github/
+!/.github/workflows/
+!/.github/workflows/**
+# }}}
+
+# .tmux {{{
+!/.tmux/
+!/.tmux/conf/
+!/.tmux/conf/base.tmux
+!/.tmux/conf/bind.tmux
+!/.tmux/conf/color.tmux
+!/.tmux/conf/plugin.tmux
+!/.tmux/conf/scripts/
+!/.tmux/conf/scripts/**
+!/.tmux/
+!/.tmux/plugins/**
+# }}}
+
+# bin {{{
+!/bin/
+!/bin/benchmark.sh
+!/bin/setup.sh
+# }}}
+
+# doc {{{
+!/doc/
+!/doc/**
+# }}}
+
+# etc {{{
+# }}}
+
+# benchmark-results {{{
+!/benchmark-results/
+!/benchmark-results/.gitkeep
+# }}}
+
+# .zsh {{{
+!/.zsh/
+!/.zsh/.zshrc
+!/.zsh/.fzf.zsh
+!/.zsh/.zshenv
+!/.zsh/.zprofile
+# }}}

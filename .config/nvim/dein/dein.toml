@@ -1,0 +1,47 @@
+# plugin_manager {{{
+[[plugins]]
+repo = 'Shougo/dein.vim'
+# }}}
+
+[[plugins]]
+repo = 'skanehira/preview-markdown.vim'
+
+# view {{{
+[[plugins]]
+repo = 'morhetz/gruvbox'
+
+[[plugins]]
+repo = 'sainnhe/gruvbox-material'
+
+[[plugins]]
+repo = 'itchyny/lightline.vim'
+hook_add = 'source $XDG_CONFIG_HOME/nvim/plugins/settings/lightline.vim'
+
+[[plugins]]
+repo = 'shinchu/lightline-gruvbox.vim'
+
+[[plugins]]
+repo = 'mengelbrecht/lightline-bufferline'
+
+[[plugins]]
+repo = 'ryanoasis/vim-devicons'
+# }}}
+
+# lsp {{{
+
+[[plugins]]
+repo = 'neoclide/coc.nvim'
+rev = 'release'
+on_i = 1
+merged = 0
+hook_add = 'source $XDG_CONFIG_HOME/nvim/plugins/settings/coc.rc.vim'
+# }}}
+
+
+# syntax-highlight {{{
+[[plugins]]
+repo = 'nvim-treesitter/nvim-treesitter'
+hook_source = '''
+    source $XDG_CONFIG_HOME/nvim/plugins/settings/treesitter.vim
+'''
+# }}}
