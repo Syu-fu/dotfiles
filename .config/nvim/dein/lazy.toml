@@ -78,6 +78,7 @@ on_path = '.*'
 [[plugins]]
 repo = 'junegunn/fzf.vim'
 on_path = '.*'
+merged = 0
 hook_add = 'source $XDG_CONFIG_HOME/nvim/plugins/settings/fzf.vim'
 
 # }}}
