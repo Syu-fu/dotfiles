@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1640178466957,
+  "lastUpdate": 1640178483371,
   "repoUrl": "https://github.com/Syu-fu/dotfiles",
   "entries": {
     "Benchmark": [
@@ -101,6 +101,40 @@ window.BENCHMARK_DATA = {
           {
             "name": "neovim load time",
             "value": 0.0892,
+            "unit": "Second"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "syu.fu.dev@gmail.com",
+            "name": "Syu fu",
+            "username": "Syu-fu"
+          },
+          "committer": {
+            "email": "syu.fu.dev@gmail.com",
+            "name": "Syu fu",
+            "username": "Syu-fu"
+          },
+          "distinct": true,
+          "id": "ea24af39f7edc5b745426b9539ab502923a523c5",
+          "message": "[other] Delete unnecessary files",
+          "timestamp": "2021-12-22T22:02:32+09:00",
+          "tree_id": "b69708bd024c2d391c7c26787f56cb449cf0771f",
+          "url": "https://github.com/Syu-fu/dotfiles/commit/ea24af39f7edc5b745426b9539ab502923a523c5"
+        },
+        "date": 1640178482284,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "zsh load time",
+            "value": 0.08,
+            "unit": "Second"
+          },
+          {
+            "name": "neovim load time",
+            "value": 0.122,
             "unit": "Second"
           }
         ]
