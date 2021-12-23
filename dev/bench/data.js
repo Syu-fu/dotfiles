@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1640178483371,
+  "lastUpdate": 1640262081171,
   "repoUrl": "https://github.com/Syu-fu/dotfiles",
   "entries": {
     "Benchmark": [
@@ -135,6 +135,40 @@ window.BENCHMARK_DATA = {
           {
             "name": "neovim load time",
             "value": 0.122,
+            "unit": "Second"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "syu.fu.dev@gmail.com",
+            "name": "Syu fu",
+            "username": "Syu-fu"
+          },
+          "committer": {
+            "email": "syu.fu.dev@gmail.com",
+            "name": "Syu fu",
+            "username": "Syu-fu"
+          },
+          "distinct": true,
+          "id": "6957fa70ae94bc30734904793d69b4da3b619e18",
+          "message": "[vim] rename tmux window",
+          "timestamp": "2021-12-23T21:16:29+09:00",
+          "tree_id": "7ea9b4a27699666d0d517c30345e98d7be23cf41",
+          "url": "https://github.com/Syu-fu/dotfiles/commit/6957fa70ae94bc30734904793d69b4da3b619e18"
+        },
+        "date": 1640262080934,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "zsh load time",
+            "value": 0.07,
+            "unit": "Second"
+          },
+          {
+            "name": "neovim load time",
+            "value": 0.1172,
             "unit": "Second"
           }
         ]
