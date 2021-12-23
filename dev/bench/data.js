@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1640262081171,
+  "lastUpdate": 1640265362892,
   "repoUrl": "https://github.com/Syu-fu/dotfiles",
   "entries": {
     "Benchmark": [
@@ -169,6 +169,40 @@ window.BENCHMARK_DATA = {
           {
             "name": "neovim load time",
             "value": 0.1172,
+            "unit": "Second"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "syu.fu.dev@gmail.com",
+            "name": "Syu fu",
+            "username": "Syu-fu"
+          },
+          "committer": {
+            "email": "syu.fu.dev@gmail.com",
+            "name": "Syu fu",
+            "username": "Syu-fu"
+          },
+          "distinct": true,
+          "id": "7e4619568b8d29e75f5d2c1eebf236d7410d15ef",
+          "message": "[zsh] lsd alias fix",
+          "timestamp": "2021-12-23T22:10:44+09:00",
+          "tree_id": "3f9b8b555556da8edbbc23bb9382d82132dee8a2",
+          "url": "https://github.com/Syu-fu/dotfiles/commit/7e4619568b8d29e75f5d2c1eebf236d7410d15ef"
+        },
+        "date": 1640265362304,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "zsh load time",
+            "value": 0.08,
+            "unit": "Second"
+          },
+          {
+            "name": "neovim load time",
+            "value": 0.1376,
             "unit": "Second"
           }
         ]
