@@ -46,6 +46,15 @@ set showcmd
 " クリップボードの共有
 set clipboard+=unnamedplus
 
+" rename tmux window
+if $TMUX != ""
+  augroup titlesettings
+    autocmd!
+    autocmd BufEnter * call system("tmux rename-window " . "'[vim] " . expand("%:t") . "'")
+    autocmd VimLeave * call system("tmux rename-window zsh")
+    autocmd BufEnter * let &titlestring = ' ' . expand("%:t")
+  augroup END
+endif
 
 " 見た目系
 " 行番号を表示
