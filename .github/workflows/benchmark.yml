@@ -48,10 +48,15 @@ jobs:
         sh ./installer.sh /github/home/.cache/dein
 
     - name: Install node
-      run: |
-        cd ~
-        curl -sL https://deb.nodesource.com/setup_16.13.1 -o | sudo -E bash -
+      run: |  
+        sh -c "echo deb https://deb.nodesource.com/node_16.x impish main
         apt-get install -y nodejs
+        node -v
+
+    - name: Install npm
+      run: | 
+         curl -0 -L http://npmjs.org/install.sh | sudo sh
+         npm i -g tree-sitter tree-sitter-cli neovim
 
     - name: Install Neovim
       uses: actions/checkout@v2
@@ -76,9 +81,6 @@ jobs:
       shell: zsh -li --rcs {0}
       env:
         TERM: screen-256color
-
-    - name: cat results
-      run: cat /tmp/result-benchmark.json  
 
     - name: Upload benchmark
       uses: benchmark-action/github-action-benchmark@v1

@@ -10,6 +10,9 @@ alias ..2='cd ../..'
 alias ..3='cd ../../..'
 alias p='cd $HOME/Documents/Projects'
 
+if whence ls > /dev/null; then
+  alias ls="lsd"
+fi
 
 alias g='git'
 alias fzf='fzf-tmux -p 80%'
@@ -47,13 +50,6 @@ function chpwd(){
     lsd -a
   else
     ls -a
-  fi
-}
-function lspwd() {
-  if type "lsd" > /dev/null 2>&1; then
-    lsd
-  else
-    ls
   fi
 }
 # }}}
