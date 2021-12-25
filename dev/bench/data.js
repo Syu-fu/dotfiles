@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1640350555864,
+  "lastUpdate": 1640393912854,
   "repoUrl": "https://github.com/Syu-fu/dotfiles",
   "entries": {
     "Benchmark": [
@@ -237,6 +237,40 @@ window.BENCHMARK_DATA = {
           {
             "name": "neovim load time",
             "value": 0.112,
+            "unit": "Second"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "syu.fu.dev@gmail.com",
+            "name": "Syu fu",
+            "username": "Syu-fu"
+          },
+          "committer": {
+            "email": "syu.fu.dev@gmail.com",
+            "name": "Syu fu",
+            "username": "Syu-fu"
+          },
+          "distinct": true,
+          "id": "a7bbe6ac111d0cf5fb133f5f5aa7a8bbca690740",
+          "message": "[action] vimのbenchmark用のnpm関連の追加",
+          "timestamp": "2021-12-25T09:51:51+09:00",
+          "tree_id": "b53ea071faa589bf78814c8b11c3147ae68fc859",
+          "url": "https://github.com/Syu-fu/dotfiles/commit/a7bbe6ac111d0cf5fb133f5f5aa7a8bbca690740"
+        },
+        "date": 1640393912468,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "zsh load time",
+            "value": 0.09,
+            "unit": "Second"
+          },
+          {
+            "name": "neovim load time",
+            "value": 0.1408,
             "unit": "Second"
           }
         ]
