@@ -48,14 +48,12 @@ jobs:
         sh ./installer.sh /github/home/.cache/dein
 
     - name: Install node
-      run: |  
-        sh -c "echo deb https://deb.nodesource.com/node_16.x impish main
-        apt-get install -y nodejs
-        node -v
+      uses: actions/setup-node@v2
+      with:
+        node-version: '16'
 
-    - name: Install npm
-      run: | 
-         curl -0 -L http://npmjs.org/install.sh | sudo sh
+    - name: npm install
+      run:
          npm i -g tree-sitter tree-sitter-cli neovim
 
     - name: Install Neovim
