@@ -74,7 +74,7 @@ autoload -Uz _zinit
 ;zinit light junegunn/fzf-bin
 # tmuximum
 zinit light arks22/tmuximum
-# zsh起動時にtmux（ここに書いておくことで選択中に他のプラグインを読み込める）
+# zsh起動時にtmuximum（ここに書いておくことで選択中に他のプラグインを読み込める）
 if [ -z $TMUX ]; then
   tmuximum
 fi
