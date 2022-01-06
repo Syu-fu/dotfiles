@@ -54,6 +54,21 @@ function chpwd(){
 }
 # }}}
 
+# tmuxのwindow nameをrepository nameあるいはcurrent directory nameに変更
+autoload -Uz vcs_info
+zstyle ':vcs_info:*' enable git svn
+zstyle ':vcs_info:*' formats '%r'
+
+precmd () {
+  LANG=en_US.UTF-8 vcs_info
+  if git rev-parse 2>/dev/null; then
+    tmux rename-window `basename $(git rev-parse --show-toplevel 2>/dev/null) 2>/dev/null`2>/dev/null
+  else
+    tmux rename-window `basename $(pwd)`
+  fi
+}
+# }}}
+
 # plugins {{{
 # zinit読み込み
 ### Added by Zinit's installer
