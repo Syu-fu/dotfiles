@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1641297657296,
+  "lastUpdate": 1641475421995,
   "repoUrl": "https://github.com/Syu-fu/dotfiles",
   "entries": {
     "Benchmark": [
@@ -305,6 +305,40 @@ window.BENCHMARK_DATA = {
           {
             "name": "neovim load time",
             "value": 0.1176,
+            "unit": "Second"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "syu.fu.dev@gmail.com",
+            "name": "Syu fu",
+            "username": "Syu-fu"
+          },
+          "committer": {
+            "email": "syu.fu.dev@gmail.com",
+            "name": "Syu fu",
+            "username": "Syu-fu"
+          },
+          "distinct": true,
+          "id": "238836d563285c2bde3cc498f452f1696f006df1",
+          "message": "[zsh] tmuxのwindow nameをrepository nameに自動でするよう変更",
+          "timestamp": "2022-01-06T22:15:52+09:00",
+          "tree_id": "c7721b5ed408e8fa90c4d477604cbdcd41649381",
+          "url": "https://github.com/Syu-fu/dotfiles/commit/238836d563285c2bde3cc498f452f1696f006df1"
+        },
+        "date": 1641475421581,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "zsh load time",
+            "value": 0.08,
+            "unit": "Second"
+          },
+          {
+            "name": "neovim load time",
+            "value": 0.1244,
             "unit": "Second"
           }
         ]
