@@ -62,7 +62,7 @@ zstyle ':vcs_info:*' formats '%r'
 precmd () {
   LANG=en_US.UTF-8 vcs_info
   if git rev-parse 2>/dev/null; then
-    tmux rename-window `basename $(git rev-parse --show-toplevel 2>/dev/null) 2>/dev/null`2>/dev/null
+    tmux rename-window `basename $(git rev-parse --show-toplevel 2>/dev/null) 2>/dev/null` 2>/dev/null
   else
     tmux rename-window `basename $(pwd)`
   fi
