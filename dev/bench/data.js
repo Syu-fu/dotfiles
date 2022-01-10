@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1641475421995,
+  "lastUpdate": 1641818543475,
   "repoUrl": "https://github.com/Syu-fu/dotfiles",
   "entries": {
     "Benchmark": [
@@ -339,6 +339,40 @@ window.BENCHMARK_DATA = {
           {
             "name": "neovim load time",
             "value": 0.1244,
+            "unit": "Second"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "syu.fu.dev@gmail.com",
+            "name": "Syu fu",
+            "username": "Syu-fu"
+          },
+          "committer": {
+            "email": "syu.fu.dev@gmail.com",
+            "name": "Syu fu",
+            "username": "Syu-fu"
+          },
+          "distinct": true,
+          "id": "05f26b5ed1e92cf8a8b9a2b5403b28dd7ce0a035",
+          "message": "[zsh] tmuxのwindow名表示が.gitファイル内でエラーメッセージを出てしまうことの対処",
+          "timestamp": "2022-01-10T21:36:39+09:00",
+          "tree_id": "b8870acb502893813b7662affcd006ef78d471af",
+          "url": "https://github.com/Syu-fu/dotfiles/commit/05f26b5ed1e92cf8a8b9a2b5403b28dd7ce0a035"
+        },
+        "date": 1641818543093,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "zsh load time",
+            "value": 0.07,
+            "unit": "Second"
+          },
+          {
+            "name": "neovim load time",
+            "value": 0.1368,
             "unit": "Second"
           }
         ]
