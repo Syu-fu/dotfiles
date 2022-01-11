@@ -122,8 +122,6 @@ autocmd FileType javascript      setlocal expandtab   shiftwidth=2 softtabstop=2
 autocmd FileType typescript      setlocal expandtab   shiftwidth=2 softtabstop=2 tabstop=2
 autocmd FileType typescriptreact setlocal expandtab   shiftwidth=2 softtabstop=2 tabstop=2
 autocmd FileType vue             setlocal expandtab   shiftwidth=2 softtabstop=2 tabstop=2
-autocmd FileType ruby            setlocal expandtab   shiftwidth=2 softtabstop=2 tabstop=2
-autocmd FileType eruby           setlocal expandtab   shiftwidth=2 softtabstop=2 tabstop=2
 autocmd FileType python          setlocal expandtab   shiftwidth=4 softtabstop=4 tabstop=4
 autocmd FileType go              setlocal noexpandtab shiftwidth=4 softtabstop=4 tabstop=4
 autocmd FileType json            setlocal expandtab   shiftwidth=2 softtabstop=2 tabstop=2
@@ -135,7 +133,7 @@ autocmd FileType sh              setlocal expandtab   shiftwidth=2 softtabstop=2
 autocmd FileType zsh             setlocal expandtab   shiftwidth=2 softtabstop=2 tabstop=2
 " }}}3
 
-" HTML & eruby {{{
+" HTML {{{
 function! s:map_html_keys() abort
   inoremap <silent> <buffer> \\ \
   inoremap <silent> <buffer> \& &amp;
@@ -147,7 +145,7 @@ function! s:map_html_keys() abort
   inoremap <silent> <buffer> \' &#8217;
   inoremap <silent> <buffer> \" &#8221;
 endfunction
-autocmd FileType html,eruby call <SID>map_html_keys()
+autocmd FileType html call <SID>map_html_keys()
 " }}}
 
 " リソース関連
