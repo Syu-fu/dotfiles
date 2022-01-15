@@ -11,6 +11,8 @@ export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"
 export MANPATH="/home/linuxbrew/.linuxbrew/share/man:$MANPATH"
 export INFOPATH="/home/linuxbrew/.linuxbrew/share/info:$INFOPATH"
 export LD_LIBRARY_PATH="/home/linuxbrew/.linuxbrew/lib:$LD_LIBRARY_PATH"
+export DENO_INSTALL="/$HOME/.deno"
+export PATH="$DENO_INSTALL/bin:$PATH"
 
 path=(
   /usr/local/{bin,sbin}
