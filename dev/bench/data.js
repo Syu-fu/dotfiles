@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1641818543475,
+  "lastUpdate": 1642247971414,
   "repoUrl": "https://github.com/Syu-fu/dotfiles",
   "entries": {
     "Benchmark": [
@@ -373,6 +373,40 @@ window.BENCHMARK_DATA = {
           {
             "name": "neovim load time",
             "value": 0.1368,
+            "unit": "Second"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "syu.fu.dev@gmail.com",
+            "name": "Syu fu",
+            "username": "Syu-fu"
+          },
+          "committer": {
+            "email": "syu.fu.dev@gmail.com",
+            "name": "Syu fu",
+            "username": "Syu-fu"
+          },
+          "distinct": true,
+          "id": "c2edc323c0f4790dd8bb1235c1977a0a67937b56",
+          "message": "[actions] add install deno",
+          "timestamp": "2022-01-15T20:53:34+09:00",
+          "tree_id": "b03f17acc3757f51580a6e6206ecd1919b409209",
+          "url": "https://github.com/Syu-fu/dotfiles/commit/c2edc323c0f4790dd8bb1235c1977a0a67937b56"
+        },
+        "date": 1642247971017,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "zsh load time",
+            "value": 0.08,
+            "unit": "Second"
+          },
+          {
+            "name": "neovim load time",
+            "value": 0.1572,
             "unit": "Second"
           }
         ]
