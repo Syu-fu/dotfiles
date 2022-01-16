@@ -56,6 +56,9 @@ jobs:
       run:
          npm i -g tree-sitter tree-sitter-cli neovim
 
+    - name: Install deno
+      run: curl -fsSL https://deno.land/x/install/install.sh | sh  
+
     - name: Install Neovim
       uses: actions/checkout@v2
       with:
