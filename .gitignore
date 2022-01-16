@@ -40,10 +40,7 @@
 !/.config/nvim/dein/lazy.toml
 !/.config/nvim/plugins/
 !/.config/nvim/plugins/settings/
-!/.config/nvim/plugins/settings/coc.rc.vim
-!/.config/nvim/plugins/settings/fern.vim
-!/.config/nvim/plugins/settings/fzf.vim
-!/.config/nvim/plugins/settings/lightline.vim
+!/.config/nvim/plugins/settings/**
 /.config/nvim/plugins/UltiSnips/
 /.config/nvim/plugins/UltiSnips/**
 # }}}
