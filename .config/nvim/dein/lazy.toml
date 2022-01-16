@@ -67,11 +67,16 @@ repo = 'honza/vim-snippets'
 # fzf{{{
 [[plugins]]
 repo = 'junegunn/fzf'
-depends = 'fzf'
+
+# [[plugins]]
+# repo = 'junegunn/fzf.vim'
+# merged = 0
+# hook_add = 'source $XDG_CONFIG_HOME/nvim/plugins/settings/fzf.vim'
 
 [[plugins]]
-repo = 'junegunn/fzf.vim'
-merged = 0
+repo = 'yuki-yano/fzf-preview.vim'
+on_source = 'fzf'
+rev = 'release/rpc'
 hook_add = 'source $XDG_CONFIG_HOME/nvim/plugins/settings/fzf.vim'
 
 # }}}
