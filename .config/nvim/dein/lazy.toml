@@ -61,7 +61,6 @@ hook_add = '''
 
 [[plugins]]
 repo = 'honza/vim-snippets'
-on_path = '.*'
 
 # }}}
 
@@ -89,10 +88,20 @@ repo = 'mattn/vim-findroot'
 
 # }}}
 
-# languages{{{
-# cocだとうまくハイライトあたらないので個別で
+# syntax-highlight {{{
 [[plugins]]
-repo = 'cespare/vim-toml'
-on_path = '.toml'
-#}}}
+repo = 'nvim-treesitter/nvim-treesitter'
+if = 'has("nvim")'
+on_event = 'BufRead'
+hook_source = '''
+lua <<EOF
+require'nvim-treesitter.configs'.setup {
+    highlight = {
+        enable = true,
+    },
+    ensure_installed = 'all'
+}
+EOF
+'''
+# }}}
 

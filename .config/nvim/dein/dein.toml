@@ -37,11 +37,3 @@ merged = 0
 hook_add = 'source $XDG_CONFIG_HOME/nvim/plugins/settings/coc.rc.vim'
 # }}}
 
-
-# syntax-highlight {{{
-[[plugins]]
-repo = 'nvim-treesitter/nvim-treesitter'
-hook_source = '''
-    source $XDG_CONFIG_HOME/nvim/plugins/settings/treesitter.vim
-'''
-# }}}
