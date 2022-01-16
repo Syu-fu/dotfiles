@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1642304045986,
+  "lastUpdate": 1642339823176,
   "repoUrl": "https://github.com/Syu-fu/dotfiles",
   "entries": {
     "Benchmark": [
@@ -441,6 +441,40 @@ window.BENCHMARK_DATA = {
           {
             "name": "neovim load time",
             "value": 0.004,
+            "unit": "Second"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "syu.fu.dev@gmail.com",
+            "name": "Syu fu",
+            "username": "Syu-fu"
+          },
+          "committer": {
+            "email": "syu.fu.dev@gmail.com",
+            "name": "Syu fu",
+            "username": "Syu-fu"
+          },
+          "distinct": true,
+          "id": "aa92ac5f51f8fbcd57a1bb439dd0b157eb2ff8cc",
+          "message": "[actions] unzipのインストール位置を調整",
+          "timestamp": "2022-01-16T22:25:14+09:00",
+          "tree_id": "173768e94ea022ecf7d340127c32c0ae00e3565f",
+          "url": "https://github.com/Syu-fu/dotfiles/commit/aa92ac5f51f8fbcd57a1bb439dd0b157eb2ff8cc"
+        },
+        "date": 1642339822782,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "zsh load time",
+            "value": 0.07,
+            "unit": "Second"
+          },
+          {
+            "name": "neovim load time",
+            "value": 0.0036,
             "unit": "Second"
           }
         ]
