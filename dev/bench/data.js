@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1642247971414,
+  "lastUpdate": 1642304045986,
   "repoUrl": "https://github.com/Syu-fu/dotfiles",
   "entries": {
     "Benchmark": [
@@ -407,6 +407,40 @@ window.BENCHMARK_DATA = {
           {
             "name": "neovim load time",
             "value": 0.1572,
+            "unit": "Second"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "syu.fu.dev@gmail.com",
+            "name": "Syu fu",
+            "username": "Syu-fu"
+          },
+          "committer": {
+            "email": "syu.fu.dev@gmail.com",
+            "name": "Syu fu",
+            "username": "Syu-fu"
+          },
+          "distinct": true,
+          "id": "e535d385ebcb4719cca88332c2e57adec7954c08",
+          "message": "[vim] treesitterをlazy loadに変更",
+          "timestamp": "2022-01-16T12:28:11+09:00",
+          "tree_id": "b3784e81ab1e7c8fa4fc1ab31f3420f7858c3f1f",
+          "url": "https://github.com/Syu-fu/dotfiles/commit/e535d385ebcb4719cca88332c2e57adec7954c08"
+        },
+        "date": 1642304045597,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "zsh load time",
+            "value": 0.08,
+            "unit": "Second"
+          },
+          {
+            "name": "neovim load time",
+            "value": 0.004,
             "unit": "Second"
           }
         ]
