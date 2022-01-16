@@ -39,15 +39,11 @@ on_source= 'fern.vim'
 # helpの表示を日本語に
 [[plugins]]
 repo = 'vim-jp/vimdoc-ja'
-on_path = '.*'
-hook_add = '''
-   set helplang=ja,en
-'''
+hook_add = 'set helplang=ja,en'
 
 # cheatsheet 
 [[plugins]]
 repo = 'reireias/vim-cheatsheet'
-on_path = '.*'
 hook_add = '''
     let g:cheatsheet#cheat_file = '$XDG_CONFIG_HOME/nvim/plugins/settings/cheatsheet.md'
     let g:cheatsheet#float_window = 1
@@ -58,7 +54,6 @@ hook_add = '''
 
 [[plugins]]
 repo = 'SirVer/ultisnips'
-on_path = '.*'
 hook_add = '''
     let g:UltiSnipsExpandTrigger="<c-k>"
     let g:UltiSnippetDirectries = '$XDG_CONFIG_HOME/nvim/snippets'
@@ -74,11 +69,9 @@ on_path = '.*'
 [[plugins]]
 repo = 'junegunn/fzf'
 depends = 'fzf'
-on_path = '.*'
 
 [[plugins]]
 repo = 'junegunn/fzf.vim'
-on_path = '.*'
 merged = 0
 hook_add = 'source $XDG_CONFIG_HOME/nvim/plugins/settings/fzf.vim'
 
@@ -87,14 +80,12 @@ hook_add = 'source $XDG_CONFIG_HOME/nvim/plugins/settings/fzf.vim'
 # git {{{
 [[plugins]]
 repo = 'lambdalisue/gina.vim'
-on_path = '.*'
 # }}}
 
 # dir {{{
 # .gitをもつディレクトリをルートディレクトリとして扱う
 [[plugins]]
 repo = 'mattn/vim-findroot'
-on_path = '.*'
 
 # }}}
 
