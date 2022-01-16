@@ -30,28 +30,3 @@ nnoremap <silent> [fzf-p]t     :<C-u>FzfPreviewBufferTagsRpc<CR>
 nnoremap <silent> [fzf-p]q     :<C-u>FzfPreviewQuickFixRpc<CR>
 nnoremap <silent> [fzf-p]l     :<C-u>FzfPreviewLocationListRpc<CR>
 
-function! s:fzf_preview_settings() abort
-  let g:fzf_preview_grep_preview_cmd = 'COLORTERM=truecolor ' . g:fzf_preview_grep_preview_cmd
-  let g:fzf_preview_command = 'COLORTERM=truecolor ' . g:fzf_preview_command
-
-  let g:fzf_preview_custom_processes['open-file'] = fzf_preview#remote#process#get_default_processes('open-file', 'coc')
-  let g:fzf_preview_custom_processes['open-file']['ctrl-s'] = g:fzf_preview_custom_processes['open-file']['ctrl-x']
-  call remove(g:fzf_preview_custom_processes['open-file'], 'ctrl-x')
-
-  let g:fzf_preview_custom_processes['open-buffer'] = fzf_preview#remote#process#get_default_processes('open-buffer', 'coc')
-  let g:fzf_preview_custom_processes['open-buffer']['ctrl-s'] = g:fzf_preview_custom_processes['open-buffer']['ctrl-x']
-  call remove(g:fzf_preview_custom_processes['open-buffer'], 'ctrl-q')
-  let g:fzf_preview_custom_processes['open-buffer']['ctrl-x'] = get(function('s:buffers_delete_from_lines'), 'name')
-
-  let g:fzf_preview_custom_processes['open-bufnr'] = fzf_preview#remote#process#get_default_processes('open-bufnr', 'coc')
-  let g:fzf_preview_custom_processes['open-bufnr']['ctrl-s'] = g:fzf_preview_custom_processes['open-bufnr']['ctrl-x']
-  call remove(g:fzf_preview_custom_processes['open-bufnr'], 'ctrl-q')
-  let g:fzf_preview_custom_processes['open-bufnr']['ctrl-x'] = get(function('s:buffers_delete_from_lines'), 'name')
-
-  let g:fzf_preview_custom_processes['git-status'] = fzf_preview#remote#process#get_default_processes('git-status', 'coc')
-  let g:fzf_preview_custom_processes['git-status']['ctrl-s'] = g:fzf_preview_custom_processes['git-status']['ctrl-x']
-  call remove(g:fzf_preview_custom_processes['git-status'], 'ctrl-x')
-endfunction
-
-
-" call s:fzf_preview_settings()

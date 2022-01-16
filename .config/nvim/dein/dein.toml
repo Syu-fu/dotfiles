@@ -27,16 +27,6 @@ repo = 'mengelbrecht/lightline-bufferline'
 repo = 'ryanoasis/vim-devicons'
 # }}}
 
-# lsp {{{
-
-[[plugins]]
-repo = 'neoclide/coc.nvim'
-rev = 'release'
-on_i = 1
-merged = 0
-hook_add = 'source $XDG_CONFIG_HOME/nvim/plugins/settings/coc.rc.vim'
-# }}}
-
 # setting deno {{{
 [[plugins]]
 repo = 'vim-denops/denops.vim'
