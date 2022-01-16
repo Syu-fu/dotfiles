@@ -3,33 +3,34 @@
 # ファイラープラグイン
 [[plugins]]
 repo = 'lambdalisue/fern.vim'
+hook_add = 'nnoremap <silent> <Leader>t :Fern . -reveal=% -drawer -toggle -width=40<CR>'
 hook_source = 'source $XDG_CONFIG_HOME/nvim/plugins/settings/fern.vim'
-on_path = '.*'
+on_cmd = ['Fern']
 
 # ファイルのアイコン付け
 [[plugins]]
 repo = 'lambdalisue/fern-renderer-nerdfont.vim'
-on_path= '.*'
+on_source= 'fern.vim'
 
 # ファイルのアイコンに色付け
 [[plugins]]
 repo = 'lambdalisue/glyph-palette.vim'
-on_path = '.*'
+on_source= 'fern.vim'
 
 # ファイルアイコンの依存プラグイン
 [[plugins]]
 repo = 'lambdalisue/nerdfont.vim'
-on_path = '.*'
+on_source= 'fern.vim'
 
 # ファイルのプレビュー
 [[plugins]]
 repo = 'yuki-yano/fern-preview.vim'
-on_path = '.*'
+on_source= 'fern.vim'
 
 # git statusを表示
 [[plugins]]
 repo = 'lambdalisue/fern-git-status.vim'
-on_path = '.*'
+on_source= 'fern.vim'
 
 # }}}
 
