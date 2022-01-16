@@ -37,3 +37,8 @@ merged = 0
 hook_add = 'source $XDG_CONFIG_HOME/nvim/plugins/settings/coc.rc.vim'
 # }}}
 
+# setting deno {{{
+[[plugins]]
+repo = 'vim-denops/denops.vim'
+# }}}
+
