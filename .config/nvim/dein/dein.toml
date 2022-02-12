@@ -3,9 +3,6 @@
 repo = 'Shougo/dein.vim'
 # }}}
 
-[[plugins]]
-repo = 'skanehira/preview-markdown.vim'
-
 # view {{{
 [[plugins]]
 repo = 'morhetz/gruvbox'
@@ -19,9 +16,6 @@ hook_add = 'source $XDG_CONFIG_HOME/nvim/plugins/settings/lightline.vim'
 
 [[plugins]]
 repo = 'shinchu/lightline-gruvbox.vim'
-
-[[plugins]]
-repo = 'mengelbrecht/lightline-bufferline'
 
 [[plugins]]
 repo = 'ryanoasis/vim-devicons'

@@ -14,6 +14,8 @@ export LD_LIBRARY_PATH="/home/linuxbrew/.linuxbrew/lib:$LD_LIBRARY_PATH"
 export DENO_INSTALL="/$HOME/.deno"
 export PATH="$DENO_INSTALL/bin:$PATH"
 
+export NEXTWORD_DATA_PATH=$HOME/dic/nextword-data-large
+
 path=(
   /usr/local/{bin,sbin}
   $path

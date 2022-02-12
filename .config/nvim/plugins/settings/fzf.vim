@@ -1,4 +1,4 @@
-"let g:fzf_preview_git_files_command   = 'git ls-files --exclude-standard | while read line; do if [[ ! -L $line ]] && [[ -f $line ]]; then echo $line; fi; done'
+let g:fzf_preview_git_files_command   = 'git ls-files --exclude-standard | while read line; do if [[ ! -L $line ]] && [[ -f $line ]]; then echo $line; fi; done'
 let g:fzf_preview_grep_cmd            = 'rg --line-number --no-heading --color=never --sort=path'
 let g:fzf_preview_mru_limit           = 500
 let g:fzf_preview_use_dev_icons       = 1

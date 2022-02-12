@@ -1,36 +1,36 @@
 # filer{{{
- 
+
 # ファイラープラグイン
 [[plugins]]
 repo = 'lambdalisue/fern.vim'
 hook_add = 'nnoremap <silent> <Leader>t :Fern . -reveal=% -drawer -toggle -width=40<CR>'
-hook_source = 'source $XDG_CONFIG_HOME/nvim/plugins/settings/fern.vim'
+hook_source = 'source $XDG_CONFIG_HOME/nvim/plugins/settings/ferna.vim'
 on_cmd = ['Fern']
 
 # ファイルのアイコン付け
 [[plugins]]
 repo = 'lambdalisue/fern-renderer-nerdfont.vim'
-on_source= 'fern.vim'
+on_source = 'fern.vim'
 
 # ファイルのアイコンに色付け
 [[plugins]]
 repo = 'lambdalisue/glyph-palette.vim'
-on_source= 'fern.vim'
+on_source = 'fern.vim'
 
 # ファイルアイコンの依存プラグイン
 [[plugins]]
 repo = 'lambdalisue/nerdfont.vim'
-on_source= 'fern.vim'
+on_source = 'fern.vim'
 
 # ファイルのプレビュー
 [[plugins]]
 repo = 'yuki-yano/fern-preview.vim'
-on_source= 'fern.vim'
+on_source = 'fern.vim'
 
 # git statusを表示
 [[plugins]]
 repo = 'lambdalisue/fern-git-status.vim'
-on_source= 'fern.vim'
+on_source = 'fern.vim'
 
 # }}}
 
@@ -44,6 +44,7 @@ hook_add = 'set helplang=ja,en'
 # cheatsheet 
 [[plugins]]
 repo = 'reireias/vim-cheatsheet'
+hook_source = 'source $XDG_CONFIG_HOME/nvim/plugins/settings/coc.vim'
 hook_add = '''
     let g:cheatsheet#cheat_file = '$XDG_CONFIG_HOME/nvim/plugins/settings/cheatsheet.md'
     let g:cheatsheet#float_window = 1
@@ -84,6 +85,13 @@ hook_add = 'source $XDG_CONFIG_HOME/nvim/plugins/settings/fzf.vim'
 # git {{{
 [[plugins]]
 repo = 'lambdalisue/gina.vim'
+
+[[plugins]]
+repo = 'airblade/vim-gitgutter'
+hook_add = '''
+    set updatetime=100
+    let g:gitgutter_map_keys = 0
+'''
 # }}}
 
 # dir {{{
@@ -109,4 +117,257 @@ require'nvim-treesitter.configs'.setup {
 EOF
 '''
 # }}}
+[[plugins]]
+repo = 'Shougo/ddc.vim'
+on_event = 'InsertEnter'
+depends = ['denops.vim']
+hook_source = '''
+ call ddc#custom#patch_global('completionMenu', 'pum.vim')
+ call ddc#custom#patch_global('sources', ['nvim-lsp', 'around', 'vsnip', 'nextword'])
+ call ddc#custom#patch_global('sourceOptions', {
+      \ '_': {
+      \ 'matchers': ['matcher_head'],
+      \ 'sorters': ['sorter_rank'],
+      \ 'converters': ['converter_remove_overlap'],
+      \ },
+      \ 'around': {'mark': 'around'},
+      \ 'nextword': {'mark': 'Nextword'},
+      \ 'nvim-lsp': {
+      \ 'mark': 'LSP',
+      \ 'forceCompletionPattern': '\.\w*|:\w*|->\w*',
+      \ },
+      \ })
 
+ call ddc#custom#patch_global('sourceParams', {
+      \ 'around': {'maxSize': 500},
+      \ })
+
+ call ddc#enable()
+
+
+call ddc#custom#patch_global('autoCompleteEvents', [
+    \ 'InsertEnter', 'TextChangedI', 'TextChangedP',
+    \ 'CmdlineEnter', 'CmdlineChanged',
+    \ ])
+
+nnoremap :       <Cmd>call CommandlinePre()<CR>:
+
+function! CommandlinePre() abort
+  " Note: It disables default command line completion!
+  cnoremap <expr> <Tab>
+  \ pum#visible() ? '<Cmd>call pum#map#insert_relative(+1)<CR>' :
+  \ ddc#manual_complete()
+  cnoremap <S-Tab> <Cmd>call pum#map#insert_relative(-1)<CR>
+  cnoremap <C-y>   <Cmd>call pum#map#confirm()<CR>
+  cnoremap <C-e>   <Cmd>call pum#map#cancel()<CR>
+
+  " Overwrite sources
+  let s:prev_buffer_config = ddc#custom#get_buffer()
+  call ddc#custom#patch_buffer('sources',
+          \ ['cmdline', 'cmdline-history', 'around'])
+
+  autocmd User DDCCmdlineLeave ++once call CommandlinePost()
+
+  " Enable command line completion
+  call ddc#enable_cmdline_completion()
+  call ddc#enable()
+endfunction
+function! CommandlinePost() abort
+  " Restore sources
+  call ddc#custom#set_buffer(s:prev_buffer_config)
+  cunmap <Tab>
+endfunction
+
+'''
+
+[[plugins]]
+repo = 'Shougo/ddc-around'
+on_source = 'ddc.vim'
+
+[[plugins]]
+repo = 'Shougo/ddc-nextword'
+on_source = 'ddc.vim'
+
+[[plugins]]
+repo = 'Shougo/ddc-matcher_head'
+on_source = 'ddc.vim'
+
+[[plugins]]
+repo = 'Shougo/ddc-sorter_rank'
+on_source = 'ddc.vim'
+
+[[plugins]]
+repo = 'Shougo/ddc-converter_remove_overlap'
+on_source = 'ddc.vim'
+
+[[plugins]]
+repo = 'Shougo/ddc-nvim-lsp'
+on_source = 'ddc.vim'
+
+[[plugins]]
+repo = 'hrsh7th/vim-vsnip'
+on_event = 'InsertEnter'
+depends = ['vim-vsnip-integ', 'friendly-snippets']
+hook_add = '''
+ imap <expr> <C-j> vsnip#expandable() ? '<Plug>(vsnip-expand)' : '<C-j>'
+ smap <expr> <C-j> vsnip#expandable() ? '<Plug>(vsnip-expand)' : '<C-j>'
+ imap <expr> <C-f> vsnip#jumpable(1)  ? '<Plug>(vsnip-jump-next)' : '<C-f>'
+ smap <expr> <C-f> vsnip#jumpable(1)  ? '<Plug>(vsnip-jump-next)' : '<C-f>'
+ imap <expr> <C-b> vsnip#jumpable(-1) ? '<Plug>(vsnip-jump-prev)' : '<C-b>'
+ smap <expr> <C-b> vsnip#jumpable(-1) ? '<Plug>(vsnip-jump-prev)' : '<C-b>'
+ let g:vsnip_filetypes = {}
+ '''
+
+[[plugins]]
+repo = 'hrsh7th/vim-vsnip-integ'
+
+[[plugins]]
+repo = 'rafamadriz/friendly-snippets'
+
+[[plugins]]
+repo = 'neovim/nvim-lspconfig'
+if = 'has("nvim")'
+on_event = 'BufRead'
+hook_source = '''
+lua <<EOF
+local on_attach = function(client)
+  vim.wo.signcolumn = 'yes'
+  local maps = {
+    {'n', '<c-]>',     '<cmd>lua vim.lsp.buf.definition()<CR>'},
+    {'n', 'K',         '<cmd>lua vim.lsp.buf.hover()<CR>'},
+    {'n', 'gD',        '<cmd>lua vim.lsp.buf.implementation()<CR>'},
+    {'n', '1gD',       '<cmd>lua vim.lsp.buf.type_definition()<CR>'},
+    {'n', 'gW',        '<cmd>lua vim.lsp.buf.workspace_symbol()<CR>'},
+    {'n', 'gd',        '<cmd>lua vim.lsp.buf.declaration()<CR>'},
+    {'n', '<Leader>f', '<cmd>lua vim.lsp.buf.formatting()<CR>'},
+    {'n', '<Leader>r', '<cmd>lua vim.lsp.buf.rename()<CR>'},
+    {'n', 'gl',        '<cmd>lua vim.lsp.buf.document_highlight()<CR>'},
+    {'n', 'gm',        '<cmd>lua vim.diagnostic.open_float()<CR>'},
+    {'n', 'g0',        '<cmd>Denite lsp/document_symbol -auto-action=highlight<CR>'},
+    {'n', 'gr',        '<cmd>Denite lsp/references -auto-action=preview_bat<CR>'},
+  }
+  for _, map in ipairs(maps) do
+    vim.api.nvim_buf_set_keymap(0, map[1], map[2], map[3], {noremap = true})
+  end
+
+  vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
+    vim.lsp.diagnostic.on_publish_diagnostics, {
+      virtual_text = false,
+    }
+  )
+  -- require "lsp_signature".on_attach({
+  --   floating_window = false,
+  -- })  -- Note: add in lsp client on-attach
+
+  vim.api.nvim_exec(
+  [[
+    augroup MyLspSettings
+      autocmd!
+      autocmd CursorMoved <buffer> lua vim.lsp.buf.clear_references()
+    augroup END
+  ]],
+  false)
+end
+
+-- The nvim-cmp almost supports LSP's capabilities so You should advertise it to LSP servers..
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities.textDocument.completion.completionItem.preselectSupport = true
+capabilities.textDocument.completion.completionItem.insertReplaceSupport = true
+capabilities.textDocument.completion.completionItem.labelDetailsSupport = true
+capabilities.textDocument.completion.completionItem.deprecatedSupport = true
+capabilities.textDocument.completion.completionItem.commitCharactersSupport = true
+capabilities.textDocument.completion.completionItem.tagSupport = { valueSet = { 1 } }
+capabilities.textDocument.completion.completionItem.resolveSupport = {
+  properties = {
+    'documentation',
+    'detail',
+    'additionalTextEdits',
+  }
+}
+
+require'lspconfig'.clangd.setup{on_attach = on_attach, capabilities = capabilities}
+require'lspconfig'.pylsp.setup{on_attach = on_attach, capabilities = capabilities}
+require'lspconfig'.rls.setup{on_attach = on_attach, capabilities = capabilities}
+-- require'lspconfig'.texlab.setup{on_attach = on_attach, capabilities = capabilities}
+require'lspconfig'.gopls.setup{on_attach = on_attach, capabilities = capabilities}
+require'lspconfig'.denols.setup{
+  on_attach = on_attach,
+  capabilities = capabilities,
+  init_options = {
+    lint = true,
+    unstable = true,
+  },
+}
+
+local lsp_installer = require("nvim-lsp-installer")
+
+lsp_installer.on_server_ready(function(server)
+  local opts = {}
+
+  if server.name == 'sumneko_lua' then
+    opts.settings = {
+      Lua = {
+        runtime = {
+          version = 'LuaJIT',
+          path = vim.split(package.path, ';'),
+        },
+        diagnostics = {
+          globals = {'vim'},
+        },
+        workspace = {
+          library = {
+            [vim.fn.expand('$VIMRUNTIME/lua')] = true,
+            [vim.fn.expand('$VIMRUNTIME/lua/vim/lsp')] = true,
+          },
+        },
+      },
+    }
+  end
+
+  opts.on_attach = on_attach
+  opts.capabilities = capabilities
+  server:setup(opts)
+end)
+EOF
+'''
+
+[[plugins]]
+repo = 'williamboman/nvim-lsp-installer'
+on_source = 'nvim-lspconfig'
+hook_source = '''
+  "lua require'lspinstall'.setup()
+'''
+
+[[plugins]]
+repo = 'matsui54/denops-signature_help'
+on_source = 'ddc.vim'
+hook_source = 'call signature_help#enable()'
+
+[[plugins]]
+repo = 'matsui54/denops-popup-preview.vim'
+on_source = 'ddc.vim'
+hook_source = 'call popup_preview#enable()'
+
+[[plugins]]
+repo = 'Shougo/pum.vim'
+hook_source = '''
+inoremap <silent><expr> <TAB>
+      \ pum#visible() ? '<Cmd>call pum#map#insert_relative(+1)<CR>' :
+      \ (col('.') <= 1 <Bar><Bar> getline('.')[col('.') - 2] =~# '\s') ?
+      \ '<TAB>' : ddc#manual_complete()
+inoremap <S-Tab> <Cmd>call pum#map#insert_relative(-1)<CR>
+inoremap <C-n>   <Cmd>call pum#map#select_relative(+1)<CR>
+inoremap <C-p>   <Cmd>call pum#map#select_relative(-1)<CR>
+inoremap <C-y>   <Cmd>call pum#map#confirm()<CR>
+inoremap <C-e>   <Cmd>call pum#map#cancel()<CR>
+
+autocmd User PumCompleteDone call vsnip_integ#on_complete_done(g:pum#completed_item)
+'''
+
+[[plugins]]
+repo = 'Shougo/ddc-cmdline'
+on_source = 'ddc.vim'
+
+[[plugins]]
+repo = 'Shougo/ddc-cmdline-history'
+on_source = 'ddc.vim'
