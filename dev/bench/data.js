@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1642339823176,
+  "lastUpdate": 1644734223011,
   "repoUrl": "https://github.com/Syu-fu/dotfiles",
   "entries": {
     "Benchmark": [
@@ -475,6 +475,40 @@ window.BENCHMARK_DATA = {
           {
             "name": "neovim load time",
             "value": 0.0036,
+            "unit": "Second"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "syu.fu.dev@gmail.com",
+            "name": "Syu fu",
+            "username": "Syu-fu"
+          },
+          "committer": {
+            "email": "syu.fu.dev@gmail.com",
+            "name": "Syu fu",
+            "username": "Syu-fu"
+          },
+          "distinct": true,
+          "id": "be0599becba0affdbceedf03383949fa8f9d0c8d",
+          "message": "[doc] update Neovim version v0.6.1",
+          "timestamp": "2022-02-13T15:32:06+09:00",
+          "tree_id": "02caa2a9fb90a07cc67e59dd6c02d3c0e4d5414e",
+          "url": "https://github.com/Syu-fu/dotfiles/commit/be0599becba0affdbceedf03383949fa8f9d0c8d"
+        },
+        "date": 1644734222774,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "zsh load time",
+            "value": 0.08,
+            "unit": "Second"
+          },
+          {
+            "name": "neovim load time",
+            "value": 0.0028,
             "unit": "Second"
           }
         ]
