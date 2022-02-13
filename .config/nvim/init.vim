@@ -14,6 +14,7 @@ if dein#load_state('~/.cache/dein')
 
     call dein#load_toml(s:toml_dir . '/dein.toml', {'lazy': 0})
     call dein#load_toml(s:toml_dir . '/lazy.toml', {'lazy': 1})
+    call dein#load_toml(s:toml_dir . '/ddc.toml', {'lazy': 1})
     call dein#end()
     call dein#save_state()
 endif
@@ -114,7 +115,6 @@ nnoremap ZQ <Nop>
 " spaceでカーソルを動かさない
 nnoremap <space> <Nop>
   
-"カラーテーマ
 colorscheme gruvbox-material
 
 " Indent {{{

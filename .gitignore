@@ -31,16 +31,21 @@
 !/.config/rofi/**
 # nvim {{{
 !/.config/nvim/
-!/.config/nvim/coc-settings.json
+!/.config/nvim/lua/
+!/.config/nvim/lua/lsp_rc.lua
+!/.config/nvim/lua/treesitter_rc.lua
 !/.config/nvim/init.vim
-!/.config/nvim/colors/
-!/.config/nvim/colors/**
 !/.config/nvim/dein/
 !/.config/nvim/dein/dein.toml
 !/.config/nvim/dein/lazy.toml
+!/.config/nvim/dein/ddc.toml
 !/.config/nvim/plugins/
 !/.config/nvim/plugins/settings/
-!/.config/nvim/plugins/settings/**
+!/.config/nvim/plugins/settings/ddc.rc.vim
+!/.config/nvim/plugins/settings/fern.rc.vim
+!/.config/nvim/plugins/settings/fzf.rc.vim
+!/.config/nvim/plugins/settings/lightline.rc.vim
+!/.config/nvim/plugins/settings/pum.rc.vim
 /.config/nvim/plugins/UltiSnips/
 /.config/nvim/plugins/UltiSnips/**
 # }}}

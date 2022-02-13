@@ -1,22 +1,25 @@
-call ddc#custom#patch_global('sources', ['around'])
-call ddc#custom#patch_global('sourceOptions', {
+ call ddc#custom#patch_global('completionMenu', 'pum.vim')
+ call ddc#custom#patch_global('sources', ['nvim-lsp', 'around', 'vsnip', 'nextword'])
+ call ddc#custom#patch_global('sourceOptions', {
       \ '_': {
-      \   'matchers': ['matcher_head'],
-      \   'sorters': ['sorter_rank']},
+      \ 'matchers': ['matcher_fuzzy', 'matcher_head'],
+      \ 'sorters': ['sorter_fuzzy', 'sorter_rank'],
+      \ 'converters': ['converter_remove_overlap'],
+      \ },
+      \ 'around': {'mark': 'around'},
+      \ 'nextword': {'mark': 'Nextword'},
+      \ 'nvim-lsp': {
+      \ 'mark': 'LSP',
+      \ 'forceCompletionPattern': '\.\w*|:\w*|->\w*',
+      \ },
       \ })
-call ddc#enable()
 
-call ddc#custom#patch_global('completionMenu', 'pum.vim')
+ call ddc#custom#patch_global('sourceParams', {
+      \ 'around': {'maxSize': 500},
+      \ })
 
-inoremap <silent><expr> <TAB>
-      \ pum#visible() ? '<Cmd>call pum#map#insert_relative(+1)<CR>' :
-      \ (col('.') <= 1 <Bar><Bar> getline('.')[col('.') - 2] =~# '\s') ?
-      \ '<TAB>' : ddc#manual_complete()
-inoremap <S-Tab> <Cmd>call pum#map#insert_relative(-1)<CR>
-inoremap <C-n>   <Cmd>call pum#map#select_relative(+1)<CR>
-inoremap <C-p>   <Cmd>call pum#map#select_relative(-1)<CR>
-inoremap <C-y>   <Cmd>call pum#map#confirm()<CR>
-inoremap <C-e>   <Cmd>call pum#map#cancel()<CR>
+ call ddc#enable()
+
 
 call ddc#custom#patch_global('autoCompleteEvents', [
     \ 'InsertEnter', 'TextChangedI', 'TextChangedP',
@@ -50,3 +53,4 @@ function! CommandlinePost() abort
   call ddc#custom#set_buffer(s:prev_buffer_config)
   cunmap <Tab>
 endfunction
+

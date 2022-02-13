@@ -5,20 +5,29 @@ repo = 'Shougo/dein.vim'
 
 # view {{{
 [[plugins]]
-repo = 'morhetz/gruvbox'
-
-[[plugins]]
 repo = 'sainnhe/gruvbox-material'
 
 [[plugins]]
 repo = 'itchyny/lightline.vim'
-hook_add = 'source $XDG_CONFIG_HOME/nvim/plugins/settings/lightline.vim'
+hook_add = 'source $XDG_CONFIG_HOME/nvim/plugins/settings/lightline.rc.vim'
 
 [[plugins]]
 repo = 'shinchu/lightline-gruvbox.vim'
 
 [[plugins]]
 repo = 'ryanoasis/vim-devicons'
+# }}}
+
+# git {{{
+[[plugins]]
+repo = 'lambdalisue/gina.vim'
+
+[[plugins]]
+repo = 'airblade/vim-gitgutter'
+hook_add = '''
+    set updatetime=100
+    let g:gitgutter_map_keys = 0
+'''
 # }}}
 
 # setting deno {{{
