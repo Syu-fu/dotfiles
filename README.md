@@ -10,7 +10,7 @@
 OS: Ubuntu 20.04 LTS  
 WindowManager: i3-wm  
 shell: Zsh  
-editor: Neovim v0.5.0  
+editor: Neovim v0.6.1  
 Terminal emulator: Alacritty
 
 ## Install
