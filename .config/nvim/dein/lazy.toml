@@ -53,6 +53,20 @@ hook_add = 'source $XDG_CONFIG_HOME/nvim/plugins/settings/fzf.rc.vim'
 
 # }}}
 
+# git {{{
+[[plugins]]
+repo = 'lambdalisue/gina.vim'
+on_cmd = 'VimEnter'
+
+[[plugins]]
+repo = 'airblade/vim-gitgutter'
+on_cmd = 'bufRead'
+hook_add = '''
+    set updatetime=100
+    let g:gitgutter_map_keys = 0
+'''
+# }}}
+
 [[plugins]]
 repo = 'cohama/lexima.vim'
 
