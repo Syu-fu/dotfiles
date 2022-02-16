@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1644734223011,
+  "lastUpdate": 1645013571020,
   "repoUrl": "https://github.com/Syu-fu/dotfiles",
   "entries": {
     "Benchmark": [
@@ -509,6 +509,40 @@ window.BENCHMARK_DATA = {
           {
             "name": "neovim load time",
             "value": 0.0028,
+            "unit": "Second"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "syu.fu.dev@gmail.com",
+            "name": "Syu fu",
+            "username": "Syu-fu"
+          },
+          "committer": {
+            "email": "syu.fu.dev@gmail.com",
+            "name": "Syu fu",
+            "username": "Syu-fu"
+          },
+          "distinct": true,
+          "id": "0eceebdd813df01dd29fd1bcf2b9f6e7c2288559",
+          "message": "[vim] change gina and gitgutter to lazy load",
+          "timestamp": "2022-02-14T21:42:20+09:00",
+          "tree_id": "af836e0656ada93ba03fda2ccfeb4dbda190af6b",
+          "url": "https://github.com/Syu-fu/dotfiles/commit/0eceebdd813df01dd29fd1bcf2b9f6e7c2288559"
+        },
+        "date": 1645013570785,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "zsh load time",
+            "value": 0.08,
+            "unit": "Second"
+          },
+          {
+            "name": "neovim load time",
+            "value": 0.0044,
             "unit": "Second"
           }
         ]
