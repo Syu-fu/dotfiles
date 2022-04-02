@@ -1,9 +1,15 @@
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-# emacsモード
+# emacsmode
 bindkey -e
+
 # cdの省略
 setopt auto_cd
+
+# comp
+autoload -U compinit
+compinit
+
 # alias {{{
 alias ..='cd ..'
 alias ..2='cd ../..'
@@ -44,6 +50,7 @@ function do_enter {
 }
 zle -N do_enter
 bindkey '^m' do_enter
+
 # cdしたらls
 function chpwd(){
   if type "lsd" > /dev/null 2>&1; then
