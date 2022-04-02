@@ -1,6 +1,9 @@
 require'nvim-treesitter.configs'.setup {
     highlight = {
         enable = true,
+        disable = {
+            'toml',
+        }
     },
-    ensure_installed = 'all'
+    ensure_installed = 'maintained'
 }
