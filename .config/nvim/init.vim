@@ -1,8 +1,7 @@
-" ステータスラインを常に表示
 set laststatus=2
-" LeaderをSpaceに
+set showtabline=2
 let mapleader = "\<Space>"
-" プラグイン関係
+" dein.vim
 if &compatible
     set nocompatible
 endif
@@ -28,7 +27,8 @@ if len(s:removed_plugins) > 0
 endif
 filetype plugin indent on
 
-:set t_Co=256
+":set t_Co=256
+set termguicolors
 " setting
 "jj=escape
 inoremap <silent> jj <ESC>
@@ -116,37 +116,6 @@ nnoremap ZQ <Nop>
 nnoremap <space> <Nop>
   
 colorscheme gruvbox-material
-
-" Indent {{{
-autocmd FileType javascript      setlocal expandtab   shiftwidth=2 softtabstop=2 tabstop=2
-autocmd FileType typescript      setlocal expandtab   shiftwidth=2 softtabstop=2 tabstop=2
-autocmd FileType typescriptreact setlocal expandtab   shiftwidth=2 softtabstop=2 tabstop=2
-autocmd FileType vue             setlocal expandtab   shiftwidth=2 softtabstop=2 tabstop=2
-autocmd FileType python          setlocal expandtab   shiftwidth=4 softtabstop=4 tabstop=4
-autocmd FileType go              setlocal noexpandtab shiftwidth=4 softtabstop=4 tabstop=4
-autocmd FileType json            setlocal expandtab   shiftwidth=2 softtabstop=2 tabstop=2
-autocmd FileType markdown        setlocal expandtab   shiftwidth=2 softtabstop=2 tabstop=2
-autocmd FileType html            setlocal expandtab   shiftwidth=2 softtabstop=2 tabstop=2
-autocmd FileType css             setlocal expandtab   shiftwidth=2 softtabstop=2 tabstop=2
-autocmd FileType vim             setlocal expandtab   shiftwidth=2 softtabstop=2 tabstop=2
-autocmd FileType sh              setlocal expandtab   shiftwidth=2 softtabstop=2 tabstop=2
-autocmd FileType zsh             setlocal expandtab   shiftwidth=2 softtabstop=2 tabstop=2
-" }}}3
-
-" HTML {{{
-function! s:map_html_keys() abort
-  inoremap <silent> <buffer> \\ \
-  inoremap <silent> <buffer> \& &amp;
-  inoremap <silent> <buffer> \< &lt;
-  inoremap <silent> <buffer> \> &gt;
-  inoremap <silent> <buffer> \- &#8212;
-  inoremap <silent> <buffer> \<Space> &nbsp;
-  inoremap <silent> <buffer> \` &#8216;
-  inoremap <silent> <buffer> \' &#8217;
-  inoremap <silent> <buffer> \" &#8221;
-endfunction
-autocmd FileType html call <SID>map_html_keys()
-" }}}
 
 " リソース関連
 let g:loaded_python_provider=0
