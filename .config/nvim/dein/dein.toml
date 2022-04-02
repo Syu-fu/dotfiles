@@ -12,7 +12,10 @@ repo = 'itchyny/lightline.vim'
 hook_add = 'source $XDG_CONFIG_HOME/nvim/plugins/settings/lightline.rc.vim'
 
 [[plugins]]
-repo = 'shinchu/lightline-gruvbox.vim'
+repo = 'mengelbrecht/lightline-bufferline'
+
+[[plugins]]
+repo = 'Syu-fu/nvim-lightline-lsp'
 
 [[plugins]]
 repo = 'ryanoasis/vim-devicons'
