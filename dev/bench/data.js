@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1646542083453,
+  "lastUpdate": 1648961066550,
   "repoUrl": "https://github.com/Syu-fu/dotfiles",
   "entries": {
     "Benchmark": [
@@ -577,6 +577,40 @@ window.BENCHMARK_DATA = {
           {
             "name": "neovim load time",
             "value": 0.0032,
+            "unit": "Second"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "syu.fu.dev@gmail.com",
+            "name": "Syu fu",
+            "username": "Syu-fu"
+          },
+          "committer": {
+            "email": "syu.fu.dev@gmail.com",
+            "name": "Syu fu",
+            "username": "Syu-fu"
+          },
+          "distinct": true,
+          "id": "c3d7d6e68fadd916c92b100869cb5b46072fbd07",
+          "message": "[vim] Fix nvim-lsp-installer settings",
+          "timestamp": "2022-04-03T13:34:54+09:00",
+          "tree_id": "f3a4c4dd446866914256a62ecfe0c8b3c0b35d96",
+          "url": "https://github.com/Syu-fu/dotfiles/commit/c3d7d6e68fadd916c92b100869cb5b46072fbd07"
+        },
+        "date": 1648961066124,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "zsh load time",
+            "value": 0.09,
+            "unit": "Second"
+          },
+          {
+            "name": "neovim load time",
+            "value": 0.0048,
             "unit": "Second"
           }
         ]
