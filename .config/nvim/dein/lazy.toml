@@ -97,9 +97,6 @@ hook_source = '''
 [[plugins]]
 repo = 'williamboman/nvim-lsp-installer'
 on_source = 'nvim-lspconfig'
-hook_source = '''
-  lua require'lspinstall'.setup()
-'''
 
 [[plugins]]
 repo = 'matsui54/denops-signature_help'
