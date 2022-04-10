@@ -64,3 +64,6 @@ hook_source = 'source $XDG_CONFIG_HOME/nvim/plugins/settings/pum.rc.vim'
 repo = 'Shougo/context_filetype.vim'
 on_event = 'BufRead'
 
+[[plugins]]
+repo = 'osyo-manga/vim-precious'
+depends = ['context_filetype.vim']
