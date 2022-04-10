@@ -21,16 +21,6 @@ repo = 'Syu-fu/nvim-lightline-lsp'
 repo = 'ryanoasis/vim-devicons'
 # }}}
 
-# git {{{
-
-[[plugins]]
-repo = 'airblade/vim-gitgutter'
-hook_add = '''
-    set updatetime=100
-    let g:gitgutter_map_keys = 0
-'''
-# }}}
-
 # setting deno {{{
 [[plugins]]
 repo = 'vim-denops/denops.vim'
