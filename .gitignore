@@ -29,6 +29,8 @@
 !/.config/i3blocks/**
 !/.config/rofi/
 !/.config/rofi/**
+!/.config/efm-langserver/
+!/.config/efm-langserver/config.yaml
 # nvim {{{
 !/.config/nvim/
 !/.config/nvim/lua/
