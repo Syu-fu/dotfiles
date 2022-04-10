@@ -48,6 +48,7 @@
 !/.config/nvim/plugins/settings/fzf.rc.vim
 !/.config/nvim/plugins/settings/lightline.rc.vim
 !/.config/nvim/plugins/settings/pum.rc.vim
+!/.config/nvim/plugins/settings/lexima.rc.vim
 /.config/nvim/plugins/UltiSnips/
 /.config/nvim/plugins/UltiSnips/**
 # }}}
