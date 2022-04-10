@@ -9,6 +9,7 @@ let g:lightline = {
   \     ['lineinfo'],
   \     ['filetype', 'fileencoding', 'fileformat'],
   \     ['lsp_status'],
+  \     ['quickrun'],
   \     ['lsp_ok', 'lsp_info', 'lsp_warnings', 'lsp_errors'],
   \   ],
   \ },
@@ -30,7 +31,8 @@ let g:lightline = {
   \   'fileformat':       'LightlineFileformat',
   \   'special_mode':     'LightlineSpecialmode',
   \   'lsp_status':       'lightline#lsp#status',
-  \   'gitbranch':        'LightlineGitbranch'
+  \   'gitbranch':        'LightlineGitbranch',
+  \   'quickrun':         'LightlineQuickrunRunning',
   \ },
   \ 'component_function_visible_condition': {
   \   'spell': '&spell',
@@ -42,6 +44,7 @@ let g:lightline = {
   \   'lsp_warnings':     'warning',
   \   'lsp_info':         'information',
   \   'lsp_ok':           'ok',
+  \   'quickrun':         'quickrun',
   \ },
   \ 'component_expand': {
   \   'lsp_errors':       'lightline#lsp#errors',
@@ -50,6 +53,7 @@ let g:lightline = {
   \   'lsp_hints':        'lightline#lsp#hints',
   \   'lsp_ok':           'lightline#lsp#ok',
   \   'buffers':          'lightline#bufferline#buffers',
+  \   'quickrun':         'LightlineQuickrunRunning',
   \ },
   \ 'enable': {
   \   'statusline': 1,
@@ -110,6 +114,10 @@ endfunction
 
 function! LightlineFileencoding()
   return winwidth(0) > 70 ? (&fenc !=# '' ? &fenc : &enc) : ''
+endfunction
+
+function! LightlineQuickrunRunning()
+  return g:quickrun_running_message
 endfunction
 
 " lightline-bufferline
