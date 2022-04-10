@@ -58,6 +58,10 @@ repo = 'cohama/lexima.vim'
 hook_add = 'source $XDG_CONFIG_HOME/nvim/plugins/settings/lexima.rc.vim'
 on_event = 'InsertEnter'
 
+[[plugins]]
+repo = 'machakann/vim-sandwich'
+on_event = 'InsertEnter'
+
 # syntax-highlight {{{
 [[plugins]]
 repo = 'nvim-treesitter/nvim-treesitter'
