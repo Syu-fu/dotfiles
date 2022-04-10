@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1648961066550,
+  "lastUpdate": 1649593449932,
   "repoUrl": "https://github.com/Syu-fu/dotfiles",
   "entries": {
     "Benchmark": [
@@ -611,6 +611,40 @@ window.BENCHMARK_DATA = {
           {
             "name": "neovim load time",
             "value": 0.0048,
+            "unit": "Second"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "syu.fu.dev@gmail.com",
+            "name": "Syu fu",
+            "username": "Syu-fu"
+          },
+          "committer": {
+            "email": "syu.fu.dev@gmail.com",
+            "name": "Syu fu",
+            "username": "Syu-fu"
+          },
+          "distinct": true,
+          "id": "323e5dc7ee265010d18d7a6034b4eabc50589ea6",
+          "message": "[vim] Add suda.vim",
+          "timestamp": "2022-04-10T21:18:50+09:00",
+          "tree_id": "0449726a130e68390e24ad7ac9ae016c40c37ad4",
+          "url": "https://github.com/Syu-fu/dotfiles/commit/323e5dc7ee265010d18d7a6034b4eabc50589ea6"
+        },
+        "date": 1649593449484,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "zsh load time",
+            "value": 0.1,
+            "unit": "Second"
+          },
+          {
+            "name": "neovim load time",
+            "value": 0.002,
             "unit": "Second"
           }
         ]
