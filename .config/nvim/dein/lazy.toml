@@ -108,3 +108,10 @@ repo = 'matsui54/denops-popup-preview.vim'
 on_source = 'ddc.vim'
 hook_source = 'call popup_preview#enable()'
 
+# git {{{
+[[plugins]]
+repo = 'lambdalisue/gina.vim'
+on_cmd = 'Gina'
+
+# }}}
+
