@@ -108,6 +108,23 @@ repo = 'matsui54/denops-popup-preview.vim'
 on_source = 'ddc.vim'
 hook_source = 'call popup_preview#enable()'
 
+# view {{{
+[[plugins]]
+repo = 'itchyny/lightline.vim'
+on_event = 'VimEnter'
+depends = ['lightline-bufferline', 'nvim-lightline-lsp', 'vim-devicons']
+hook_add = 'source $XDG_CONFIG_HOME/nvim/plugins/settings/lightline.rc.vim'
+
+[[plugins]]
+repo = 'mengelbrecht/lightline-bufferline'
+
+[[plugins]]
+repo = 'Syu-fu/nvim-lightline-lsp'
+
+[[plugins]]
+repo = 'ryanoasis/vim-devicons'
+# }}}
+
 # git {{{
 [[plugins]]
 repo = 'lambdalisue/gina.vim'

@@ -7,18 +7,6 @@ repo = 'Shougo/dein.vim'
 [[plugins]]
 repo = 'sainnhe/gruvbox-material'
 
-[[plugins]]
-repo = 'itchyny/lightline.vim'
-hook_add = 'source $XDG_CONFIG_HOME/nvim/plugins/settings/lightline.rc.vim'
-
-[[plugins]]
-repo = 'mengelbrecht/lightline-bufferline'
-
-[[plugins]]
-repo = 'Syu-fu/nvim-lightline-lsp'
-
-[[plugins]]
-repo = 'ryanoasis/vim-devicons'
 # }}}
 
 # setting deno {{{
