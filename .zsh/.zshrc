@@ -112,3 +112,14 @@ zinit ice depth=1;zinit light romkatv/powerlevel10k
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 # }}}
 
+bindkey '^]' fzf-src
+function fzf-src() {
+    local src=$(ghq list -full-path | fzf --query "$BUFFER")
+    if [ -n "$src" ]; then
+        BUFFER="cd $src"
+        zle accept-line
+    fi
+    zle -R -c
+}
+zle -N fzf-src
+
