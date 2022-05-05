@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1651716138450,
+  "lastUpdate": 1651735780340,
   "repoUrl": "https://github.com/Syu-fu/dotfiles",
   "entries": {
     "Benchmark": [
@@ -679,6 +679,40 @@ window.BENCHMARK_DATA = {
           {
             "name": "neovim load time",
             "value": 0.0024,
+            "unit": "Second"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "syu.fu.dev@gmail.com",
+            "name": "Syu fu",
+            "username": "Syu-fu"
+          },
+          "committer": {
+            "email": "syu.fu.dev@gmail.com",
+            "name": "Syu fu",
+            "username": "Syu-fu"
+          },
+          "distinct": true,
+          "id": "d66c4fb6e6b500c03f4e015a632d51514ed23054",
+          "message": "[vim] ddc support snippet",
+          "timestamp": "2022-05-05T16:25:01+09:00",
+          "tree_id": "96f6860dd354dfba04d4915c2c2658638115fa54",
+          "url": "https://github.com/Syu-fu/dotfiles/commit/d66c4fb6e6b500c03f4e015a632d51514ed23054"
+        },
+        "date": 1651735779873,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "zsh load time",
+            "value": 0.09,
+            "unit": "Second"
+          },
+          {
+            "name": "neovim load time",
+            "value": 0.002,
             "unit": "Second"
           }
         ]
