@@ -8,7 +8,7 @@ let g:fzf_preview_default_fzf_options = {
 \ '--exact': v:true,
 \ '--no-sort': v:true,
 \ }
-let $FZF_PREVIEW_PREVIEW_BAT_THEME  = 'gruvbox-dark'
+"let $FZF_PREVIEW_PREVIEW_BAT_THEME  = '$BAT_THEME'
 
 noremap <fzf-p> <Nop>
 nmap <Leader>f [fzf-p]
