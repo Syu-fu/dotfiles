@@ -29,6 +29,9 @@ jobs:
 
     - name: Install required packages
       run: apt-get install -y git time zsh curl sudo python3 python3-pip luajit unzip
+
+    - name: fatal unsafe repository
+      run: git config --global --add safe.directory /__w/dotfiles/dotfiles
       
     - name: Install pynvim
       run: pip3 install pynvim      
