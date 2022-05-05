@@ -5,6 +5,8 @@
 set-option -g @plugin "tmux-plugins/tpm"
 # set-option -g @plugin "reireias/tmux-themepack"
 set -g @plugin 'sainnhe/tmux-fzf'
+set -g @plugin 'tmux-plugins/tmux-resurrect'
+set -g @plugin 'tmux-plugins/tmux-continuum'
 
 #--------------------------------------------------------------#
 ##          Disable Plugins                                   ##

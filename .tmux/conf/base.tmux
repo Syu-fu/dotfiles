@@ -80,4 +80,5 @@ set-option -g word-separators " -_()@,[]{}:=/"
 ##          Environments                                      ##
 #--------------------------------------------------------------#
 set-environment -g TMUX_DATA_DIR "${HOME}/.local/share/tmux"
+set -g @continuum-restore 'on'
 
