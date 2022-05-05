@@ -67,6 +67,7 @@ on_event = 'InsertEnter'
 repo = 'nvim-treesitter/nvim-treesitter'
 if = 'has("nvim")'
 on_event = 'BufRead'
+hook_post_update = 'TSUpdate'
 hook_source = '''
   luafile $XDG_CONFIG_HOME/nvim/lua/treesitter_rc.lua
 '''
