@@ -105,11 +105,11 @@ cnoremap <C-e>   <Cmd>call pum#map#cancel()<CR>
 
 augroup MyAutoCmd
   autocmd!
+  autocmd CmdlineEnter * call CommandlinePre()
+  autocmd CmdlineLeave * call CommandlinePost()
+  autocmd User PumCompleteDone call vsnip_integ#on_complete_done(g:pum#completed_item)
 augroup End
 
-autocmd MyAutoCmd CmdlineEnter * call CommandlinePre()
-autocmd MyAutoCmd CmdlineLeave * call CommandlinePost()
-autocmd MyAutoCmd User PumCompleteDone call vsnip_integ#on_complete_done(g:pum#completed_item)
 
 function! CommandlinePre() abort
   call denops#plugin#wait('ddc')
