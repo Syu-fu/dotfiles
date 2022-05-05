@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1649593449932,
+  "lastUpdate": 1651716138450,
   "repoUrl": "https://github.com/Syu-fu/dotfiles",
   "entries": {
     "Benchmark": [
@@ -645,6 +645,40 @@ window.BENCHMARK_DATA = {
           {
             "name": "neovim load time",
             "value": 0.002,
+            "unit": "Second"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "syu.fu.dev@gmail.com",
+            "name": "Syu fu",
+            "username": "Syu-fu"
+          },
+          "committer": {
+            "email": "syu.fu.dev@gmail.com",
+            "name": "Syu fu",
+            "username": "Syu-fu"
+          },
+          "distinct": true,
+          "id": "607cc04b36eaec760320c434e7678a399ed5742b",
+          "message": "[actions] fix error `exit status 128`",
+          "timestamp": "2022-05-05T10:57:20+09:00",
+          "tree_id": "561c7642ab415a836ef0b027be38a2621df816bb",
+          "url": "https://github.com/Syu-fu/dotfiles/commit/607cc04b36eaec760320c434e7678a399ed5742b"
+        },
+        "date": 1651716137942,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "zsh load time",
+            "value": 0.11,
+            "unit": "Second"
+          },
+          {
+            "name": "neovim load time",
+            "value": 0.0024,
             "unit": "Second"
           }
         ]
