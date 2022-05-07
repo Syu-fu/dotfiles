@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1651735780340,
+  "lastUpdate": 1651914576772,
   "repoUrl": "https://github.com/Syu-fu/dotfiles",
   "entries": {
     "Benchmark": [
@@ -703,6 +703,40 @@ window.BENCHMARK_DATA = {
           "url": "https://github.com/Syu-fu/dotfiles/commit/d66c4fb6e6b500c03f4e015a632d51514ed23054"
         },
         "date": 1651735779873,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "zsh load time",
+            "value": 0.09,
+            "unit": "Second"
+          },
+          {
+            "name": "neovim load time",
+            "value": 0.002,
+            "unit": "Second"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "syu.fu.dev@gmail.com",
+            "name": "Syu fu",
+            "username": "Syu-fu"
+          },
+          "committer": {
+            "email": "syu.fu.dev@gmail.com",
+            "name": "Syu fu",
+            "username": "Syu-fu"
+          },
+          "distinct": true,
+          "id": "cb7cf5d17af0e684cbe3aceadc36bb954a043ba9",
+          "message": "[others] efm debounce change",
+          "timestamp": "2022-05-07T18:04:47+09:00",
+          "tree_id": "dbb377a013ed5497593167246d13fa826aa17719",
+          "url": "https://github.com/Syu-fu/dotfiles/commit/cb7cf5d17af0e684cbe3aceadc36bb954a043ba9"
+        },
+        "date": 1651914576384,
         "tool": "customSmallerIsBetter",
         "benches": [
           {
