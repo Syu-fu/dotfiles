@@ -49,6 +49,15 @@ tools:
   json-jq: &json-jq
     lint-command: 'jq .'
 
+  yamllint-lint: &yaml-yamllint
+    prefix: yamllint
+    lint-command: 'yamllint --strict --format parsable ${INPUT}'
+    lint-stdin: false
+    lint-formats:
+      - '%f:%l:%c: [%t%*[a-z]] %m'
+    env:
+      - 'PYTHONIOENCODING=UTF-8'
+
 languages:
   typescript:
     - <<: *javascript-eslint
@@ -63,4 +72,6 @@ languages:
 
   vim:
     - <<: *vim-vint
+  yaml:
+    - <<: *yaml-yamllint
 
