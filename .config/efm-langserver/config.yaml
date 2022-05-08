@@ -67,6 +67,17 @@ tools:
   json-jq: &json-jq
     lint-command: 'jq .'
 
+  shellcheck-lint: &shellcheck-lint
+    prefix: shellcheck
+    lint-command: 'shellcheck -f gcc -x -'
+    lint-stdin: true
+    lint-formats:
+      - '%f:%l:%c: %t%*[^:]: %m [SC%n]'
+
+  shfmt-format: &shfmt-format
+    format-command: 'shfmt -ln bash -i 2 -bn -ci -sr -kp'
+    format-stdin: true
+
   yamllint-lint: &yaml-yamllint
     prefix: yamllint
     lint-command: 'yamllint --strict --format parsable ${INPUT}'
@@ -108,6 +119,11 @@ languages:
 
   vim:
     - <<: *vim-vint
+
+  sh:
+    - <<: *shellcheck-lint
+    - <<: *shfmt-format
+
   yaml:
     - <<: *yaml-yamllint
   gitcommit:
