@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1651984785088,
+  "lastUpdate": 1651986910963,
   "repoUrl": "https://github.com/Syu-fu/dotfiles",
   "entries": {
     "Benchmark": [
@@ -781,6 +781,40 @@ window.BENCHMARK_DATA = {
           {
             "name": "neovim load time",
             "value": 0.0024,
+            "unit": "Second"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "syu.fu.dev@gmail.com",
+            "name": "Syu fu",
+            "username": "Syu-fu"
+          },
+          "committer": {
+            "email": "syu.fu.dev@gmail.com",
+            "name": "Syu fu",
+            "username": "Syu-fu"
+          },
+          "distinct": true,
+          "id": "f343392831685fb65760d74f8d04aca284af6eab",
+          "message": "[other] efm-langserver add shellcheck-lint and shellfmt",
+          "timestamp": "2022-05-08T14:09:55+09:00",
+          "tree_id": "7496d3e252895362890b6c25091d9424987669a7",
+          "url": "https://github.com/Syu-fu/dotfiles/commit/f343392831685fb65760d74f8d04aca284af6eab"
+        },
+        "date": 1651986910726,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "zsh load time",
+            "value": 0.11,
+            "unit": "Second"
+          },
+          {
+            "name": "neovim load time",
+            "value": 0.0032,
             "unit": "Second"
           }
         ]
