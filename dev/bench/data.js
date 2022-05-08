@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1651914576772,
+  "lastUpdate": 1651984785088,
   "repoUrl": "https://github.com/Syu-fu/dotfiles",
   "entries": {
     "Benchmark": [
@@ -747,6 +747,40 @@ window.BENCHMARK_DATA = {
           {
             "name": "neovim load time",
             "value": 0.002,
+            "unit": "Second"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "syu.fu.dev@gmail.com",
+            "name": "Syu fu",
+            "username": "Syu-fu"
+          },
+          "committer": {
+            "email": "syu.fu.dev@gmail.com",
+            "name": "Syu fu",
+            "username": "Syu-fu"
+          },
+          "distinct": true,
+          "id": "508d5bf5a55effec07b89dbd90ce9244dfcd4138",
+          "message": "[vim] efm-langserver feat yamllint",
+          "timestamp": "2022-05-08T13:32:52+09:00",
+          "tree_id": "0ac9ca1d6e3ff1c644c8422f663502ecfeb2c48a",
+          "url": "https://github.com/Syu-fu/dotfiles/commit/508d5bf5a55effec07b89dbd90ce9244dfcd4138"
+        },
+        "date": 1651984784717,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "zsh load time",
+            "value": 0.12,
+            "unit": "Second"
+          },
+          {
+            "name": "neovim load time",
+            "value": 0.0024,
             "unit": "Second"
           }
         ]
