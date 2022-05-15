@@ -1,16 +1,9 @@
-# plugin_manager {{{
 [[plugins]]
 repo = 'Shougo/dein.vim'
-# }}}
 
-# view {{{
 [[plugins]]
 repo = 'sainnhe/gruvbox-material'
 
-# }}}
-
-# setting deno {{{
 [[plugins]]
 repo = 'vim-denops/denops.vim'
-# }}}
 
