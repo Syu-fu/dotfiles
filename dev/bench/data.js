@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1653204762872,
+  "lastUpdate": 1653210316185,
   "repoUrl": "https://github.com/Syu-fu/dotfiles",
   "entries": {
     "Benchmark": [
@@ -883,6 +883,40 @@ window.BENCHMARK_DATA = {
           {
             "name": "neovim load time",
             "value": 0.002,
+            "unit": "Second"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "syu.fu.dev@gmail.com",
+            "name": "Syu fu",
+            "username": "Syu-fu"
+          },
+          "committer": {
+            "email": "syu.fu.dev@gmail.com",
+            "name": "Syu fu",
+            "username": "Syu-fu"
+          },
+          "distinct": true,
+          "id": "19e9c792ac3809c7c23f362255b0393744870cda",
+          "message": "feat(tmux): tmux setting move XDG Base Directory",
+          "timestamp": "2022-05-22T17:59:51+09:00",
+          "tree_id": "117a75b948858335dd067380ed27779b333ffb27",
+          "url": "https://github.com/Syu-fu/dotfiles/commit/19e9c792ac3809c7c23f362255b0393744870cda"
+        },
+        "date": 1653210315744,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "zsh load time",
+            "value": 0.12,
+            "unit": "Second"
+          },
+          {
+            "name": "neovim load time",
+            "value": 0.0024,
             "unit": "Second"
           }
         ]
