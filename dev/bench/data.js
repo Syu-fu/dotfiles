@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1652600526845,
+  "lastUpdate": 1653204762872,
   "repoUrl": "https://github.com/Syu-fu/dotfiles",
   "entries": {
     "Benchmark": [
@@ -849,6 +849,40 @@ window.BENCHMARK_DATA = {
           {
             "name": "neovim load time",
             "value": 0.0024,
+            "unit": "Second"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "syu.fu.dev@gmail.com",
+            "name": "Syu fu",
+            "username": "Syu-fu"
+          },
+          "committer": {
+            "email": "syu.fu.dev@gmail.com",
+            "name": "Syu fu",
+            "username": "Syu-fu"
+          },
+          "distinct": true,
+          "id": "1cc7f43e0b6e20a4d0f52d2992ad549f2508e79f",
+          "message": "feat(vim): add easy motion conventional commit",
+          "timestamp": "2022-05-22T16:27:38+09:00",
+          "tree_id": "3d294aab043f11939f530ba16a73455ebce378b4",
+          "url": "https://github.com/Syu-fu/dotfiles/commit/1cc7f43e0b6e20a4d0f52d2992ad549f2508e79f"
+        },
+        "date": 1653204762430,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "zsh load time",
+            "value": 0.1,
+            "unit": "Second"
+          },
+          {
+            "name": "neovim load time",
+            "value": 0.002,
             "unit": "Second"
           }
         ]
