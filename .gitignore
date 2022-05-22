@@ -7,7 +7,6 @@
 !/.gitignore
 !/.gitconfig
 !/.p10k.zsh
-!/.tmux.conf
 !/.zshenv
 !/Brewfile
 !/README.md
@@ -63,16 +62,17 @@
 # }}}
 
 # .tmux {{{
-!/.tmux/
-!/.tmux/conf/
-!/.tmux/conf/base.tmux
-!/.tmux/conf/bind.tmux
-!/.tmux/conf/color.tmux
-!/.tmux/conf/plugin.tmux
-!/.tmux/conf/scripts/
-!/.tmux/conf/scripts/**
-!/.tmux/
-!/.tmux/plugins/**
+!/.config/tmux/
+!/.config/tmux/tmux.conf
+!/.config/tmux/conf/
+!/.config/tmux/conf/base.tmux
+!/.config/tmux/conf/bind.tmux
+!/.config/tmux/conf/color.tmux
+!/.config/tmux/conf/plugin.tmux
+!/.config/tmux/conf/scripts/
+!/.config/tmux/conf/scripts/**
+!/.config/tmux/
+!/.config/tmux/plugins/**
 # }}}
 
 # bin {{{
