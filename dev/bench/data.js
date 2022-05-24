@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1653210316185,
+  "lastUpdate": 1653396763702,
   "repoUrl": "https://github.com/Syu-fu/dotfiles",
   "entries": {
     "Benchmark": [
@@ -917,6 +917,40 @@ window.BENCHMARK_DATA = {
           {
             "name": "neovim load time",
             "value": 0.0024,
+            "unit": "Second"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "syu.fu.dev@gmail.com",
+            "name": "Syu fu",
+            "username": "Syu-fu"
+          },
+          "committer": {
+            "email": "syu.fu.dev@gmail.com",
+            "name": "Syu fu",
+            "username": "Syu-fu"
+          },
+          "distinct": true,
+          "id": "d42eb98cb5c2a744520d552ccb2a00091cb0a551",
+          "message": "fix(tmux): fix tmux directory",
+          "timestamp": "2022-05-24T21:14:58+09:00",
+          "tree_id": "d3a2ac206edf426acf4dba251826aedc44d14919",
+          "url": "https://github.com/Syu-fu/dotfiles/commit/d42eb98cb5c2a744520d552ccb2a00091cb0a551"
+        },
+        "date": 1653396763491,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "zsh load time",
+            "value": 0.09,
+            "unit": "Second"
+          },
+          {
+            "name": "neovim load time",
+            "value": 0.002,
             "unit": "Second"
           }
         ]
