@@ -3,7 +3,7 @@
 # ファイラープラグイン
 [[plugins]]
 repo = 'lambdalisue/fern.vim'
-hook_add = 'nnoremap <silent> <Leader>t :Fern . -reveal=% -drawer -toggle -width=40<CR>'
+hook_add = 'nnoremap <silent> <Leader>l :Fern . -reveal=% -drawer -toggle -width=40<CR>'
 hook_source = 'source $XDG_CONFIG_HOME/nvim/plugins/settings/fern.rc.vim'
 on_cmd = ['Fern']
 
