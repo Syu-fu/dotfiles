@@ -103,6 +103,7 @@ hook_source = '''
 
 [[plugins]]
 repo = 'williamboman/nvim-lsp-installer'
+if = 'has("nvim")'
 on_source = 'nvim-lspconfig'
 
 [[plugins]]
@@ -127,6 +128,7 @@ repo = 'mengelbrecht/lightline-bufferline'
 
 [[plugins]]
 repo = 'Syu-fu/nvim-lightline-lsp'
+if = 'has("nvim")'
 
 [[plugins]]
 repo = 'ryanoasis/vim-devicons'
