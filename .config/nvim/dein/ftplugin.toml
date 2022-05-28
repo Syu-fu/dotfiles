@@ -16,3 +16,6 @@ endfunction
 nnoremap <buffer> <CR><CR> <Cmd>call <SID>select_type()<CR>
 '''
 
+go = '''
+nnoremap <buffer><silent> <Leader>t :<C-u>QuickRun -mode n go/test<CR>
+'''

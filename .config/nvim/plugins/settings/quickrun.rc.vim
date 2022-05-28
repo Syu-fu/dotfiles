@@ -12,8 +12,26 @@ function! s:notify_hook.on_finish(session, context) abort
   call lightline#update()
 endfunction
 
+nnoremap <silent> <Leader>r :<C-u>QuickRun<CR>
+
 let g:quickrun_config = {
+\   "_" : {
+\       "outputter/buffer/split" : ":botright",
+\       "outputter/buffer/opener" : "new",
+\       "outputter/buffer/close_on_empty" : 1
+\   },
+\}
+let s:config = {
 \ 'tsc': {
 \   'command': 'tsc',
-\}, 
+\   },
+\ 'go/test': {
+\   'command': 'go',
+\   'exec': '%c test %o',
+\   'hook/output_encode/encoding':'utf-8',
+\   'hook/cd/directory': '%S:p:h',
+\   },
 \}
+
+call extend(g:quickrun_config, s:config)
+unlet s:config
