@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1653747145089,
+  "lastUpdate": 1653748018767,
   "repoUrl": "https://github.com/Syu-fu/dotfiles",
   "entries": {
     "Benchmark": [
@@ -980,6 +980,40 @@ window.BENCHMARK_DATA = {
           {
             "name": "zsh load time",
             "value": 0.08,
+            "unit": "Second"
+          },
+          {
+            "name": "neovim load time",
+            "value": 0.002,
+            "unit": "Second"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "syu.fu.dev@gmail.com",
+            "name": "Syu fu",
+            "username": "Syu-fu"
+          },
+          "committer": {
+            "email": "syu.fu.dev@gmail.com",
+            "name": "Syu fu",
+            "username": "Syu-fu"
+          },
+          "distinct": true,
+          "id": "61a9220d3360add7d8446d99c12f8a97e9748416",
+          "message": "breaking(vim): fern open key t to l",
+          "timestamp": "2022-05-28T23:21:41+09:00",
+          "tree_id": "99729595fc2235932daf5a5f824037eb9d374b00",
+          "url": "https://github.com/Syu-fu/dotfiles/commit/61a9220d3360add7d8446d99c12f8a97e9748416"
+        },
+        "date": 1653748018333,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "zsh load time",
+            "value": 0.07,
             "unit": "Second"
           },
           {
