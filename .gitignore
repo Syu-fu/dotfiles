@@ -20,6 +20,7 @@
 !/.config/alacritty/alacritty.yml
 !/.config/git/
 !/.config/git/ignore
+!/.config/git/.gitmessage
 !/.config/i3/
 !/.config/i3/config
 !/.config/i3/wallpaper.jpg
