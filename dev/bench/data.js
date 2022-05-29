@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1653801933037,
+  "lastUpdate": 1653805750124,
   "repoUrl": "https://github.com/Syu-fu/dotfiles",
   "entries": {
     "Benchmark": [
@@ -1053,6 +1053,40 @@ window.BENCHMARK_DATA = {
           {
             "name": "neovim load time",
             "value": 0.0032,
+            "unit": "Second"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "syu.fu.dev@gmail.com",
+            "name": "Syu fu",
+            "username": "Syu-fu"
+          },
+          "committer": {
+            "email": "syu.fu.dev@gmail.com",
+            "name": "Syu fu",
+            "username": "Syu-fu"
+          },
+          "distinct": true,
+          "id": "6f9c9d07e05229440271fd41262db6caeff229a6",
+          "message": "feat(vim): update quickrun config",
+          "timestamp": "2022-05-29T15:24:03+09:00",
+          "tree_id": "ca0ffc9f04f54088b4b7ceaf4cc4c9721b1ecda6",
+          "url": "https://github.com/Syu-fu/dotfiles/commit/6f9c9d07e05229440271fd41262db6caeff229a6"
+        },
+        "date": 1653805749670,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "zsh load time",
+            "value": 0.11,
+            "unit": "Second"
+          },
+          {
+            "name": "neovim load time",
+            "value": 0.0036,
             "unit": "Second"
           }
         ]
