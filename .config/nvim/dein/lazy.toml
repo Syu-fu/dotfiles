@@ -85,6 +85,7 @@ hook_add = '''
   imap <expr> <C-b> vsnip#jumpable(-1) ? '<Plug>(vsnip-jump-prev)' : '<C-b>'
   smap <expr> <C-b> vsnip#jumpable(-1) ? '<Plug>(vsnip-jump-prev)' : '<C-b>'
   let g:vsnip_filetypes = {}
+  let g:vsnip_snippet_dir = expand('$XDG_CONFIG_HOME/nvim/vsnip')
 '''
 
 [[plugins]]

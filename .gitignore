@@ -51,8 +51,8 @@
 !/.config/nvim/plugins/settings/pum.rc.vim
 !/.config/nvim/plugins/settings/quickrun.rc.vim
 !/.config/nvim/plugins/settings/lexima.rc.vim
-/.config/nvim/plugins/UltiSnips/
-/.config/nvim/plugins/UltiSnips/**
+!/.config/nvim/vsnip/
+!/.config/nvim/vsnip/**
 # }}}
 # }}}
 
