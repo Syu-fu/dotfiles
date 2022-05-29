@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1653748018767,
+  "lastUpdate": 1653801933037,
   "repoUrl": "https://github.com/Syu-fu/dotfiles",
   "entries": {
     "Benchmark": [
@@ -1019,6 +1019,40 @@ window.BENCHMARK_DATA = {
           {
             "name": "neovim load time",
             "value": 0.002,
+            "unit": "Second"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "syu.fu.dev@gmail.com",
+            "name": "Syu fu",
+            "username": "Syu-fu"
+          },
+          "committer": {
+            "email": "syu.fu.dev@gmail.com",
+            "name": "Syu fu",
+            "username": "Syu-fu"
+          },
+          "distinct": true,
+          "id": "3c7efcaee987e437c87531b2576ae7cca27c81a5",
+          "message": "feat(vim): add ddu.vim config",
+          "timestamp": "2022-05-29T14:20:44+09:00",
+          "tree_id": "ec1cd47e730ac97a41971168092191ad3d3c8055",
+          "url": "https://github.com/Syu-fu/dotfiles/commit/3c7efcaee987e437c87531b2576ae7cca27c81a5"
+        },
+        "date": 1653801932791,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "zsh load time",
+            "value": 0.1,
+            "unit": "Second"
+          },
+          {
+            "name": "neovim load time",
+            "value": 0.0032,
             "unit": "Second"
           }
         ]
