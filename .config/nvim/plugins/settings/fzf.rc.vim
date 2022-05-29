@@ -14,10 +14,10 @@ noremap <fzf-p> <Nop>
 nmap <Leader>f [fzf-p]
 xmap <Leader>f [fzf-p]
 
-nnoremap <silent> <Leader>p     :<C-u>FzfPreviewProjectFilesRpc<CR>
+"nnoremap <silent> <Leader>p     :<C-u>FzfPreviewProjectFilesRpc<CR>
 nnoremap <silent> <Leader>gs   :<C-u>FzfPreviewGitStatusRpc<CR>
 nnoremap <silent> <Leader>gt   :<C-u>FzfPreviewGitActionsRpc<CR>
-nnoremap <silent> <Leader>b     :<C-u>FzfPreviewBuffersRpc<CR>
+"nnoremap <silent> <Leader>b     :<C-u>FzfPreviewBuffersRpc<CR>
 nnoremap <silent> [fzf-p]B     :<C-u>FzfPreviewAllBuffersRpc<CR>
 nnoremap <silent> [fzf-p]o     :<C-u>FzfPreviewFromResourcesRpc buffer project_mru<CR>
 nnoremap <silent> [fzf-p]<C-o> :<C-u>FzfPreviewJumpsRpc<CR>
