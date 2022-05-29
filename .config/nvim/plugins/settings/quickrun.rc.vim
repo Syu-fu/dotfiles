@@ -13,12 +13,14 @@ function! s:notify_hook.on_finish(session, context) abort
 endfunction
 
 nnoremap <silent> <Leader>r :<C-u>QuickRun<CR>
+nnoremap <silent><expr> <C-c> quickrun#session#exists() ? '<Cmd>call quickrun#session#sweep()' : '<C-c>'
 
 let g:quickrun_config = {
 \   "_" : {
 \       "outputter/buffer/split" : ":botright",
 \       "outputter/buffer/opener" : "new",
-\       "outputter/buffer/close_on_empty" : 1
+\       "outputter/buffer/close_on_empty" : v:true,
+\       "outputter/buffer/into" : v:true,
 \   },
 \}
 let s:config = {

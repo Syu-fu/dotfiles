@@ -156,6 +156,11 @@ repo = 'lambdalisue/suda.vim'
 repo = 'thinca/vim-quickrun'
 hook_add = 'source $XDG_CONFIG_HOME/nvim/plugins/settings/quickrun.rc.vim'
 on_cmd = 'QuickRun'
+[plugins.ftplugin]
+quickrun = '''
+  nnoremap <buffer> q <C-w>q
+  nnoremap <buffer> <C-c> <Cmd>call quickrun#session#sweep()<CR>
+'''
 
 [[plugins]]
 repo = 'mattn/vim-goimports'
