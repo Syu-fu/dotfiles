@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1653805750124,
+  "lastUpdate": 1654335030656,
   "repoUrl": "https://github.com/Syu-fu/dotfiles",
   "entries": {
     "Benchmark": [
@@ -1087,6 +1087,40 @@ window.BENCHMARK_DATA = {
           {
             "name": "neovim load time",
             "value": 0.0036,
+            "unit": "Second"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "syu.fu.dev@gmail.com",
+            "name": "Syu fu",
+            "username": "Syu-fu"
+          },
+          "committer": {
+            "email": "syu.fu.dev@gmail.com",
+            "name": "Syu fu",
+            "username": "Syu-fu"
+          },
+          "distinct": true,
+          "id": "7759f57dec7bb48c5f12f49115bae6b409048222",
+          "message": "feat(git): git commit default verbose on",
+          "timestamp": "2022-06-04T18:25:09+09:00",
+          "tree_id": "a32cf1d238c737c65e844a870cbc8aef7c550c32",
+          "url": "https://github.com/Syu-fu/dotfiles/commit/7759f57dec7bb48c5f12f49115bae6b409048222"
+        },
+        "date": 1654335030420,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "zsh load time",
+            "value": 0.11,
+            "unit": "Second"
+          },
+          {
+            "name": "neovim load time",
+            "value": 0.0064,
             "unit": "Second"
           }
         ]
