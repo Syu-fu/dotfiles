@@ -13,3 +13,4 @@
   defaultBranch = main
 [commit]
   template = "~/.config/git/.gitmessage"
+  verbose = true
