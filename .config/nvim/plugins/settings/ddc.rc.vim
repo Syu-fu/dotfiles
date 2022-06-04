@@ -5,7 +5,7 @@ call ddc#custom#patch_global('sourceOptions', {
      \ '_': {
      \   'matchers': ['matcher_fuzzy', 'matcher_head'],
      \   'sorters': ['sorter_fuzzy', 'sorter_rank'],
-     \   'converters': ['converter_remove_overlap'],
+     \   'converters': ['converter_remove_overlap', 'converter_truncate_abbr'],
      \ },
      \ 'around': {
      \   'mark': '[around]',

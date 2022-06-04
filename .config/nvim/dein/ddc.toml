@@ -33,6 +33,10 @@ repo = 'Shougo/ddc-converter_remove_overlap'
 on_source = 'ddc.vim'
 
 [[plugins]]
+repo = 'Shougo/ddc-converter_truncate_abbr'
+on_source = 'ddc.vim'
+
+[[plugins]]
 repo = 'Shougo/ddc-nvim-lsp'
 on_source = 'ddc.vim'
 
