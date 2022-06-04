@@ -5,7 +5,6 @@
 ### not ignore ###
 # root {{{
 !/.gitignore
-!/.gitconfig
 !/.p10k.zsh
 !/.zshenv
 !/Brewfile
@@ -19,6 +18,7 @@
 !/.config/alacritty/
 !/.config/alacritty/alacritty.yml
 !/.config/git/
+!/.config/git/config
 !/.config/git/ignore
 !/.config/git/.gitmessage
 !/.config/i3/
