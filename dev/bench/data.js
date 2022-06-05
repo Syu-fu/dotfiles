@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1654395791199,
+  "lastUpdate": 1654397624277,
   "repoUrl": "https://github.com/Syu-fu/dotfiles",
   "entries": {
     "Benchmark": [
@@ -1155,6 +1155,40 @@ window.BENCHMARK_DATA = {
           {
             "name": "neovim load time",
             "value": 0.0044,
+            "unit": "Second"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "syu.fu.dev@gmail.com",
+            "name": "Syu fu",
+            "username": "Syu-fu"
+          },
+          "committer": {
+            "email": "syu.fu.dev@gmail.com",
+            "name": "Syu fu",
+            "username": "Syu-fu"
+          },
+          "distinct": true,
+          "id": "d00e41b5563f1c54ca9c5a9e54b5e037d05e044e",
+          "message": "fix(vim): fix lexima rules",
+          "timestamp": "2022-06-05T11:49:42+09:00",
+          "tree_id": "e4d6a1205bf34ddecb54d0e77e57eb1d9d2010c9",
+          "url": "https://github.com/Syu-fu/dotfiles/commit/d00e41b5563f1c54ca9c5a9e54b5e037d05e044e"
+        },
+        "date": 1654397624061,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "zsh load time",
+            "value": 0.08,
+            "unit": "Second"
+          },
+          {
+            "name": "neovim load time",
+            "value": 0.002,
             "unit": "Second"
           }
         ]
