@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1654335030656,
+  "lastUpdate": 1654395791199,
   "repoUrl": "https://github.com/Syu-fu/dotfiles",
   "entries": {
     "Benchmark": [
@@ -1121,6 +1121,40 @@ window.BENCHMARK_DATA = {
           {
             "name": "neovim load time",
             "value": 0.0064,
+            "unit": "Second"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "syu.fu.dev@gmail.com",
+            "name": "Syu fu",
+            "username": "Syu-fu"
+          },
+          "committer": {
+            "email": "syu.fu.dev@gmail.com",
+            "name": "Syu fu",
+            "username": "Syu-fu"
+          },
+          "distinct": true,
+          "id": "84a9bb7559ffc0ca2cfb0e95530f67a29b2dae95",
+          "message": "feat(git): add setting pull rebase false",
+          "timestamp": "2022-06-05T11:17:12+09:00",
+          "tree_id": "38c0882fbae609e6c2ede2f5550c35663703f41e",
+          "url": "https://github.com/Syu-fu/dotfiles/commit/84a9bb7559ffc0ca2cfb0e95530f67a29b2dae95"
+        },
+        "date": 1654395790732,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "zsh load time",
+            "value": 0.11,
+            "unit": "Second"
+          },
+          {
+            "name": "neovim load time",
+            "value": 0.0044,
             "unit": "Second"
           }
         ]
