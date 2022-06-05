@@ -55,7 +55,7 @@ hook_add = 'source $XDG_CONFIG_HOME/nvim/plugins/settings/fzf.rc.vim'
 
 [[plugins]]
 repo = 'cohama/lexima.vim'
-hook_add = 'source $XDG_CONFIG_HOME/nvim/plugins/settings/lexima.rc.vim'
+hook_source = 'source $XDG_CONFIG_HOME/nvim/plugins/settings/lexima.rc.vim'
 on_event = 'InsertEnter'
 
 [[plugins]]
@@ -165,3 +165,7 @@ quickrun = '''
 [[plugins]]
 repo = 'mattn/vim-goimports'
 on_ft = 'go'
+
+[[plugins]]
+repo = 'lambdalisue/gin.vim'
+on_cmd = 'Gin'

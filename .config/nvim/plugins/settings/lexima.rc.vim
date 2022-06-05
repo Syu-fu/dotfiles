@@ -1,5 +1,1 @@
-call lexima#add_rule({'at': '\%#[0-9a-zA-Z-_,:]', 'char': '(', 'input': '('})
-call lexima#add_rule({'at': '\%#[0-9a-zA-Z-_,:]', 'char': '{', 'input': '{'})
-call lexima#add_rule({'at': '\%#[0-9a-zA-Z-_,:]', 'char': '[', 'input': '['})
-call lexima#add_rule({'at': '\%#[0-9a-zA-Z-_,:]', 'char': "'", 'input': "'"})
-call lexima#add_rule({'at': '\%#[0-9a-zA-Z-_,:]', 'char': '"', 'input': '"'})
+call lexima#set_default_rules()
