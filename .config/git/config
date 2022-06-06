@@ -9,6 +9,10 @@
   cmd = "nvim -R -d -c \"wincmd l\" -d \"$LOCAL\" \"$REMOTE\""
 [mergetool "nvimdiff"]
   cmd = "nvim -d -c \"4wincmd w | wincmd J\" \"$LOCAL\" \"$BASE\" \"$REMOTE\"  \"$MERGED\""
+[merge]
+  ff = false
+[pull]
+  ff = only
 [init]
   defaultBranch = main
 [commit]
