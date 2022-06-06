@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1654397624277,
+  "lastUpdate": 1654516683996,
   "repoUrl": "https://github.com/Syu-fu/dotfiles",
   "entries": {
     "Benchmark": [
@@ -1189,6 +1189,40 @@ window.BENCHMARK_DATA = {
           {
             "name": "neovim load time",
             "value": 0.002,
+            "unit": "Second"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "syu.fu.dev@gmail.com",
+            "name": "Syu fu",
+            "username": "Syu-fu"
+          },
+          "committer": {
+            "email": "syu.fu.dev@gmail.com",
+            "name": "Syu fu",
+            "username": "Syu-fu"
+          },
+          "distinct": true,
+          "id": "f3d692992ac38d07e3e9066afbaa99ddf6cf6cbc",
+          "message": "feat(git): add pull and merge rules",
+          "timestamp": "2022-06-06T20:53:34+09:00",
+          "tree_id": "b7b50cf2bb7a0160be6bcb2c2a375b268b472be1",
+          "url": "https://github.com/Syu-fu/dotfiles/commit/f3d692992ac38d07e3e9066afbaa99ddf6cf6cbc"
+        },
+        "date": 1654516683443,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "zsh load time",
+            "value": 0.08,
+            "unit": "Second"
+          },
+          {
+            "name": "neovim load time",
+            "value": 0.0024,
             "unit": "Second"
           }
         ]
