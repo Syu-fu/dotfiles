@@ -105,6 +105,9 @@ tools:
       - commitlint.config.cjs
       - commitlint.config.ts
 
+  go-golangci-lint: &go-golangci-lint
+    lint-command: 'golangci-lint run'
+
 languages:
   typescript:
     - <<: *javascript-eslint
@@ -126,6 +129,9 @@ languages:
 
   yaml:
     - <<: *yaml-yamllint
+
+  go:
+    - <<: *go-golangci-lint
+
   gitcommit:
     - <<: *commitlint-lint
-
