@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1654516683996,
+  "lastUpdate": 1655623566634,
   "repoUrl": "https://github.com/Syu-fu/dotfiles",
   "entries": {
     "Benchmark": [
@@ -1218,6 +1218,40 @@ window.BENCHMARK_DATA = {
           {
             "name": "zsh load time",
             "value": 0.08,
+            "unit": "Second"
+          },
+          {
+            "name": "neovim load time",
+            "value": 0.0024,
+            "unit": "Second"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "syu.fu.dev@gmail.com",
+            "name": "Syu fu",
+            "username": "Syu-fu"
+          },
+          "committer": {
+            "email": "syu.fu.dev@gmail.com",
+            "name": "Syu fu",
+            "username": "Syu-fu"
+          },
+          "distinct": true,
+          "id": "fbe6c950b11aa69e4570c33c30d43f8656fdf8b1",
+          "message": "fix(vim): prevents overwriting of hover by diagnostics",
+          "timestamp": "2022-06-19T16:21:55+09:00",
+          "tree_id": "1e8ffd33427d5c43d52166c9936602cc31e38791",
+          "url": "https://github.com/Syu-fu/dotfiles/commit/fbe6c950b11aa69e4570c33c30d43f8656fdf8b1"
+        },
+        "date": 1655623566436,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "zsh load time",
+            "value": 0.09,
             "unit": "Second"
           },
           {
