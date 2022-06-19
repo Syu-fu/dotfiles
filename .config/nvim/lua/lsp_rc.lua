@@ -42,7 +42,17 @@ vim.diagnostic.config({
 
 -- Show line diagnostics automatically in hover window
 vim.o.updatetime = 250
-vim.cmd [[autocmd CursorHold,CursorHoldI * lua vim.diagnostic.open_float(nil, {focus=false})]]
+
+OpenDiagFloat = function ()
+  for _, winid in pairs(vim.api.nvim_tabpage_list_wins(0)) do
+    if vim.api.nvim_win_get_config(winid).zindex then
+      return
+    end
+  end
+  vim.diagnostic.open_float({focusable = false})
+end
+
+vim.cmd([[autocmd CursorHold,CursorHoldI <buffer> lua OpenDiagFloat()]])
 
 local lsp_installer = require("nvim-lsp-installer")
 lsp_installer.on_server_ready(function(server)
