@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1659791365101,
+  "lastUpdate": 1659792594677,
   "repoUrl": "https://github.com/Syu-fu/dotfiles",
   "entries": {
     "Benchmark": [
@@ -1291,6 +1291,40 @@ window.BENCHMARK_DATA = {
           {
             "name": "neovim load time",
             "value": 0.0024,
+            "unit": "Second"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "syu.fu.dev@gmail.com",
+            "name": "Syu fu",
+            "username": "Syu-fu"
+          },
+          "committer": {
+            "email": "syu.fu.dev@gmail.com",
+            "name": "Syu fu",
+            "username": "Syu-fu"
+          },
+          "distinct": true,
+          "id": "e5f341f308c33d055b7200b63537f6f75c645da4",
+          "message": "fix(vim): lexima can also be used in commandline mode",
+          "timestamp": "2022-08-06T22:24:46+09:00",
+          "tree_id": "8f2fe48e2b08866592d457fbd0fa76c77a0c5232",
+          "url": "https://github.com/Syu-fu/dotfiles/commit/e5f341f308c33d055b7200b63537f6f75c645da4"
+        },
+        "date": 1659792594440,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "zsh load time",
+            "value": 0.11,
+            "unit": "Second"
+          },
+          {
+            "name": "neovim load time",
+            "value": 0.0036,
             "unit": "Second"
           }
         ]
