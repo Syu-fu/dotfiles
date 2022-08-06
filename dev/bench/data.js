@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1655623566634,
+  "lastUpdate": 1659791365101,
   "repoUrl": "https://github.com/Syu-fu/dotfiles",
   "entries": {
     "Benchmark": [
@@ -1247,6 +1247,40 @@ window.BENCHMARK_DATA = {
           "url": "https://github.com/Syu-fu/dotfiles/commit/fbe6c950b11aa69e4570c33c30d43f8656fdf8b1"
         },
         "date": 1655623566436,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "zsh load time",
+            "value": 0.09,
+            "unit": "Second"
+          },
+          {
+            "name": "neovim load time",
+            "value": 0.0024,
+            "unit": "Second"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "syu.fu.dev@gmail.com",
+            "name": "Syu fu",
+            "username": "Syu-fu"
+          },
+          "committer": {
+            "email": "syu.fu.dev@gmail.com",
+            "name": "Syu fu",
+            "username": "Syu-fu"
+          },
+          "distinct": true,
+          "id": "b74ffae780071c8613a96e68d27902634c3306ba",
+          "message": "fix(vim): fixed lexima indentation not working",
+          "timestamp": "2022-08-06T22:04:51+09:00",
+          "tree_id": "f53f31f806df75488a4752e0725e676190a89017",
+          "url": "https://github.com/Syu-fu/dotfiles/commit/b74ffae780071c8613a96e68d27902634c3306ba"
+        },
+        "date": 1659791364680,
         "tool": "customSmallerIsBetter",
         "benches": [
           {
