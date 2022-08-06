@@ -2,7 +2,7 @@ inoremap <silent><expr> <TAB>
       \ pum#visible() ? '<Cmd>call pum#map#insert_relative(+1)<CR>' :
       \ (col('.') <= 1 <Bar><Bar> getline('.')[col('.') - 2] =~# '\s') ?
       \ '<TAB>' : ddc#manual_complete()
-inoremap <expr><CR> pum#visible() ? '<Cmd>call pum#map#confirm()<CR>' : '<CR>'
+inoremap <silent><expr> <CR> pum#visible() ? '<Cmd>call pum#map#confirm()<CR>' : lexima#expand('<LT>CR>', 'i')
 inoremap <S-Tab> <Cmd>call pum#map#insert_relative(-1)<CR>
 inoremap <C-n>   <Cmd>call pum#map#select_relative(+1)<CR>
 inoremap <C-p>   <Cmd>call pum#map#select_relative(-1)<CR>
