@@ -29,7 +29,7 @@ let s:config = {
 \   },
 \ 'go/test': {
 \   'command': 'go',
-\   'exec': '%c test %o',
+\   'exec': '%c test -v %o',
 \   'hook/output_encode/encoding':'utf-8',
 \   'hook/cd/directory': '%S:p:h',
 \   },
