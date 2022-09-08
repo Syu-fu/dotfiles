@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1659792594677,
+  "lastUpdate": 1662638286917,
   "repoUrl": "https://github.com/Syu-fu/dotfiles",
   "entries": {
     "Benchmark": [
@@ -1325,6 +1325,40 @@ window.BENCHMARK_DATA = {
           {
             "name": "neovim load time",
             "value": 0.0036,
+            "unit": "Second"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "syu.fu.dev@gmail.com",
+            "name": "Syu fu",
+            "username": "Syu-fu"
+          },
+          "committer": {
+            "email": "syu.fu.dev@gmail.com",
+            "name": "Syu fu",
+            "username": "Syu-fu"
+          },
+          "distinct": true,
+          "id": "e5674931684006f474e750da44d7d19882570014",
+          "message": "deps(vim): change nvim-lspinstaller to mason",
+          "timestamp": "2022-09-08T20:53:39+09:00",
+          "tree_id": "af67ea0f3250ccb2439af7f6cf5a4ec05b6960e1",
+          "url": "https://github.com/Syu-fu/dotfiles/commit/e5674931684006f474e750da44d7d19882570014"
+        },
+        "date": 1662638286354,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "zsh load time",
+            "value": 0.09,
+            "unit": "Second"
+          },
+          {
+            "name": "neovim load time",
+            "value": 0.0024,
             "unit": "Second"
           }
         ]
