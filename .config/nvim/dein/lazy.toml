@@ -103,7 +103,12 @@ hook_source = '''
 '''
 
 [[plugins]]
-repo = 'williamboman/nvim-lsp-installer'
+repo = 'williamboman/mason.nvim'
+if = 'has("nvim")'
+on_source = 'nvim-lspconfig'
+
+[[plugins]]
+repo = 'williamboman/mason-lspconfig.nvim'
 if = 'has("nvim")'
 on_source = 'nvim-lspconfig'
 
