@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1662638286917,
+  "lastUpdate": 1663489876768,
   "repoUrl": "https://github.com/Syu-fu/dotfiles",
   "entries": {
     "Benchmark": [
@@ -1359,6 +1359,40 @@ window.BENCHMARK_DATA = {
           {
             "name": "neovim load time",
             "value": 0.0024,
+            "unit": "Second"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "syu.fu.dev@gmail.com",
+            "name": "Syu fu",
+            "username": "Syu-fu"
+          },
+          "committer": {
+            "email": "syu.fu.dev@gmail.com",
+            "name": "Syu fu",
+            "username": "Syu-fu"
+          },
+          "distinct": true,
+          "id": "ba6b6762cbe360a2a5f4c7398fca0828cabe4a02",
+          "message": "feat(vim): close with normalmode-'q' in the ddu input field",
+          "timestamp": "2022-09-18T17:23:01+09:00",
+          "tree_id": "8cbabb3e288725aeb4e46a7eea434bd15c384220",
+          "url": "https://github.com/Syu-fu/dotfiles/commit/ba6b6762cbe360a2a5f4c7398fca0828cabe4a02"
+        },
+        "date": 1663489876514,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "zsh load time",
+            "value": 0.11,
+            "unit": "Second"
+          },
+          {
+            "name": "neovim load time",
+            "value": 0.0036,
             "unit": "Second"
           }
         ]
