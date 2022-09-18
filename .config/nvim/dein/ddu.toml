@@ -71,6 +71,8 @@ inoremap <buffer> <CR>
 \ <Esc><Cmd>call ddu#ui#ff#close()<CR>
 nnoremap <buffer> <CR>
 \ <Cmd>call ddu#ui#ff#close()<CR>
+nnoremap <buffer> q
+\ <Cmd>call ddu#ui#ff#do_action('quit')<CR>
 '''
 
 [[plugins]]
