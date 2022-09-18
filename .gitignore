@@ -46,6 +46,7 @@
 !/.config/nvim/plugins/
 !/.config/nvim/plugins/settings/
 !/.config/nvim/plugins/settings/ddc.rc.vim
+!/.config/nvim/plugins/settings/ddu.rc.vim
 !/.config/nvim/plugins/settings/fern.rc.vim
 !/.config/nvim/plugins/settings/fzf.rc.vim
 !/.config/nvim/plugins/settings/lightline.rc.vim
