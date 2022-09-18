@@ -6,7 +6,6 @@ function vim.lsp.util.open_floating_preview(contents, syntax, opts, ...)
   return orig_util_open_floating_preview(contents, syntax, opts, ...)
 end
 
-require 'lspconfig'.myservertwo.setup {}
 local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
 for type, icon in pairs(signs) do
   local hl = "DiagnosticSign" .. type
@@ -50,8 +49,7 @@ mason_lspconfig.setup_handlers({ function(server_name)
     local bufopts = { silent = true, buffer = bufnr }
 
  end
- --nvim_lsp[server_name].setup(opts)
- require('lspconfig')[server_name].setup(opts)
+ nvim_lsp[server_name].setup(opts)
 end })
 
 vim.keymap.set("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>")
