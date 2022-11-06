@@ -20,3 +20,5 @@
   verbose = true
 [pull]
   rebase = false
+[ghq]
+  root = "~/Documents/Projects"
