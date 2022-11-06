@@ -43,7 +43,6 @@ project/metals.sbt
 # These can be changed by user in Lazarus/project options.
 backup/
 *.bak
-lib/
 
 # Application bundle for Mac OS
 *.app/
@@ -114,9 +113,6 @@ config.codekit3
 # Web P
 *.webp
 
-# Portable Network Graphics
-*.png
-
 # Animated Portable Network Graphics
 *.apng
 
@@ -127,10 +123,6 @@ config.codekit3
 *.tiff
 *.tif
 
-# Scalable Vector Graphics
-*.svg
-*.svgz
-
 # Portable Document Format
 *.pdf
 
@@ -140,9 +132,6 @@ config.codekit3
 # BMP
 *.bmp
 *.dib
-
-# ICO
-*.ico
 
 # 3D Images
 *.3dm
@@ -387,8 +376,6 @@ Temporary Items
 *.psm
 *.bak
 *.cmp
-*.jpg
-*.html
 *.bsf
 
 # ignore simulation output of ModelSim
@@ -846,13 +833,11 @@ cscope.po.out
 
 dist/*
 target/
-lib_managed/
 src_managed/
 project/boot/
 project/plugins/project/
 .history
 .cache
-.lib/
 *.bak
 *.gho
 *.ori
@@ -892,12 +877,6 @@ tmtags
 # Virtualenv
 # http://iamzed.com/2009/05/07/a-primer-on-virtualenv/
 .Python
-[Bb]in
-[Ii]nclude
-[Ll]ib
-[Ll]ib64
-[Ll]ocal
-[Ss]cripts
 pyvenv.cfg
 .venv
 pip-selfcheck.json
@@ -925,3 +904,5 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
+
+node_modules/
