@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1663489876768,
+  "lastUpdate": 1667709496921,
   "repoUrl": "https://github.com/Syu-fu/dotfiles",
   "entries": {
     "Benchmark": [
@@ -1393,6 +1393,40 @@ window.BENCHMARK_DATA = {
           {
             "name": "neovim load time",
             "value": 0.0036,
+            "unit": "Second"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "syu.fu.dev@gmail.com",
+            "name": "Syu fu",
+            "username": "Syu-fu"
+          },
+          "committer": {
+            "email": "syu.fu.dev@gmail.com",
+            "name": "Syu fu",
+            "username": "Syu-fu"
+          },
+          "distinct": true,
+          "id": "1225a0ab5a2e9efb5d3aadd57c8dbea5cbc7913d",
+          "message": "fix(git): Fix gitignore global file",
+          "timestamp": "2022-11-06T13:32:46+09:00",
+          "tree_id": "6d9f56bfad3e8d609224f093a807eca2dfa4d49e",
+          "url": "https://github.com/Syu-fu/dotfiles/commit/1225a0ab5a2e9efb5d3aadd57c8dbea5cbc7913d"
+        },
+        "date": 1667709496447,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "zsh load time",
+            "value": 0.11,
+            "unit": "Second"
+          },
+          {
+            "name": "neovim load time",
+            "value": 0.0024,
             "unit": "Second"
           }
         ]
