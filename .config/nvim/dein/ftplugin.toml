@@ -20,3 +20,11 @@ go = '''
 nnoremap <buffer><silent> <Leader>t :<C-u>QuickRun -mode n go/test<CR>
 setlocal noexpandtab
 '''
+
+typescript = '''
+setlocal shiftwidth=2
+'''
+
+typescriptreact = '''
+setlocal shiftwidth=2 softtabstop=2 tabstop=2
+'''
