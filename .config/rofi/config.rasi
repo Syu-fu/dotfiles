@@ -1,0 +1,9 @@
+configuration {
+    modi:"window,drun,system:~/.config/rofi/rofi_system.sh";
+    sidebar-mode:  true;
+    hide-scrollbar: true;
+    kb-cancel: "Escape,Control+c";
+    kb-mode-previous: "Alt+h";
+    kb-mode-next: "Alt+l";
+}
+@theme "/usr/share/rofi/themes/gruvbox-dark-soft.rasi"
