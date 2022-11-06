@@ -3,9 +3,9 @@ repo = 'Shougo/ddu.vim'
 depends = 'denops.vim'
 on_source = 'denops.vim'
 hook_add = '''
-nnoremap <Leader>b <Cmd>Ddu buffer<CR>
-nnoremap <Leader>p <Cmd>Ddu file_external -ui-param-startFilter=v:true<CR>
-nnoremap <Leader>a <Cmd>DduRgLive<CR>
+"nnoremap <Leader>b <Cmd>Ddu buffer<CR>
+"nnoremap <Leader>p <Cmd>Ddu file_external -ui-param-startFilter=v:true<CR>
+"nnoremap <Leader>a <Cmd>DduRgLive<CR>
 '''
 hook_source = '''
 source $XDG_CONFIG_HOME/nvim/plugins/settings/ddu.rc.vim
