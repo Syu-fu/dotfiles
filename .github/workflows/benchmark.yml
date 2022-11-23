@@ -48,7 +48,7 @@ jobs:
         mkdir -p /github/home/.cache/dein  
         cd /github/home/.cache/dein
         curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > installer.sh
-        sh ./installer.sh /github/home/.cache/dein
+        2 | sh ./installer.sh /github/home/.cache/dein
 
     - name: Install node
       uses: actions/setup-node@v2
