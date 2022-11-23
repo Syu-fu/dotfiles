@@ -1,7 +1,7 @@
 [[plugins]]
 repo = 'Shougo/ddc.vim'
 on_event = ['InsertEnter', 'CmdlineEnter']
-depends = ['denops.vim']
+depends = ['denops.vim', 'pum.vim']
 hook_source = 'source $XDG_CONFIG_HOME/nvim/plugins/settings/ddc.rc.vim'
 
 [[plugins]]
@@ -71,3 +71,7 @@ on_event = 'BufRead'
 [[plugins]]
 repo = 'osyo-manga/vim-precious'
 depends = ['context_filetype.vim']
+
+[[plugins]]
+repo = 'Shougo/ddc-ui-pum'
+on_source = 'ddc.vim'
