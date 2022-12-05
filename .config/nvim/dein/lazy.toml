@@ -174,3 +174,10 @@ on_ft = 'go'
 [[plugins]]
 repo = 'lambdalisue/gin.vim'
 on_cmd = 'Gin'
+
+[[plugins]]
+repo = 'windwp/nvim-ts-autotag'
+on_event = 'InsertEnter'
+lua_source = '''
+    require('nvim-ts-autotag').setup()
+'''
