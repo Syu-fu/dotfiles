@@ -59,6 +59,18 @@ if $TMUX != ""
   augroup END
 endif
 
+" {{{ ensure_git_root
+" https://zenn.dev/kawarimidoll/articles/30693f48096eb1
+function! s:ensure_git_root() abort
+  let cmd = 'git rev-parse --show-superproject-working-tree --show-toplevel 2>/dev/null | head -1'
+  let root = system(cmd)->trim()->expand()
+  if isdirectory(root) && root != getcwd()
+    execute 'cd' root
+  endif
+endfunction
+autocmd VimEnter * ++once call s:ensure_git_root()
+" }}}
+
 " 見た目系
 " 行番号を表示
 set number
