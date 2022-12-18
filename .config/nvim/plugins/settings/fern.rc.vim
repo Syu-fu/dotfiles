@@ -1,5 +1,6 @@
 " nerdfontを設定
 let g:fern#renderer = 'nerdfont'
+let g:fern#renderer#nerdfont#indent_markers=1
 " アイコンに色をつける
 augroup my-glyph-palette
   autocmd! *
