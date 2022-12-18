@@ -5,16 +5,6 @@ call ddu#custom#patch_global({
     \       'ignoreCase': v:true,
     \       'matchers': ['matcher_substring'],
     \     },
-    \     'file_external': {
-    \       'matchers': [
-    \         'matcher_substring', 'matcher_hidden',
-    \       ],
-    \     },
-    \     'buffer': {
-    \       'matchers': [
-    \         'matcher_fzf', 'matcher_substring'
-    \       ],
-    \     },
     \   },
     \   'sourceParams': {
     \     'file_external': {
@@ -23,16 +13,19 @@ call ddu#custom#patch_global({
     \   },
     \   'uiParams': {
     \     'ff': {
-    \       'floatingBorder': ['╭','─','╮','│','╯','─','╰','│']->map('[v:val, "Comment"]'),
-    \       'split': has('nvim') ? 'floating' : 'horizontal',
-    \       'ignoreEmpty': v:false,
     \       'filterSplitDirection': 'floating',
+    \       'split': has('nvim') ? 'floating' : 'horizontal',
     \       'filterFloatingPosition': 'top',
+    \       'autoAction': {'name': 'preview'},
     \       'autoResize': v:false,
     \       'winCol': &columns / 2 - min([&columns / 2 - 5, 80]),
     \       'winRow': (&lines - min([&lines - 10, 45])) / 2,
-    \       'winWidth': min([&columns - 5, 160]),
+    \       'winWidth': min([&columns / 2 - 5, 80]),
     \       'winHeight': min([&lines - 10, 45]),
+    \       'previewFloating': v:true,
+    \       'previewVertical': v:true,
+    \       'previewHeight': min([&lines - 10, 45]),
+    \       'previewWidth': min([&columns / 2 - 5, 80]),
     \     }
     \   },
     \   'kindOptions': {
@@ -45,27 +38,18 @@ call ddu#custom#patch_global({
     \   },
     \ })
 
-"call ddu#custom#patch_local('preview', {
-"    \   'uiParams': {
-"    \     'ff': {
-"    \       'split': has('nvim') ? 'floating' : 'horizontal',
-"    \       'ignoreEmpty': v:false,
-"    \       'startFilter': v:true,
-"    \       'autoAction': {'name': 'preview'},
-"    \       'filterSplitDirection': 'floating',
-"    \       'filterFloatingPosition': 'top',
-"    \       'previewFloating': v:true,
-"    \       'previewHeight': min([&lines - 10, 45]),
-"    \       'previewVertical': v:true,
-"    \       'previewWidth': min([&columns / 2 - 5, 80]),
-"    \       'autoResize': v:false,
-"    \       'winCol': &columns / 2 - min([&columns / 2 - 5, 80]),
-"    \       'winRow': (&lines - min([&lines - 10, 45])) / 2,
-"    \       'winWidth': min([&columns / 2 - 5, 80]),
-"    \       'winHeight': min([&lines - 10, 45]),
-"    \     }
-"    \   },
-"    \ })
+call ddu#custom#patch_local('preview', {
+    \   'uiParams': {
+    \     'ff': {
+    \       'split': has('nvim') ? 'floating' : 'horizontal',
+    \       'ignoreEmpty': v:false,
+    \       'startFilter': v:true,
+    \       'autoAction': {'name': 'preview'},
+    \       'filterSplitDirection': 'floating',
+    \       'filterFloatingPosition': 'top',
+    \     }
+    \   },
+    \ })
 
 call ddu#custom#patch_global({
     \   'filterParams': {
@@ -78,30 +62,51 @@ call ddu#custom#patch_global({
     \   }
     \ })
 
+command! DduProjectFile call <SID>ddu_project_file()
+function! s:ddu_project_file() abort
+  call ddu#start({
+        \   'volatile': v:true,
+        \   'sources': [{
+        \     'name': 'file_external',
+        \   }],
+        \   'matchers': [
+        \     'matcher_fzf', 'matcher_substring'
+        \   ],
+        \   'uiParams': {'ff': {
+        \     'ignoreEmpty': v:true,
+        \     'startFilter': v:true,
+        \   }},
+        \ })
+endfunction
+
+command! DduBuffer call <SID>ddu_buffer()
+function! s:ddu_buffer() abort
+  call ddu#start({
+        \   'volatile': v:true,
+        \   'sources': [{
+        \     'name': 'buffer',
+        \   }],
+        \   'matchers': [
+        \     'matcher_fzf', 'matcher_substring'
+        \   ],
+        \   'uiParams': {'ff': {
+        \     'ignoreEmpty': v:false,
+        \     'startFilter': v:true,
+        \     }
+        \   },
+        \ })
+endfunction
+
 command! DduRgLive call <SID>ddu_rg_live()
 function! s:ddu_rg_live() abort
   call ddu#start({
         \   'volatile': v:true,
         \   'sources': [{
         \     'name': 'rg', 
-        \     'options': {'matchers': []},
         \   }],
         \   'uiParams': {'ff': {
-        \     'split': has('nvim') ? 'floating' : 'horizontal',
         \     'ignoreEmpty': v:false,
         \     'startFilter': v:true,
-        \     'autoAction': {'name': 'preview'},
-        \     'filterSplitDirection': 'floating',
-        \     'filterFloatingPosition': 'top',
-        \     'previewFloating': v:true,
-        \     'previewHeight': min([&lines - 10, 45]),
-        \     'previewVertical': v:true,
-        \     'previewWidth': min([&columns / 2 - 5, 80]),
-        \     'autoResize': v:false,
-        \     'winCol': &columns / 2 - min([&columns / 2 - 5, 80]),
-        \     'winRow': (&lines - min([&lines - 10, 45])) / 2,
-        \     'winWidth': min([&columns / 2 - 5, 80]),
-        \     'winHeight': min([&lines - 10, 45]),
         \   }},
         \ })
 endfunction

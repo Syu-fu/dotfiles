@@ -3,9 +3,11 @@ repo = 'Shougo/ddu.vim'
 depends = 'denops.vim'
 on_source = 'denops.vim'
 hook_add = '''
-"nnoremap <Leader>b <Cmd>Ddu buffer<CR>
-"nnoremap <Leader>p <Cmd>Ddu file_external -ui-param-startFilter=v:true<CR>
-"nnoremap <Leader>a <Cmd>DduRgLive<CR>
+nnoremap <Space>b <Cmd>DduBuffer<CR>
+nnoremap <Space>p <Cmd>DduProjectFile<CR>
+nnoremap <Space>a <Cmd>DduRgLive<CR>
+nnoremap <Space>mg <Cmd>DduMemoGrep<CR>
+nnoremap <Space>ml <Cmd>DduMemoList<CR>
 '''
 hook_source = '''
 source $XDG_CONFIG_HOME/nvim/plugins/settings/ddu.rc.vim
@@ -73,43 +75,6 @@ nnoremap <buffer> <CR>
 \ <Cmd>call ddu#ui#ff#close()<CR>
 nnoremap <buffer> q
 \ <Cmd>call ddu#ui#ff#do_action('quit')<CR>
-'''
-
-[[plugins]]
-repo = 'Shougo/ddu-ui-filer'
-on_source = 'ddu.vim'
-[plugins.ftplugin]
-ddu-filer = '''
-nnoremap <buffer> <Space>
-\ <Cmd>call ddu#ui#filer#do_action('toggleSelectItem')<CR>
-nnoremap <buffer> q
-\ <Cmd>call ddu#ui#filer#do_action('quit')<CR>
-nnoremap <buffer> o
-\ <Cmd>call ddu#ui#filer#do_action('expandItem')<CR>
-nnoremap <buffer> O
-\ <Cmd>call ddu#ui#filer#do_action('collapseItem')<CR>
-nnoremap <buffer> d
-\ <Cmd>call ddu#ui#filer#do_action('itemAction',
-\ {'name': 'delete'})<CR>
-nnoremap <buffer> x
-\ <Cmd>call ddu#ui#filer#do_action('itemAction',
-\ {'name': 'executeSystem'})<CR>
-nnoremap <buffer> K
-\ <Cmd>call ddu#ui#filer#do_action('itemAction',
-\ {'name': 'newDirectory'})<CR>
-nnoremap <buffer> N
-\ <Cmd>call ddu#ui#filer#do_action('itemAction',
-\ {'name': 'newFile'})<CR>
-nnoremap <buffer> ~
-\ <Cmd>call ddu#ui#filer#do_action('itemAction',
-\ {'name': 'narrow', 'params': {'path': expand('~')}})<CR>
-nnoremap <buffer> h
-\ <Cmd>call ddu#ui#filer#do_action('itemAction',
-\ {'name': 'narrow', 'params': {'path': ".."}})<CR>
-nnoremap <buffer><expr> <CR>
-\ ddu#ui#filer#is_directory() ?
-\ "<Cmd>call ddu#ui#filer#do_action('itemAction', {'name': 'narrow'})<CR>" :
-\ "<Cmd>call ddu#ui#filer#do_action('itemAction', {'name': 'open'})<CR>"
 '''
 
 [[plugins]]
