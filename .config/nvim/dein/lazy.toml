@@ -194,3 +194,11 @@ hook_add = '''
   let g:memolist_path = $HOME."/Documents/Projects/github.com/Syu-fu/memo"
   nnoremap <Space>mn :MemoNew<CR>
 '''
+
+[[plugins]]
+repo = 'tani/glance-vim'
+on_cmd = 'Glance'
+hook_add = '''
+  let g:glance#server_open = v:false
+  let g:glance#markdown_plugins = ['https://esm.sh/markdown-it-mathjax3?bundle']
+'''
