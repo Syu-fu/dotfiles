@@ -1,5 +1,3 @@
-" Space+tでファイルツリーを表示/非表示する
-nnoremap <silent> <Leader>t :Fern . -reveal=% -drawer -toggle -width=40<CR>
 " nerdfontを設定
 let g:fern#renderer = 'nerdfont'
 " アイコンに色をつける
