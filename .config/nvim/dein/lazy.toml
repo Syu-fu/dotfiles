@@ -181,3 +181,8 @@ on_event = 'InsertEnter'
 lua_source = '''
     require('nvim-ts-autotag').setup()
 '''
+
+[[plugins]]
+repo = 'skanehira/denops-gh.vim'
+on_if = 'bufname() =~# "^gh://"'
+hook_add = 'source $XDG_CONFIG_HOME/nvim/plugins/settings/denops-gh.rc.vim'

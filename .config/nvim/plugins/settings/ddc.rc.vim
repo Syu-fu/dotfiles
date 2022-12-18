@@ -164,3 +164,25 @@ call ddc#custom#patch_filetype(['help', 'markdown', 'gitcommit', 'text'],
 "  endif
 "endfunction
 
+" denops-gh.vim連携
+augroup gh_autocmd
+  au!
+  autocmd User gh_open_issue call EnableAutoCompletion()
+augroup END
+
+function! EnableAutoCompletion() abort
+  " Enable source 'gh_issues' to current buffer.
+  call ddc#custom#patch_buffer('sources', ['gh_issues'])
+  call ddc#custom#patch_buffer('sourceOptions', {
+        \ 'gh_issues': {
+          \  'matcherKey': 'menu'
+        \ }})
+  call ddc#custom#patch_buffer('specialBufferCompletion', v:true)
+
+  " If matsui54/denops-popup-preview.vim is installed,
+  " you can preview issue body's info.
+  call popup_preview#enable()
+
+  " remove 'preview' from completeopt
+  set completeopt-=preview
+endfunction
