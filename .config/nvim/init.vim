@@ -75,7 +75,7 @@ autocmd VimEnter * ++once call s:ensure_git_root()
 " 行番号を表示
 set number
 " エラー表示列を常に表示
-set signcolumn=yes
+set signcolumn=yes:2
 " 現在の行を強調表示
 "set cursorline
 " インデントはスマートインデント
