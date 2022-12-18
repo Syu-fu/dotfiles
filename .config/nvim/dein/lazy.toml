@@ -177,7 +177,7 @@ on_cmd = 'Gin'
 
 [[plugins]]
 repo = 'windwp/nvim-ts-autotag'
-on_event = 'InsertEnter'
+on_ft = ['html', 'javascript', 'typescript', 'javascriptreact', 'typescriptreact', 'vue', 'tsx', 'jsx', 'xml']
 lua_source = '''
     require('nvim-ts-autotag').setup()
 '''
