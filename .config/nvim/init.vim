@@ -126,6 +126,8 @@ nnoremap Q <Nop>
 nnoremap ZZ <Nop>
 " ZQではなく:q!を使う
 nnoremap ZQ <Nop>
+" q:でコマンドラインウィンドウが開くことを防ぐ
+nnoremap q: <Nop>
 " spaceでカーソルを動かさない
 nnoremap <space> <Nop>
   
