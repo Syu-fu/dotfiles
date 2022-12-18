@@ -186,3 +186,11 @@ lua_source = '''
 repo = 'skanehira/denops-gh.vim'
 on_if = 'bufname() =~# "^gh://"'
 hook_add = 'source $XDG_CONFIG_HOME/nvim/plugins/settings/denops-gh.rc.vim'
+
+[[plugins]]
+repo = 'glidenote/memolist.vim'
+on_event = 'CursorHold'
+hook_add = '''
+  let g:memolist_path = $HOME."/Documents/Projects/github.com/Syu-fu/memo"
+  nnoremap <Space>mn :MemoNew<CR>
+'''

@@ -110,3 +110,39 @@ function! s:ddu_rg_live() abort
         \   }},
         \ })
 endfunction
+
+command! DduMemoGrep call <SID>ddu_rg_live_memo()
+function! s:ddu_rg_live_memo() abort
+  let memolist_path = $HOME.'/Documents/Projects/github.com/Syu-fu/memo'
+  call ddu#start({
+        \   'volatile': v:true,
+        \   'sources': [{
+        \     'name': 'rg',
+        \     'params': {
+        \         'path': memolist_path,
+        \       },
+        \   }],
+        \   'uiParams': {'ff': {
+        \     'ignoreEmpty': v:false,
+        \     'startFilter': v:true,
+        \   }},
+        \ })
+endfunction
+
+command! DduMemoList call <SID>ddu_memo_list()
+function! s:ddu_memo_list() abort
+  let memolist_path = $HOME.'/Documents/Projects/github.com/Syu-fu/memo'
+  call ddu#start({
+        \   'volatile': v:true,
+        \   'sources': [{
+        \     'name': 'file_rec',
+        \     'options': {
+        \       'path': memolist_path,
+        \     },
+        \   }],
+        \   'uiParams': {'ff': {
+        \     'ignoreEmpty': v:true,
+        \     'startFilter': v:true,
+        \   }},
+        \ })
+endfunction
