@@ -1,9 +1,0 @@
-[[plugins]]
-repo = 'Shougo/dein.vim'
-
-[[plugins]]
-repo = 'sainnhe/gruvbox-material'
-
-[[plugins]]
-repo = 'vim-denops/denops.vim'
-
