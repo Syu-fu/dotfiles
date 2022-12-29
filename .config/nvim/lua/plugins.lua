@@ -43,6 +43,13 @@ return require('packer').startup(function(use)
       require('pluginconfig/null-ls')
     end,
   })
+  use({
+    'ray-x/lsp_signature.nvim',
+    after = 'nvim-lspconfig',
+    config = function()
+      require('pluginconfig/lsp_signature')
+    end,
+  })
 
   -- LSP(UI)
   use({
