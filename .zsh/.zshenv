@@ -6,13 +6,15 @@ export VISUAL=nvim
 export PAGER=less
 # bat-theme
 export BAT_THEME="gruvbox-dark"
+export RIPGREP_CONFIG_PATH="$XDG_CONFIG_HOME/ripgrep/config"
+
 # linuxbrew
-export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"
 export MANPATH="/home/linuxbrew/.linuxbrew/share/man:$MANPATH"
 export INFOPATH="/home/linuxbrew/.linuxbrew/share/info:$INFOPATH"
 export LD_LIBRARY_PATH="/home/linuxbrew/.linuxbrew/lib:$LD_LIBRARY_PATH"
+export GOPATH="$HOME/go"
 export DENO_INSTALL="/$HOME/.deno"
-export PATH="$DENO_INSTALL/bin:$PATH"
+export PATH="$DENO_INSTALL/bin:$GOPATH/bin:/home/linuxbrew/.linuxbrew/bin:$PATH"
 
 export NEXTWORD_DATA_PATH=$HOME/dic/nextword-data-large
 
