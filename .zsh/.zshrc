@@ -1,4 +1,4 @@
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+[ -f $ZDOTDIR/.fzf.zsh ] && source $ZDOTDIR/.fzf.zsh
 
 # emacsmode
 bindkey -e
@@ -16,7 +16,7 @@ alias ..2='cd ../..'
 alias ..3='cd ../../..'
 alias p='cd $HOME/Documents/Projects'
 
-if whence ls > /dev/null; then
+if command -v lsd > /dev/null; then
   alias ls="lsd"
 fi
 
@@ -39,7 +39,7 @@ function do_enter {
     return 0
   fi
   echo ""
-  if type "lsd" > /dev/null 2>&1; then
+  if command -v lsd > /dev/null; then
     lsd -a
   else
     ls -a
@@ -53,7 +53,7 @@ bindkey '^m' do_enter
 
 # cdしたらls
 function chpwd(){
-  if type "lsd" > /dev/null 2>&1; then
+  if command -v lsd > /dev/null; then
     lsd -a
   else
     ls -a
