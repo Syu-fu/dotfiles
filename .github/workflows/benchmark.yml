@@ -37,7 +37,7 @@ jobs:
         env:
           TERM: screen-256color
       - name: Install neovim plugins
-        run: nvim -q
+        run: nvim -c q
       - name: Install packages required benchmark
         run: pacman -S --noconfirm time
 
