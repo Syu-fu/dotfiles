@@ -1,189 +1,208 @@
-vim.cmd([[packadd packer.nvim]])
+local lazypath = vim.fn.stdpath('data') .. '/lazy/lazy.nvim'
+if not vim.loop.fs_stat(lazypath) then
+  vim.fn.system({
+    'git',
+    'clone',
+    '--filter=blob:none',
+    '--single-branch',
+    'https://github.com/folke/lazy.nvim.git',
+    lazypath,
+  })
+end
+vim.opt.runtimepath:prepend(lazypath)
 
-return require('packer').startup(function(use)
+require('lazy').setup({
   -- ------------------------------------------------------------
   -- Installer
 
   -- Plugin Manager
-  use({ 'wbthomason/packer.nvim', opt = true })
+  { 'folke/lazy.nvim' },
 
-  use({ 'nvim-lua/plenary.nvim' })
+  { 'nvim-lua/plenary.nvim' },
   -- ColorScheme
-  use({ 'sainnhe/gruvbox-material' })
+  { 'sainnhe/gruvbox-material' },
 
   -- Font
-  use({ 'kyazdani42/nvim-web-devicons', after = { 'gruvbox-material' } })
+  { 'kyazdani42/nvim-web-devicons' },
 
   -- LSP
-  use({
+  {
     'williamboman/mason.nvim',
     event = 'BufReadPre',
     config = function()
       require('pluginconfig/mason')
     end,
-  })
-  use({
-    'williamboman/mason-lspconfig.nvim',
-    after = { 'mason.nvim', 'nvim-lspconfig' },
-    config = function()
-      require('pluginconfig/mason-lspconfig')
-    end,
-  })
-  use({
+  },
+  {
     'neovim/nvim-lspconfig',
     event = { 'BufReadPre' },
     config = function()
       require('pluginconfig/nvim-lspconfig')
     end,
-  })
-  use({
+    dependencies = {
+      {
+        'williamboman/mason-lspconfig.nvim',
+        config = function()
+          require('pluginconfig/mason-lspconfig')
+        end,
+      },
+      {
+        'ray-x/lsp_signature.nvim',
+        config = function()
+          require('pluginconfig/lsp_signature')
+        end,
+      },
+    },
+    lazy = true,
+  },
+  {
     'jose-elias-alvarez/null-ls.nvim',
-    after = 'mason.nvim',
+    event = 'VimEnter',
     config = function()
       require('pluginconfig/null-ls')
     end,
-  })
-  use({
-    'ray-x/lsp_signature.nvim',
-    after = 'nvim-lspconfig',
-    config = function()
-      require('pluginconfig/lsp_signature')
-    end,
-  })
+  },
 
   -- LSP(UI)
-  use({
+  {
     'glepnir/lspsaga.nvim',
-    after = 'mason.nvim',
+    event = 'VimEnter',
     config = function()
       require('pluginconfig/lspsaga')
     end,
-  })
-  use({
+  },
+  {
     'j-hui/fidget.nvim',
-    after = 'mason.nvim',
+    event = 'VimEnter',
     config = function()
       require('pluginconfig/fidget')
     end,
-  })
+  },
 
   -- Auto Completion
-  use({
+  {
     'hrsh7th/nvim-cmp',
-    requires = {
-      { 'L3MON4D3/LuaSnip', opt = true, event = 'VimEnter' },
-      { 'windwp/nvim-autopairs', opt = true, event = 'VimEnter' },
-    },
-    after = { 'LuaSnip', 'nvim-autopairs' },
+    event = { 'InsertEnter, CmdlineEnter' },
     config = function()
       require('pluginconfig/nvim-cmp')
     end,
-  })
-  use({
-    'onsails/lspkind-nvim',
-    module = 'lspkind',
-    config = function()
-      require('pluginconfig/lspkind-nvim')
-    end,
-  })
-  use({ 'hrsh7th/cmp-nvim-lsp', module = 'cmp_nvim_lsp' })
-  use({ 'hrsh7th/cmp-nvim-lsp-signature-help', after = 'nvim-cmp' })
-  use({ 'hrsh7th/cmp-nvim-lsp-document-symbol', after = 'nvim-cmp' })
-  use({ 'hrsh7th/cmp-emoji', after = 'nvim-cmp' })
-  use({ 'hrsh7th/cmp-buffer', after = 'nvim-cmp' })
-  use({ 'hrsh7th/cmp-path', after = 'nvim-cmp' })
-  use({ 'hrsh7th/cmp-nvim-lua', after = 'nvim-cmp' })
+    dependencies = {
+      { 'L3MON4D3/LuaSnip', event = { 'InsertEnter, CmdlineEnter' } },
+      { 'windwp/nvim-autopairs', lazy = true, event = { 'InsertEnter, CmdlineEnter' } },
+      { 'hrsh7th/cmp-nvim-lsp', module = 'cmp_nvim_lsp' },
+      { 'hrsh7th/cmp-nvim-lsp-signature-help', event = { 'InsertEnter, CmdlineEnter' } },
+      { 'hrsh7th/cmp-nvim-lsp-document-symbol', event = { 'InsertEnter, CmdlineEnter' } },
+      { 'hrsh7th/cmp-emoji', after = 'nvim-cmp', event = { 'InsertEnter, CmdlineEnter' } },
+      { 'hrsh7th/cmp-buffer', after = 'nvim-cmp', event = { 'InsertEnter, CmdlineEnter' } },
+      { 'hrsh7th/cmp-path', after = 'nvim-cmp', event = { 'InsertEnter, CmdlineEnter' } },
+      { 'hrsh7th/cmp-nvim-lua', after = 'nvim-cmp', event = { 'InsertEnter, CmdlineEnter' } },
+      {
+        'onsails/lspkind-nvim',
+        event = { 'InsertEnter', 'CmdlineEnter' },
+        config = function()
+          require('pluginconfig/lspkind-nvim')
+        end,
+      },
+    },
+  },
 
-  use({ 'hrsh7th/cmp-cmdline', after = 'nvim-cmp' })
-  use({ 'dmitmel/cmp-cmdline-history', after = 'nvim-cmp' })
+  { 'hrsh7th/cmp-cmdline', event = 'CmdlineEnter' },
+  { 'dmitmel/cmp-cmdline-history', event = 'CmdlineEnter' },
 
   -- FZF
-  use({
+  {
     'nvim-telescope/telescope.nvim',
-    after = { 'gruvbox-material' },
+    cmd = 'Telescope',
     config = function()
       require('pluginconfig/telescope')
     end,
-  })
-  use({
-    'nvim-telescope/telescope-github.nvim',
-    after = { 'telescope.nvim' },
-    config = function()
-      require('telescope').load_extension('gh')
+    init = function()
+      require('pluginconfig/keymap/telescope')
     end,
-  })
-  use({
-    'nvim-telescope/telescope-live-grep-args.nvim',
-    after = { 'telescope.nvim' },
-    config = function()
-      require('telescope').load_extension('live_grep_args')
-    end,
-  })
+    dependencies = {
+      {
+        'nvim-telescope/telescope-github.nvim',
+        config = function()
+          require('telescope').load_extension('gh')
+        end,
+        lazy = true,
+      },
+      {
+        'nvim-telescope/telescope-live-grep-args.nvim',
+        config = function()
+          require('telescope').load_extension('live_grep_args')
+        end,
+        lazy = true,
+      },
+    },
+  },
 
   -- Treesitter
-  use({
+  {
     'nvim-treesitter/nvim-treesitter',
-    after = { 'gruvbox-material' },
     run = ':TSUpdate',
+    event = 'BufReadPre',
+    dependencies = {
+      {
+        'windwp/nvim-ts-autotag',
+        config = function()
+          require('pluginconfig/nvim-ts-autotag')
+        end,
+      },
+    },
     config = function()
       require('pluginconfig/nvim-treesitter')
     end,
-  })
+  },
 
   -- Statusline
-  use({
+  {
     'nvim-lualine/lualine.nvim',
-    after = { 'gruvbox-material' },
-    requires = { 'kyazdani42/nvim-web-devicons', opt = true },
+    event = 'VimEnter',
     config = function()
       require('pluginconfig/lualine')
     end,
-  })
-  use({
+  },
+  {
     'akinsho/bufferline.nvim',
-    after = { 'gruvbox-material' },
+    event = 'VimEnter',
     config = function()
       require('pluginconfig/bufferline')
     end,
-  })
+  },
 
   -- Git
-  use({
+  {
     'lewis6991/gitsigns.nvim',
-    event = 'VimEnter',
+    event = 'BufReadPre',
     config = function()
       require('pluginconfig/gitsigns')
     end,
-  })
+  },
 
   -- TextEdit
-  use({
+  {
     'windwp/nvim-autopairs',
-    event = 'VimEnter',
+    event = { 'InsertEnter', 'CmdlineEnter' },
     config = function()
       require('pluginconfig/nvim-autopairs')
     end,
-  })
-  use({
-    'windwp/nvim-ts-autotag',
-    requires = { { 'nvim-treesitter/nvim-treesitter', opt = true } },
-    after = { 'nvim-treesitter' },
-    config = function()
-      require('pluginconfig/nvim-ts-autotag')
-    end,
-  })
+  },
 
   -- Terminal
-  use({
+  {
     'akinsho/toggleterm.nvim',
-    event = 'VimEnter',
+    cmd = 'ToggleTerm',
+    init = function()
+      require('pluginconfig/keymap/toggleterm')
+    end,
     config = function()
       require('pluginconfig/toggleterm')
     end,
-  })
-
-  use({
+  },
+  {
     'folke/neodev.nvim',
+    event = 'InsertEnter',
     module = 'neodev',
-  })
-end)
+  },
+})
