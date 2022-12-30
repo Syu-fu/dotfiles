@@ -224,4 +224,16 @@ require('lazy').setup({
       require('pluginconfig/nvim-test')
     end,
   },
+  -- Memo
+  {
+    'renerocksai/telekasten.nvim',
+    cmd = 'Telekasten',
+    init = function()
+      require('pluginconfig/keymap/telekasten')
+    end,
+    config = function()
+      require('pluginconfig/telekasten')
+    end,
+    dependencies = { 'renerocksai/calendar-vim' },
+  },
 })
