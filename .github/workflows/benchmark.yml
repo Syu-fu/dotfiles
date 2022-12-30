@@ -1,9 +1,9 @@
 name: benchmark
-on: 
+on:
   push:
-    branches:  
-      - main  
-  workflow_dispatch: 
+    branches:
+      - main
+  workflow_dispatch:
 
 permissions:
   # deployments permission to deploy GitHub pages website
@@ -11,89 +11,53 @@ permissions:
   # contents permission to update benchmark contents in gh-pages branch
   contents: write
 
-
 jobs:
-  benchmark:  
-    runs-on: ubuntu-20.04    
-    container: ubuntu:20.04
+  benchmark:
+    runs-on: ubuntu-latest
+    container: archlinux:latest
     steps:
-    - uses: actions/checkout@v1
+      - uses: actions/checkout@v1
+      - name: Update packages
+        run: pacman -Syyu --noconfirm
+      - name: Install required packages
+        run: pacman -S --noconfirm git sudo
+      - name: fatal unsafe repository (REPO is owned by someone else)
+        run: git config --global --add safe.directory /__w/dotfiles/dotfiles
+      - name: Install dotfiles
+        run: install_scripts/dotsinstaller.sh install
+      - name: Add user
+        run: useradd builduser -m
+      - name: Add sudor
+        run: echo 'builduser ALL=(ALL) ALL' >> /etc/sudoers
+      - name: Change password
+        run: passwd -d builduser
+      - name: Install arch software
+        run: sudo -u builduser bash -c './install.sh'
+      - name: Install zsh plugins
+        run: zsh
+        shell: zsh -li --rcs {0}
+        env:
+          TERM: screen-256color
+          ZSHRC_CI_TEST: "true"
+      - name: Install neovim plugins
+        run: ~/.local/share/zsh/zinit/plugins/neovim---neovim/nvim-linux64/bin/nvim --headless -c 'Lazy! restore' -c 'qall'
+      - name: Install packages required benchmark
+        run: pacman -S --noconfirm time
 
-    - name: Update packages  
-      run: apt update  
+      - name: Run benchmark
+        run: ./bin/benchmark.sh | tee /tmp/result-benchmark.json
+        shell: zsh -li --rcs {0}
+        env:
+          TERM: screen-256color
 
-    - name: Install required tzdata
-      run: apt-get install -y tzdata  
-      env:
-        TZ: 'Asia/Tokyo'
-
-    - name: Install required packages
-      run: apt-get install -y git time zsh curl sudo python3 python3-pip luajit unzip
-
-    - name: fatal unsafe repository
-      run: git config --global --add safe.directory /__w/dotfiles/dotfiles
-      
-    - name: Install pynvim
-      run: pip3 install pynvim      
-
-    - name: Install dotfiles
-      run: ./install.sh      
-
-    - name: Install zsh plugins
-      run: zsh 
-      shell: zsh -li --rcs {0}
-
-    - name: Install Dein
-      run: |
-        mkdir -p /github/home/.cache/dein  
-        cd /github/home/.cache/dein
-        curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > installer.sh
-        1 | sudo sh ./installer.sh /github/home/.cache/dein
-
-    - name: Install node
-      uses: actions/setup-node@v2
-      with:
-        node-version: '16'
-
-    - name: npm install
-      run:
-         npm i -g tree-sitter tree-sitter-cli neovim
-
-    - name: Install deno
-      run: curl -fsSL https://deno.land/x/install/install.sh | sh  
-
-    - name: Install Neovim
-      uses: actions/checkout@v2
-      with:
-        repository: neovim/neovim
-        path: neovim
-        ref: v0.6.1
-
-    - name: Neovim Build
-      run: |
-        cd ./neovim
-        apt-get install -y cmake automake libtool libtool-bin ninja-build gettext g++ pkg-config make
-        make CMAKE_BUILD_TYPE=RelWithDebInfo
-        sudo make install
-
-    - name: Install Neovim plugins
-      run:  nvim -c q
-      shell: zsh -li --rcs {0}
-
-    - name: Run benchmark
-      run:  ./bin/benchmark.sh | tee /tmp/result-benchmark.json
-      shell: zsh -li --rcs {0}
-      env:
-        TERM: screen-256color
-
-    - name: Upload benchmark
-      uses: benchmark-action/github-action-benchmark@v1
-      with:
-        tool: customSmallerIsBetter  
-        output-file-path: /tmp/result-benchmark.json
-        github-token: ${{ secrets.GITHUB_TOKEN }}
-        auto-push: true
-        comment-on-alert: true
-        fail-on-alert: true
-        alert-threshold: '3000%'
-        alert-comment-cc-users: '@Syu-fu'
+      - name: Upload benchmark
+        uses: benchmark-action/github-action-benchmark@v1
+        with:
+          tool: customSmallerIsBetter
+          output-file-path: /tmp/result-benchmark.json
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          auto-push: true
+          comment-on-alert: true
+          fail-on-alert: true
+          alert-threshold: "3000%"
+          alert-comment-cc-users: "@Syu-fu"
