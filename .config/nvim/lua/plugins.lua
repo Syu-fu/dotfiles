@@ -195,6 +195,13 @@ require('lazy').setup({
       require('pluginconfig/nvim-autopairs')
     end,
   },
+  {
+    'kylechui/nvim-surround',
+    event = { 'InsertEnter', 'CmdlineEnter' },
+    config = function()
+      require('pluginconfig/nvim-surround')
+    end,
+  },
 
   -- Terminal
   {
