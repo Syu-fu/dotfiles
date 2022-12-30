@@ -212,4 +212,16 @@ require('lazy').setup({
     event = 'InsertEnter',
     module = 'neodev',
   },
+
+  --Test
+  {
+    'klen/nvim-test',
+    cmd = { 'TestSuite', 'TestFile', 'TestEdit' },
+    init = function()
+      require('pluginconfig/keymap/nvim-test')
+    end,
+    config = function()
+      require('pluginconfig/nvim-test')
+    end,
+  },
 })
