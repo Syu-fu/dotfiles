@@ -173,6 +173,13 @@ require('lazy').setup({
 
   -- Git
   {
+    'dinhhuy258/git.nvim',
+    cmd = 'Git',
+    config = function()
+      require('pluginconfig/git')
+    end,
+  },
+  {
     'lewis6991/gitsigns.nvim',
     event = 'BufReadPre',
     config = function()
@@ -204,5 +211,17 @@ require('lazy').setup({
     'folke/neodev.nvim',
     event = 'InsertEnter',
     module = 'neodev',
+  },
+
+  --Test
+  {
+    'klen/nvim-test',
+    cmd = { 'TestSuite', 'TestFile', 'TestEdit' },
+    init = function()
+      require('pluginconfig/keymap/nvim-test')
+    end,
+    config = function()
+      require('pluginconfig/nvim-test')
+    end,
   },
 })
