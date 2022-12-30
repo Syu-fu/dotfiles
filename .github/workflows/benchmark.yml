@@ -46,6 +46,11 @@ jobs:
         shell: zsh -li --rcs {0}
         env:
           TERM: screen-256color
+      - name: Cat benchmark
+        run: cat /tmp/result-benchmark.json
+        shell: zsh -li --rcs {0}
+        env:
+          TERM: screen-256color
 
       - name: Upload benchmark
         uses: benchmark-action/github-action-benchmark@v1
@@ -56,5 +61,5 @@ jobs:
           auto-push: true
           comment-on-alert: true
           fail-on-alert: true
-          alert-threshold: "3000%"
+          alert-threshold: "150%"
           alert-comment-cc-users: "@Syu-fu"
