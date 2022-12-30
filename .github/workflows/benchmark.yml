@@ -20,7 +20,7 @@ jobs:
       - name: Update packages
         run: pacman -Syyu --noconfirm
       - name: Install required packages
-        run: pacman -S --noconfirm git sudo neovim
+        run: pacman -S --noconfirm git sudo neovim zsh curl
       - name: fatal unsafe repository (REPO is owned by someone else)
         run: git config --global --add safe.directory /__w/dotfiles/dotfiles
       - name: Install dotfiles
@@ -36,7 +36,6 @@ jobs:
         shell: zsh -li --rcs {0}
         env:
           TERM: screen-256color
-          ZSHRC_CI_TEST: "true"
       - name: Install neovim plugins
         run: ~/.local/share/zsh/zinit/plugins/neovim---neovim/nvim-linux64/bin/nvim --headless -c 'Lazy! restore' -c 'qall'
       - name: Install packages required benchmark
