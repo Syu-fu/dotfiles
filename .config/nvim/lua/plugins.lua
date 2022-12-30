@@ -173,6 +173,13 @@ require('lazy').setup({
 
   -- Git
   {
+    'dinhhuy258/git.nvim',
+    cmd = 'Git',
+    config = function()
+      require('pluginconfig/git')
+    end,
+  },
+  {
     'lewis6991/gitsigns.nvim',
     event = 'BufReadPre',
     config = function()

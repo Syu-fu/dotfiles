@@ -40,16 +40,29 @@ require('telescope').setup({
     color_devicons = true,
     use_less = true,
     scroll_strategy = 'cycle',
+    mappings = {
+      n = {
+        ['q'] = require('telescope.actions').close,
+      },
+    },
 
     -- Developer configurations: Not meant for general override
     -- buffer_previewer_maker = require("telescope.previewers").buffer_previewer_maker,
     -- history = { path = vim.fn.stdpath("state") .. "/databases/telescope_history.sqlite3", limit = 100 },
   },
-  extensions = {
-    media_files = {
-      filetypes = { 'png', 'webp', 'jpg', 'jpeg' }, -- filetypes whitelist
-      find_cmd = 'rg', -- find command
+  pickers = {
+    git_status = {
+      mappings = {
+        n = {
+          ['<C-c>'] = { '<cmd>Git commit<CR>', type = 'command' },
+        },
+        i = {
+          ['<C-c>'] = { '<cmd>Git commit<CR>', type = 'command' },
+        },
+      },
     },
+  },
+  extensions = {
     arecibo = {
       ['selected_engine'] = 'google',
       ['url_open_command'] = 'xdg-open',
