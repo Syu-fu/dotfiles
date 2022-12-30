@@ -6,7 +6,7 @@ set -eu
 { for i in $(seq 1 10); do /usr/bin/time --format="%e" -o /dev/stdout zsh -i -c exit; done; } > /tmp/zsh-load-time.txt 2> /dev/null
 ZSH_LOAD_TIME=$(awk '{ total += $1 } END { print total/NR }' /tmp/zsh-load-time.txt)
 
-{ for i in $(seq 1 10); do /usr/bin/time --format="%e" -o /dev/stdout nvim -c q; done; } > /tmp/nvim-load-time.txt  2> /dev/null
+{ for i in $(seq 1 10); do /usr/bin/time --format="%e" -o /dev/stdout nvim -c q; done; } > /tmp/nvim-load-time.txt 2> /dev/null
  NVIM_LOAD_TIME=$(awk '{ total += $1 } END { print total/NR }' /tmp/nvim-load-time.txt)
 
 cat << EOJ
@@ -23,4 +23,3 @@ cat << EOJ
     }
 ]
 EOJ
-
