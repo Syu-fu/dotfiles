@@ -24,7 +24,7 @@ jobs:
       - name: fatal unsafe repository (REPO is owned by someone else)
         run: git config --global --add safe.directory /__w/dotfiles/dotfiles
       - name: Install dotfiles
-        run: install_scripts/dotsinstaller.sh install
+        run: sudo -u builduser bash -c './install.sh'
       - name: Add user
         run: useradd builduser -m
       - name: Add sudor
@@ -32,7 +32,7 @@ jobs:
       - name: Change password
         run: passwd -d builduser
       - name: Install arch software
-        run: sudo -u builduser bash -c './install.sh'
+        run: sudo pacman -S neovim
       - name: Install zsh plugins
         run: zsh
         shell: zsh -li --rcs {0}
