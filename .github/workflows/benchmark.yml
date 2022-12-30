@@ -20,19 +20,17 @@ jobs:
       - name: Update packages
         run: pacman -Syyu --noconfirm
       - name: Install required packages
-        run: pacman -S --noconfirm git sudo
+        run: pacman -S --noconfirm git sudo neovim
       - name: fatal unsafe repository (REPO is owned by someone else)
         run: git config --global --add safe.directory /__w/dotfiles/dotfiles
       - name: Install dotfiles
-        run: sudo -u builduser bash -c './install.sh'
+        run: sudo bash -c './install.sh'
       - name: Add user
         run: useradd builduser -m
       - name: Add sudor
         run: echo 'builduser ALL=(ALL) ALL' >> /etc/sudoers
       - name: Change password
         run: passwd -d builduser
-      - name: Install arch software
-        run: sudo pacman -S neovim
       - name: Install zsh plugins
         run: zsh
         shell: zsh -li --rcs {0}
