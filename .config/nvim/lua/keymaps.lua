@@ -16,3 +16,6 @@ vim.keymap.set({ 'n', 'x' }, 'gk', 'k', { noremap = true, silent = true })
 
 -- 検索ハイライトを解除
 vim.keymap.set('n', '<ESC><ESC>', ':nohlsearch<CR>', { noremap = false, silent = true })
+
+-- Terminal
+vim.keymap.set('t', '<ESC>', '<C-\\><C-n>', { noremap = false, silent = true })
