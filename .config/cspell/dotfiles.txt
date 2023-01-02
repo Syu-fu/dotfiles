@@ -36,3 +36,17 @@ luasnip
 untersberger
 dinhhuy
 klen
+syyu
+telekasten
+templ
+weeknm
+subdirs
+renerocksai
+kylechui
+joshi
+mkdp
+iamcco
+golangci
+gopls
+taplo
+vint
