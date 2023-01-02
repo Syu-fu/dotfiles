@@ -54,10 +54,10 @@ require('telescope').setup({
     git_status = {
       mappings = {
         n = {
-          ['<C-c>'] = { '<cmd>Git commit<CR>', type = 'command' },
+          ['<C-z>'] = { '<cmd>Git commit<CR>', type = 'command' },
         },
         i = {
-          ['<C-c>'] = { '<cmd>Git commit<CR>', type = 'command' },
+          ['<C-z>'] = { '<cmd>Git commit<CR>', type = 'command' },
         },
       },
     },
