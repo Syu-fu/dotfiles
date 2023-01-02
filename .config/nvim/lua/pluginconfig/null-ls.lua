@@ -195,6 +195,7 @@ local sources = {
     end,
     filetypes = { 'markdown' },
   }),
+  require('typescript.extensions.null-ls.code-actions'),
 }
 
 local lsp_formatting = function(bufnr)

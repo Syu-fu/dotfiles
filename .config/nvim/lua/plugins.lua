@@ -61,6 +61,12 @@ require('lazy').setup({
     config = function()
       require('pluginconfig/null-ls')
     end,
+    dependencies = {
+      {
+        'jose-elias-alvarez/typescript.nvim',
+        lazy = true,
+      },
+    },
   },
 
   -- LSP(UI)
