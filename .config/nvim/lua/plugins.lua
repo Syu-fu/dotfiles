@@ -19,6 +19,7 @@ require('lazy').setup({
   { 'folke/lazy.nvim' },
 
   { 'nvim-lua/plenary.nvim' },
+
   -- ColorScheme
   { 'sainnhe/gruvbox-material' },
 
@@ -237,6 +238,7 @@ require('lazy').setup({
       require('pluginconfig/nvim-test')
     end,
   },
+
   -- Memo
   {
     'renerocksai/telekasten.nvim',
@@ -248,5 +250,18 @@ require('lazy').setup({
       require('pluginconfig/telekasten')
     end,
     dependencies = { 'renerocksai/calendar-vim' },
+  },
+
+  -- Markdown
+  {
+    'toppair/peek.nvim',
+    build = 'deno task --quiet build:fast',
+    init = function()
+      require('pluginconfig/keymap/peek')
+    end,
+    config = function()
+      require('pluginconfig/peek')
+    end,
+    ft = { 'markdown' },
   },
 })
