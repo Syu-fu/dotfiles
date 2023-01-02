@@ -189,6 +189,12 @@ local sources = {
       return vim.fn.executable('markdownlint') > 0
     end,
   }),
+  null_ls.builtins.diagnostics.textlint.with({
+    condition = function()
+      return vim.fn.executable('textlint') > 0
+    end,
+    filetypes = { 'markdown' },
+  }),
 }
 
 local lsp_formatting = function(bufnr)
