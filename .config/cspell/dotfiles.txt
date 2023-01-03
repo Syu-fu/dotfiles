@@ -50,3 +50,5 @@ golangci
 gopls
 taplo
 vint
+nopt
+rhysd
