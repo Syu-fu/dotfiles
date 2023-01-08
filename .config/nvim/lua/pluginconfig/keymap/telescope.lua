@@ -1,5 +1,5 @@
 vim.keymap.set('n', '<Space>b', '<Cmd>Telescope buffers<CR>', { noremap = true, silent = true })
-vim.keymap.set('n', '<Space>p', '<Cmd>Telescope git_files<CR>', { noremap = true, silent = true })
+vim.keymap.set('n', '<Space>p', '<Cmd>Telescope project_files<CR>', { noremap = true, silent = true })
 vim.keymap.set('n', '<Space>h', '<Cmd>Telescope help_tags<CR>', { noremap = true, silent = true })
 vim.keymap.set('n', '<Space>a', '<Cmd>Telescope live_grep<CR>', { noremap = true, silent = true })
 vim.keymap.set('n', '<Space>d', '<Cmd>Telescope diagnostics<CR>', { noremap = true, silent = true })

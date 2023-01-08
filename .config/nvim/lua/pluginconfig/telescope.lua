@@ -77,3 +77,16 @@ require('telescope').setup({
     },
   },
 })
+
+require('telescope.builtin').project_files = function()
+  local opts = {
+    show_untracked = true,
+    git_command = { 'git', 'ls-files', '--exclude-standard', '--cached' },
+  } -- define here if you want to define something
+  vim.fn.system('git rev-parse --is-inside-work-tree')
+  if vim.v.shell_error == 0 then
+    require('telescope.builtin').git_files(opts)
+  else
+    require('telescope.builtin').find_files(opts)
+  end
+end
