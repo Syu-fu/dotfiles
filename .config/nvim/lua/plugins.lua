@@ -141,6 +141,13 @@ require('lazy').setup({
         end,
         lazy = true,
       },
+      {
+        'Syu-fu/telescope-gitcommand.nvim',
+        config = function()
+          require('telescope').load_extension('gitcommand')
+        end,
+        lazy = false,
+      },
     },
   },
 
@@ -179,12 +186,16 @@ require('lazy').setup({
   },
 
   -- Git
+  --{
+  --  'dinhhuy258/git.nvim',
+  --  cmd = 'Git',
+  --  config = function()
+  --    require('pluginconfig/git')
+  --  end,
+  --},
   {
-    'dinhhuy258/git.nvim',
+    'tpope/vim-fugitive',
     cmd = 'Git',
-    config = function()
-      require('pluginconfig/git')
-    end,
   },
   {
     'lewis6991/gitsigns.nvim',
