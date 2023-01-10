@@ -221,6 +221,15 @@ require('lazy').setup({
     end,
   },
 
+  -- Search
+  {
+    'kevinhwang91/nvim-hlslens',
+    event = { 'CmdlineEnter' },
+    config = function()
+      require('pluginconfig/nvim-hlslens')
+    end,
+  },
+
   -- Terminal
   {
     'akinsho/toggleterm.nvim',
