@@ -1,5 +1,5 @@
 local lspsaga = require('lspsaga')
-lspsaga.init_lsp_saga({
+lspsaga.setup({
   code_action_icon = '',
   finder_action_keys = {
     open = 'o',
