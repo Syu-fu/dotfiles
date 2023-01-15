@@ -28,6 +28,8 @@ vim.keymap.set(
   "<Cmd>lua require('telescope.builtin').git_branches()<CR>",
   { noremap = true, silent = true }
 )
+vim.keymap.set('n', '<Space>gt', '<Cmd>Telescope gitcommand<CR>', { noremap = true, silent = true })
+
 -- github
 vim.keymap.set('n', '<Space>gi', '<Cmd>Telescope gh issues<CR>', { noremap = true, silent = true })
 vim.keymap.set('n', '<Space>gp', '<Cmd>Telescope gh pull_request<CR>', { noremap = true, silent = true })
