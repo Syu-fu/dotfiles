@@ -2,8 +2,8 @@
 vim.keymap.set('i', 'jj', '<ESC>', { noremap = true, silent = true })
 
 -- pasteする際バッファを入れ替えない
-vim.keymap.set({ 'n', 'x' }, 'p', 'P', { noremap = true, silent = true })
-vim.keymap.set({ 'n', 'x' }, 'P', 'p', { noremap = true, silent = true })
+vim.keymap.set('x', 'p', 'P', { noremap = true, silent = true })
+vim.keymap.set('x', 'P', 'p', { noremap = true, silent = true })
 
 -- Spaceでカーソルを動かさない
 vim.keymap.set({ 'n', 'x' }, '<Space>', '<Nop>', { noremap = true, silent = true })
