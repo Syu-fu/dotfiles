@@ -52,3 +52,7 @@ taplo
 vint
 nopt
 rhysd
+tpope
+nums
+hlslens
+kevinhwang
