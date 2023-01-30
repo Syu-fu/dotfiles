@@ -13,12 +13,11 @@
   ff = false
 [pull]
   ff = only
+  rebase = false
 [init]
   defaultBranch = main
 [commit]
   template = "~/.config/git/.gitmessage"
   verbose = true
-[pull]
-  rebase = false
 [ghq]
   root = "~/Documents/Projects"
