@@ -195,13 +195,13 @@ local sources = {
     end,
     filetypes = { 'markdown' },
   }),
-  require('typescript.extensions.null-ls.code-actions'),
+  --require('typescript.extensions.null-ls.code-actions'),
 }
 
 local lsp_formatting = function(bufnr)
   vim.lsp.buf.format({
     filter = function(client)
-      return client.name ~= 'tsserver' and client.name ~= 'sumneko_lua'
+      return client.name ~= 'vtsls' and client.name ~= 'sumneko_lua'
     end,
     bufnr = bufnr,
   })
