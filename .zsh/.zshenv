@@ -16,6 +16,8 @@ export GOPATH="$HOME/go"
 export DENO_INSTALL="/$HOME/.deno"
 export PATH="$DENO_INSTALL/bin:$GOPATH/bin:/home/linuxbrew/.linuxbrew/bin:$PATH"
 
+export MEMODIR="$HOME/Documents/Projects/github.com/Syu-fu/memo"
+
 export NEXTWORD_DATA_PATH=$HOME/dic/nextword-data-large
 
 path=(
