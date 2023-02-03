@@ -62,27 +62,14 @@ require('telescope').setup({
       },
     },
   },
-  extensions = {
-    arecibo = {
-      ['selected_engine'] = 'google',
-      ['url_open_command'] = 'xdg-open',
-      ['show_http_headers'] = false,
-      ['show_domain_icons'] = false,
-    },
-    frecency = {
-      db_root = vim.fn.stdpath('state'),
-      ignore_patterns = { '*.git/*', '*/tmp/*', '*/node_modules/*' },
-      db_safe_mode = false,
-      auto_validate = true,
-    },
-  },
+  extensions = {},
 })
 
 require('telescope.builtin').project_files = function()
   local opts = {
     show_untracked = true,
     git_command = { 'git', 'ls-files', '--exclude-standard', '--cached' },
-  } -- define here if you want to define something
+  }
   vim.fn.system('git rev-parse --is-inside-work-tree')
   if vim.v.shell_error == 0 then
     require('telescope.builtin').git_files(opts)
