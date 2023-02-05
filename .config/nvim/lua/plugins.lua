@@ -148,7 +148,18 @@ require('lazy').setup({
         config = function()
           require('telescope').load_extension('gitcommand')
         end,
-        lazy = false,
+        lazy = true,
+      },
+      {
+        'delphinus/telescope-memo.nvim',
+        config = function()
+          require('telescope').load_extension('memo')
+        end,
+        lazy = true,
+      },
+      {
+        'nvim-telescope/telescope-file-browser.nvim',
+        lazy = true,
       },
     },
   },
