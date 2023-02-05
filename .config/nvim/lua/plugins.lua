@@ -286,4 +286,12 @@ require('lazy').setup({
     end,
     ft = { 'markdown' },
   },
+
+  {
+    'folke/which-key.nvim',
+    event = 'VeryLazy',
+    config = function()
+      require('pluginconfig/which-key')
+    end,
+  },
 })
