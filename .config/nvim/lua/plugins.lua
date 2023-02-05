@@ -38,7 +38,7 @@ require('lazy').setup({
   },
   {
     'neovim/nvim-lspconfig',
-    event = { 'BufReadPre' },
+    event = 'VeryLazy',
     config = function()
       require('pluginconfig/nvim-lspconfig')
     end,
@@ -60,7 +60,7 @@ require('lazy').setup({
   },
   {
     'jose-elias-alvarez/null-ls.nvim',
-    event = 'VimEnter',
+    event = 'VeryLazy',
     config = function()
       require('pluginconfig/null-ls')
     end,
@@ -75,14 +75,14 @@ require('lazy').setup({
   -- LSP(UI)
   {
     'glepnir/lspsaga.nvim',
-    event = 'VimEnter',
+    event = 'VeryLazy',
     config = function()
       require('pluginconfig/lspsaga')
     end,
   },
   {
     'j-hui/fidget.nvim',
-    event = 'VimEnter',
+    event = 'VeryLazy',
     config = function()
       require('pluginconfig/fidget')
     end,
@@ -174,14 +174,14 @@ require('lazy').setup({
   -- Statusline
   {
     'nvim-lualine/lualine.nvim',
-    event = 'VimEnter',
+    event = 'VeryLazy',
     config = function()
       require('pluginconfig/lualine')
     end,
   },
   {
     'akinsho/bufferline.nvim',
-    event = 'VimEnter',
+    event = 'VeryLazy',
     config = function()
       require('pluginconfig/bufferline')
     end,
