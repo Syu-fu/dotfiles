@@ -294,4 +294,8 @@ require('lazy').setup({
       require('pluginconfig/which-key')
     end,
   },
+  {
+    'kevinhwang91/nvim-bqf',
+    ft = 'qf',
+  },
 })
