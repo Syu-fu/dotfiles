@@ -133,13 +133,6 @@ require('lazy').setup({
     end,
     dependencies = {
       {
-        'nvim-telescope/telescope-github.nvim',
-        config = function()
-          require('telescope').load_extension('gh')
-        end,
-        lazy = true,
-      },
-      {
         'nvim-telescope/telescope-live-grep-args.nvim',
         config = function()
           require('telescope').load_extension('live_grep_args')
@@ -218,6 +211,16 @@ require('lazy').setup({
     event = 'BufReadPre',
     config = function()
       require('pluginconfig/gitsigns')
+    end,
+  },
+  {
+    'pwntester/octo.nvim',
+    cmd = { 'Octo' },
+    init = function()
+      require('pluginconfig/keymap/octo')
+    end,
+    config = function()
+      require('pluginconfig/octo')
     end,
   },
 
