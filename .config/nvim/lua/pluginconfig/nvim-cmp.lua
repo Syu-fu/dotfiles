@@ -3,6 +3,11 @@ local types = require('cmp.types')
 local luasnip = require('luasnip')
 local dict = require('cmp_dictionary')
 
+local has_words_before = function()
+  local line, col = unpack(vim.api.nvim_win_get_cursor(0))
+  return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match('%s') == nil
+end
+
 cmp.setup({
   formatting = {
     format = require('lspkind').cmp_format({
@@ -77,13 +82,14 @@ cmp.setup({
   }, {
     { name = 'buffer', priority = 50 },
     { name = 'dictionary', keyword_length = 2, priority = 10 },
+    { name = 'git', priority = 60 },
   }),
 })
 
 -- Set configuration for specific filetype.
-cmp.setup.filetype('gitcommit', {
+cmp.setup.filetype({ 'gitcommit', 'octo' }, {
   sources = cmp.config.sources({
-    { name = 'cmp_git' },
+    { name = 'git' },
   }, {
     { name = 'buffer' },
   }),
@@ -91,19 +97,13 @@ cmp.setup.filetype('gitcommit', {
 
 -- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
 cmp.setup.cmdline(':', {
-  mapping = cmp.mapping.preset.insert({
-    ['<Tab>'] = cmp.mapping.select_next_item(),
-    ['<C-n>'] = cmp.mapping.select_next_item(),
-    ['<S-Tab>'] = cmp.mapping.select_prev_item(),
-    ['<C-p>'] = cmp.mapping.select_prev_item(),
-    ['<C-b>'] = cmp.mapping.scroll_docs(-4),
-    ['<C-f>'] = cmp.mapping.scroll_docs(4),
-    ['<C-Space>'] = cmp.mapping.complete(),
-    ['<C-e>'] = cmp.mapping.abort(),
-    ['<CR>'] = cmp.mapping.confirm({ select = true }),
+  mapping = cmp.mapping.preset.cmdline(),
+  sources = cmp.config.sources({
+    { name = 'path' },
+  }, {
+    { name = 'cmdline' },
+    { name = 'cmdline_history' },
   }),
-
-  sources = cmp.config.sources({ { name = 'path' } }, { { name = 'cmdline' }, { { name = 'cmdline_history' } } }),
 })
 
 cmp.setup.cmdline({ '/', '?' }, {
@@ -136,3 +136,6 @@ dict.switcher({
     en = '/usr/share/dict/words',
   },
 })
+
+-- git
+require('cmp_git').setup()
