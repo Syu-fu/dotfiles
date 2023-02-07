@@ -19,7 +19,11 @@ vim.api.nvim_create_autocmd('BufWritePre', {
   group = augroup,
   callback = function()
     Go_org_imports(500)
-    vim.lsp.buf.formatting_sync(nil, 500)
+    vim.lsp.buf.format({
+      filter = function(client)
+        return client.name ~= 'null-ls'
+      end,
+    })
   end,
 })
 
