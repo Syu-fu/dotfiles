@@ -4,6 +4,7 @@ require('nvim-treesitter.configs').setup({
     enable = true,
     disable = {
       'toml',
+      'gitcommit',
     },
   },
 })

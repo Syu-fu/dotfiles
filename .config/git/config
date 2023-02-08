@@ -3,6 +3,7 @@
   name = Syu fu
 [core]
   editor = nvim -c \"set fenc=utf-8\"
+  commentChar = ";"
 [diff]
   tool = nvimdiff
 [difftool "nvimdiff"]
