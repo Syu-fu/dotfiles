@@ -30,3 +30,9 @@ vim.keymap.set(
 )
 vim.keymap.set('n', '<Space>gt', '<Cmd>Telescope gitcommand<CR>', { noremap = true, silent = true })
 
+-- memo
+vim.keymap.set('n', '<Space>ml', '<Cmd>Telescope memo list<CR>', { noremap = true, silent = true })
+vim.keymap.set('n', '<Space>mg', '<Cmd>Telescope memo grep<CR>', { noremap = true, silent = true })
+
+--file_browser
+vim.keymap.set('n', '<Space>l', '<Cmd>Telescope file_browser<CR>', { noremap = true, silent = true })
