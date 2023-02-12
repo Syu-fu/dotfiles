@@ -16,8 +16,8 @@ vim.opt.smartindent = true
 vim.opt.expandtab = true
 vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
-vim.wo.list = true
-vim.wo.listchars = 'tab:▸-'
+vim.opt.list = true
+vim.opt.listchars = 'tab:▸-'
 vim.opt.backup = false
 vim.opt.swapfile = false
 vim.cmd.colorscheme('gruvbox-material')
