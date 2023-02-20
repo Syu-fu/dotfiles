@@ -61,3 +61,8 @@ petertriho
 saadparwaiz
 octo
 hoge
+sampledb
+thead
+tbody
+onclick
+resonsive
