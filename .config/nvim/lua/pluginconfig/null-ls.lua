@@ -158,6 +158,12 @@ local sources = {
       return vim.fn.executable('eslint') > 0 or vim.fn.executable('./node_modules/.bin/eslint') > 0
     end,
   }),
+  null_ls.builtins.formatting.stylelint.with({
+    condition = function()
+      return vim.fn.executable('stylelint') > 0 or vim.fn.executable('./node_modules/.bin/stylelint') > 0
+    end,
+    filetypes = { 'css', 'scss', 'sass', 'less' },
+  }),
   null_ls.builtins.diagnostics.zsh,
   null_ls.builtins.formatting.beautysh.with({
     extra_args = { '-t' },
