@@ -25,3 +25,5 @@
   verbose = true
 [ghq]
   root = "~/Documents/Projects"
+[credential]
+	helper = store
