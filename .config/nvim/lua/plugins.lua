@@ -79,7 +79,7 @@ require('lazy').setup({
 
   -- LSP(UI)
   {
-    'glepnir/lspsaga.nvim',
+    'nvimdev/lspsaga.nvim',
     event = 'VeryLazy',
     config = function()
       require('pluginconfig/lspsaga')
