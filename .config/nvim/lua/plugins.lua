@@ -323,4 +323,11 @@ require('lazy').setup({
     'kevinhwang91/nvim-bqf',
     ft = 'qf',
   },
+  {
+    'rcarriga/nvim-notify',
+    event = 'VeryLazy',
+    config = function()
+      require('notify')
+    end,
+  },
 })
