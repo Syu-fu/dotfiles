@@ -288,15 +288,14 @@ require('lazy').setup({
 
   -- Memo
   {
-    'renerocksai/telekasten.nvim',
-    cmd = 'Telekasten',
+    'Syu-fu/memo-new.nvim',
+    cmd = 'MemoNew',
     init = function()
-      require('pluginconfig/keymap/telekasten')
+      require('pluginconfig/keymap/memo-new')
     end,
     config = function()
-      require('pluginconfig/telekasten')
+      require('pluginconfig/memo-new')
     end,
-    dependencies = { 'renerocksai/calendar-vim' },
   },
 
   -- Markdown
