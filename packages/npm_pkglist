@@ -1,0 +1,22 @@
+/usr/lib
+├── @types/jest@29.5.1
+├── @typescript-eslint/eslint-plugin@5.59.2
+├── @typescript-eslint/parser@5.59.2
+├── aicommits@1.11.0
+├── corepack@0.17.2
+├── eslint@8.39.0
+├── jest@29.5.0
+├── node-gyp@9.3.1
+├── nopt@7.1.0
+├── npm-check-updates@16.10.9
+├── npm@8.19.2
+├── prettier@2.8.8
+├── semver@7.5.0
+├── textlint-rule-preset-ja-spacing@2.3.0
+├── textlint-rule-preset-ja-technical-writing@7.0.0
+├── textlint-rule-preset-jtf-style@2.3.13
+├── textlint-rule-prh@5.3.0
+├── textlint-rule-terminology@3.0.4
+├── textlint@13.3.2
+└── typescript@5.0.4
+

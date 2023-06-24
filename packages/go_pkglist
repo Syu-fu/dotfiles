@@ -1,0 +1,14 @@
+github.com/golangci/golangci-lint@latest
+github.com/x-motemen/ghq@latest
+github.com/rhysd/vim-startuptime@latest
+github.com/rhysd/actionlint@latest
+github.com/mattn/memo@latest
+golang.org/x/tools/cmd/godoc@latest
+github.com/golang/mock/mockgen@latest
+github.com/daixiang0/gci
+github.com/x-motemen/ghq
+mvdan.cc/gofumpt
+github.com/golangci/golangci-lint/cmd/golangci-lint
+github.com/mattn/memo
+github.com/high-moctane/nextword
+github.com/rhysd/vim-startuptime
