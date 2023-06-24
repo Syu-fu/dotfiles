@@ -33,7 +33,7 @@ update_yay:
 	@yay -Syu
 
 update_npm:
-	@npm update -g
+	@npm sudo update -g
 
 update_go: ## Update go packages
 	for file in $${GOPATH}/bin/* ; do pkg=$$(go version -m "$$file" | head -n2 | tail -n1 | awk '{print $$2}'); echo "Updating $$pkg"; go install "$${pkg}@latest"; done
@@ -46,7 +46,7 @@ install_yay:
 	@cat packages/yay | xargs yay -S --needed --noconfirm
 
 install_npm:
-	@cat packages/npm | xargs npm install -g
+	@cat packages/npm | xargs sudo npm install -g
 
 install_go:
 	@cat packages/go | xargs -I {} go install {}@latest
