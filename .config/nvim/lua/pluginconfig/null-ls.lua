@@ -5,11 +5,12 @@ local null_ls = require('null-ls')
 local cspell_config_dir = '~/.config/cspell'
 -- $XDG_DATA_HOME/cspell
 local cspell_data_dir = '~/.local/share/cspell'
+local cspell_share_dir = '~/Dropbox/dev/cspell'
 local cspell_files = {
   config = vim.call('expand', cspell_config_dir .. '/cspell.json'),
-  dotfiles = vim.call('expand', cspell_config_dir .. '/dotfiles.txt'),
+  dotfiles = vim.call('expand', cspell_share_dir .. '/dotfiles.txt'),
   vim = vim.call('expand', cspell_data_dir .. '/vim.txt.gz'),
-  user = vim.call('expand', cspell_data_dir .. '/user.txt'),
+  user = vim.call('expand', cspell_share_dir .. '/user.txt'),
 }
 --- vim辞書がなければダウンロード
 if vim.fn.filereadable(cspell_files.vim) ~= 1 then
