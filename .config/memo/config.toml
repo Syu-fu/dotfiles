@@ -1,0 +1,11 @@
+memodir = "~/Documents/Projects/github.com/Syu-fu/memo"
+editor = "nvim"
+column = 20
+width = 0
+selectcmd = "fzf"
+grepcmd = "rg -nH ${PATTERN} ${FILES}"
+memotemplate = "~/Documents/Projects/github.com/Syu-fu/memo/templates/new_memo.md"
+assetsdir = "."
+pluginsdir = "/home/syu-fu/.config/memo/plugins"
+templatedirfile = ""
+templatebodyfile = ""

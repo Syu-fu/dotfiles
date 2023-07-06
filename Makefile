@@ -6,8 +6,6 @@ init: ## Initial deploy dotfiles
 		test -L ${HOME}/.config/$$item || rm -rf ${HOME}/.config/$$item; \
 		ln -vsfn ${PWD}/.config/$$item ${HOME}/.config/$$item; \
 	done
-	test -L ${HOME}/.zsh || rm -rf ${HOME}/.zsh
-	ln -vsfn ${PWD}/.zsh ${HOME}/.zsh
 	test -L ${HOME}/.p10k.zsh || rm -rf ${HOME}/.p10k.zsh
 	ln -vsfn ${PWD}/.p10k.zsh ${HOME}/.p10k.zsh
 	test -L ${HOME}/.zshenv || rm -rf ${HOME}/.zshenv
