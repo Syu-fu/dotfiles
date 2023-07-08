@@ -1,17 +1,3 @@
-require('mason-lspconfig').setup({
-  ensure_installed = {
-    'golangci_lint_ls',
-    'gopls',
-    'jsonls',
-    'lua_ls',
-    'pylsp',
-    'stylelint_lsp',
-    'vimls',
-    'vtsls',
-    'yamlls',
-  },
-})
-
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
 local on_attach = function(client, bufnr)
