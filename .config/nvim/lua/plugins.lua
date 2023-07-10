@@ -88,6 +88,7 @@ require('lazy').setup({
   {
     'j-hui/fidget.nvim',
     event = 'VeryLazy',
+    branch = 'legacy',
     config = function()
       require('pluginconfig/fidget')
     end,
