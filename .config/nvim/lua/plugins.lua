@@ -329,4 +329,10 @@ require('lazy').setup({
       require('notify')
     end,
   },
+  {
+    'luukvbaal/statuscol.nvim',
+    config = function()
+      require('pluginconfig/statuscol-nvim')
+    end,
+  },
 })
