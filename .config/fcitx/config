@@ -31,9 +31,9 @@
 # カスタム切り替えキー
 #CustomSwitchKey=
 # 入力メソッドをオンに
-ActivateKey=ALT_RALT
+ActivateKey=HENKANMODE
 # 入力メソッドをオフに
-InactivateKey=ALT_LALT
+InactivateKey=MUHENKAN
 # 入力メソッドの切換をホットキーで
 # Available Value:
 # True False
