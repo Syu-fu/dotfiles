@@ -1,25 +1,6 @@
 # emacsmode
 bindkey -e
 
-## hooks ##
-function chpwd () {
-	ls -a
-}
-
-# tmuxのwindow nameをrepository nameあるいはcurrent directory nameに変更
-autoload -Uz vcs_info
-zstyle ':vcs_info:*' enable git svn
-zstyle ':vcs_info:*' formats '%r'
-
-precmd () {
-	LANG=en_US.UTF-8
-	if git rev-parse 2>/dev/null; then
-		tmux rename-window `basename $(git rev-parse --show-toplevel 2>/dev/null) 2>/dev/null` 2>/dev/null
-	else
-		tmux rename-window `basename $(pwd)`
-	fi
-}
-
 setopt INC_APPEND_HISTORY
 setopt SHARE_HISTORY
 
@@ -27,7 +8,7 @@ setopt SHARE_HISTORY
 autoload -U compinit
 compinit
 
-# alias {{{
+## alias ##
 alias ..='cd ..'
 alias ..2='cd ../..'
 alias ..3='cd ../../..'
@@ -36,8 +17,6 @@ alias p='cd $HOME/Documents/Projects'
 if command -v lsd > /dev/null; then
 	alias ls="lsd"
 fi
-
-# alias fzf='fzf-tmux -p 80%'
 
 alias nv='nvim'
 
@@ -55,8 +34,7 @@ if [ -f /usr/share/fzf/completion.zsh ]; then
 	source /usr/share/fzf/completion.zsh
 fi
 
-
-# zinit読み込み
+## zinit ##
 ### Added by Zinit's installer
 if [[ ! -f $HOME/.zinit/bin/zinit.zsh ]]; then
 	print -P "%F{33}▓▒░ %F{220}Installing DHARMA Initiative Plugin Manager (zdharma/zinit)…%f"
@@ -73,7 +51,7 @@ autoload -Uz _zinit
 
 # term
 if [ -z $TMUX ]; then
-	tmuximum
+	tmux
 fi
 # auto suggestion
 zinit ice wait'!0';zinit light zsh-users/zsh-autosuggestions
@@ -82,34 +60,25 @@ bindkey '^j' autosuggest-accept
 zinit ice wait'!0';zinit light zdharma-continuum/fast-syntax-highlighting
 # p10k
 zinit ice depth=1;zinit light romkatv/powerlevel10k
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+# To customize prompt, run `p10k configure` or edit ~/.config/zsh/p10k.zsh.
+[[ ! -f ~/.config/zsh/p10k.zsh ]] || source ~/.config/zsh/p10k.zsh
 zinit ice depth=1;zinit light chitoku-k/fzf-zsh-completions
 
-# function
-# select project
-function fzf-src() {
-	local src=$(ghq list -full-path | fzf --query "$BUFFER")
-	if [ -n "$src" ]; then
-		BUFFER="cd $src"
-		zle accept-line
-	fi
-	zle -R -c
+## hooks ##
+function cd-ls-hook() {
+	ls -a
 }
-zle -N fzf-src
-bindkey '^]' fzf-src
-# Enterを押すとls
+autoload -Uz cd-ls-hook
+add-zsh-hook chpwd cd-ls-hook
+
+## function ##
 function do-enter() {
 	if [ -n "$BUFFER" ]; then
 		zle accept-line
 		return 0
 	fi
 	echo ""
-	if command -v lsd > /dev/null; then
-		lsd -a
-	else
-		ls -a
-	fi
+	ls -a
 	echo "\n"
 	zle reset-prompt
 	return 0
