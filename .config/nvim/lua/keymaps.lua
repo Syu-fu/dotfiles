@@ -1,5 +1,5 @@
 -- jj = esc
-vim.keymap.set('i', 'jj', '<ESC>', { noremap = true, silent = true })
+-- vim.keymap.set('i', 'jj', '<ESC>', { noremap = true, silent = true })
 
 -- pasteする際バッファを入れ替えない
 vim.keymap.set('x', 'p', 'P', { noremap = true, silent = true })
@@ -47,4 +47,4 @@ vim.keymap.set('n', '<space>e', '<cmd>lua vim.diagnostic.open_float()<CR>', { no
 vim.keymap.set('n', '[d', '<cmd>lua vim.diagnostic.goto_prev()<CR>', { noremap = true, silent = true })
 vim.keymap.set('n', ']d', '<cmd>lua vim.diagnostic.goto_next()<CR>', { noremap = true, silent = true })
 vim.keymap.set('n', '<space>q', '<cmd>lua vim.diagnostic.setloclist()<CR>', { noremap = true, silent = true })
-vim.keymap.set('n', '<space>f', '<cmd>lua vim.lsp.buf.formatting()<CR>', { noremap = true, silent = true })
+vim.keymap.set('n', '<space>f', '<cmd>lua vim.lsp.buf.format()<CR>', { noremap = true, silent = true })
