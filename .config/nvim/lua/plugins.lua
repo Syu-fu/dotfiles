@@ -168,6 +168,35 @@ require('lazy').setup({
       },
     },
   },
+  {
+    'Shougo/ddu.vim',
+    config = function()
+      require('pluginconfig/ddu')
+    end,
+    lazy = false,
+    dependencies = {
+      { 'vim-denops/denops.vim' },
+      { 'Shougo/ddu-ui-ff' },
+      { 'Shougo/ddu-kind-file' },
+      { 'yuki-yano/ddu-filter-fzf' },
+      { 'Shougo/ddu-filter-matcher_substring' },
+      { 'uga-rosa/ddu-filter-converter_devicon' },
+      { 'Shougo/ddu-filter-matcher_hidden' },
+      { 'Shougo/ddu-filter-matcher_ignore_current_buffer' },
+      { 'matsui54/ddu-source-file_external' },
+      { 'Shougo/ddu-source-buffer' },
+      { 'Shougo/ddu-source-action' },
+      { 'shun/ddu-source-rg' },
+      { 'uga-rosa/ddu-source-lsp' },
+      { 'kuuote/ddu-source-git_status' },
+      { 'kyoh86/ddu-source-git_log' },
+      { 'kyoh86/ddu-source-git_branch' },
+      { 'peacock0803sz/ddu-source-git_stash' },
+      { 'kyoh86/ddu-source-github' },
+      { 'uga-rosa/ddu-source-help' },
+      { 'Shougo/ddu-commands.vim' },
+    },
+  },
 
   -- Treesitter
   {
@@ -212,6 +241,14 @@ require('lazy').setup({
   --  end,
   --},
   {
+    'lambdalisue/gin.vim',
+    cmd = 'Gin',
+    lazy = false,
+    dependencies = {
+      { 'vim-denops/denops.vim' },
+    },
+  },
+  {
     'tpope/vim-fugitive',
     cmd = 'Git',
   },
@@ -242,12 +279,16 @@ require('lazy').setup({
     end,
   },
   {
-    'kylechui/nvim-surround',
+    'machakann/vim-sandwich',
     event = { 'InsertEnter', 'CmdlineEnter' },
-    config = function()
-      require('pluginconfig/nvim-surround')
-    end,
   },
+  --{
+  --  'kylechui/nvim-surround',
+  --  event = { 'InsertEnter', 'CmdlineEnter' },
+  --  config = function()
+  --    require('pluginconfig/nvim-surround')
+  --  end,
+  --},
 
   -- Search
   {
@@ -327,7 +368,7 @@ require('lazy').setup({
     'rcarriga/nvim-notify',
     event = 'VeryLazy',
     config = function()
-      require('notify')
+      vim.notify = require('notify')
     end,
   },
   {
