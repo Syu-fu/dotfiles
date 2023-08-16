@@ -13,6 +13,7 @@ cmp.setup({
     format = require('lspkind').cmp_format({
       with_text = true,
       menu = {
+        copilot = '[Copilot]',
         buffer = '[Buffer]',
         nvim_lsp = '[LSP]',
         luasnip = '[LuaSnip]',
@@ -73,6 +74,7 @@ cmp.setup({
   },
 
   sources = cmp.config.sources({
+    { name = 'copilot', priority = 90 },
     { name = 'nvim_lsp', priority = 100 },
     { name = 'luasnip', priority = 20 },
     { name = 'path', priority = 100 },
@@ -90,9 +92,15 @@ cmp.setup({
 cmp.setup.filetype({ 'gitcommit', 'octo' }, {
   sources = cmp.config.sources({
     { name = 'git' },
+    { name = 'dictionary' },
   }, {
     { name = 'buffer' },
   }),
+})
+
+-- Set configuration for specific filetype.
+cmp.setup.filetype({ 'ddu-ff-filter' }, {
+  sources = cmp.config.sources({}),
 })
 
 -- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
@@ -139,3 +147,5 @@ dict.switcher({
 
 -- git
 require('cmp_git').setup()
+-- copilot
+require('copilot_cmp').setup()

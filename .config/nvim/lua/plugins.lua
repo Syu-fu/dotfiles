@@ -115,6 +115,10 @@ require('lazy').setup({
       { 'saadparwaiz1/cmp_luasnip', after = 'nvim-cmp', event = { 'InsertEnter' } },
       { 'petertriho/cmp-git', after = 'nvim-cmp', ft = { 'gitcommit' } },
       {
+        'zbirenbaum/copilot-cmp',
+        config = true,
+      },
+      {
         'onsails/lspkind-nvim',
         event = { 'InsertEnter', 'CmdlineEnter' },
         config = function()
@@ -126,6 +130,15 @@ require('lazy').setup({
 
   { 'hrsh7th/cmp-cmdline', event = 'CmdlineEnter' },
   { 'dmitmel/cmp-cmdline-history', event = 'CmdlineEnter' },
+  {
+    'zbirenbaum/copilot.lua',
+    event = { 'InsertEnter', 'CmdlineEnter' },
+    config = function()
+      vim.defer_fn(function()
+        require('pluginconfig/copilot')
+      end, 100)
+    end,
+  },
 
   -- FZF
   {
