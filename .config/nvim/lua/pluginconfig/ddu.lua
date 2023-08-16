@@ -117,8 +117,8 @@ vim.fn['ddu#custom#patch_global']({
     action = {
       defaultAction = 'do',
     },
-    github_status = {
-      defaultAction = 'gitadd',
+    git_status = {
+      defaultAction = 'open',
     },
     github_issue = {
       defaultAction = 'edit',
