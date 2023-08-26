@@ -5,8 +5,8 @@ require('copilot').setup({
       accept = '<C-j>',
       accept_word = false,
       accept_line = false,
-      next = 'jj',
-      prev = 'kk',
+      next = '<C-S-n>',
+      prev = '<C-S-p>',
       dismiss = '<C-S-]>',
     },
     filetypes = {
