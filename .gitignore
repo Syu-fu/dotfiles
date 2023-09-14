@@ -1,2 +1,3 @@
 .config/zsh/local.zsh
+.config/zsh/**/*.zwc
 .zcomp*
