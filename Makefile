@@ -48,6 +48,12 @@ install_go:
 	@cat packages/go | xargs -I {} go install {}@latest
 	@go install golang.org/x/tools/cmd/godoc@latest
 
+install_aqua:
+	@aqua install
+
+init_aqua:
+	@curl -sSfL -O https://raw.githubusercontent.com/aquaproj/aqua-installer/v2.1.1/aqua-installer | bash
+
 tmuximum:
 	@sudo curl -L https://raw.githubusercontent.com/arks22/tmuximum/master/tmuximum -o /usr/local/bin/tmuximum
 	@sudo chmod 755 /usr/local/bin/tmuximum
@@ -64,11 +70,11 @@ allbackup: backup_pacman backup_go backup_npm backup_go ## Backup all packages
 
 allupdate: update_pacman update_yay update_npm update_go ## Update all packages
 
-allinstall: install_pacman install_yay install_npm install_go ## Install all packages
+allinstall: install_pacman install_yay install_npm install_go install_aqua ## Install all packages
 
 chore: tmuximum font
 
-setup: init allinstall allupdate chore
+setup: init init_aqua allinstall allupdate chore
 
 
 .PHONY: help

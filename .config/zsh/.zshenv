@@ -13,6 +13,10 @@ export GOPATH="$HOME/go"
 # Deno
 export DENO_INSTALL="$HOME/.deno"
 
+# Aqua
+export AQUA_ROOT_DIR="$XDG_DATA_HOME/aquaproj-aqua"
+export AQUA_GLOBAL_CONFIG="$XDG_CONFIG_HOME/aqua/aqua.yaml"
+
 # tools
 export EDITOR=nvim
 export VISUAL=nvim
@@ -28,6 +32,6 @@ export HISTSIZE=10000000
 export SAVEHIST=10000000
 export LISTMAX=10000
 
-export PATH="$DENO_INSTALL/bin:$GOPATH/bin:$PATH"
+export PATH="$DENO_INSTALL/bin:$GOPATH/bin:$AQUA_ROOT_DIR/bin:$PATH"
 
 export SHELDON_CONFIG_DIR="$ZDOTDIR/sheldon"

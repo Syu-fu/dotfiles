@@ -45,6 +45,8 @@ source $ZDOTDIR/rc/alias.zsh
 zsh-defer $ZDOTDIR/rc/function.zsh
 source $ZDOTDIR/rc/hooks.zsh
 
+if command -v aqua &> /dev/null; then source <(aqua completion zsh); fi
+
 ## local ##
 if [ -f "$ZDOTDIR/local.zsh" ]; then
 	source "$ZDOTDIR/local.zsh"
