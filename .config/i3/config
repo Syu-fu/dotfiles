@@ -7,6 +7,10 @@ set $mod Mod4
 # set default desktop layout (default is tiling)
 # workspace_layout tabbed <stacking|tabbed>
 
+set $term_cmd "alacritty --config-file ~/.config/alacritty/alacritty.yml"
+
+exec --no-startup-id "feh --no-fehbg --bg-fill '/home/syu-fu/Dropbox/dev/wallpaper.jpg'"
+
 # Configure border style <normal|1pixel|pixel xx|none|pixel>
 default_border pixel 1
 default_floating_border normal
@@ -27,7 +31,7 @@ font xft:URWGothic-Book 11
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec "alacritty"
+bindsym $mod+Return exec $term_cmd
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -289,7 +293,7 @@ exec --no-startup-id xautolock -time 10 -locker blurlock
 exec --no-startup-id fcitx
 #exec --no-startup-id i3-msg 'workspace "1: exec alacritty"'
 exec --no-startup-id vivaldi-stable
-exec --no-startup-id alacritty
+exec --no-startup-id $term_cmd
 #exec --no-startup-id i3-msg 'assign [class="alacritty"] workspace 1'
 exec_always --no-startup-id ff-theme-util
 exec_always --no-startup-id fix_xcursor
