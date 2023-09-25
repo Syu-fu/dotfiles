@@ -1,3 +1,5 @@
 .config/zsh/local.zsh
 .config/zsh/**/*.zwc
+.config/zsh/completions/**
+!/.config/zsh/completions/.gitkeep
 .zcomp*

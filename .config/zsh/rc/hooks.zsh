@@ -21,3 +21,17 @@ function ignore-history-hook() {
 	]]
 }
 add-zsh-hook zshaddhistory ignore-history-hook
+
+function do-enter() {
+	if [ -n "$BUFFER" ]; then
+		zle accept-line
+		return 0
+	fi
+	echo ""
+	ls -a
+	echo "\n"
+	zle reset-prompt
+	return 0
+}
+zle -N do-enter
+bindkey '^m' do-enter

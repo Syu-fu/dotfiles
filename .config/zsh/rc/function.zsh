@@ -1,17 +1,4 @@
 ## function ##
-function do-enter() {
-	if [ -n "$BUFFER" ]; then
-		zle accept-line
-		return 0
-	fi
-	echo ""
-	ls -a
-	echo "\n"
-	zle reset-prompt
-	return 0
-}
-zle -N do-enter
-bindkey '^m' do-enter
 
 function select-history() {
 	BUFFER=$(history -n -r 1 | fzf --no-sort +m --query "$LBUFFER" --prompt="History > ")
@@ -27,7 +14,7 @@ function github-new() {
 	fi
 
 	# Create repository on GitHub
-	gh repo create $1 --public --confirm
+	gh repo create $1 --public --confirm --license "mit"
 
 	if [ $? -ne 0 ]; then
 		echo "Failed to create repository"

@@ -33,5 +33,6 @@ export SAVEHIST=10000000
 export LISTMAX=10000
 
 export PATH="$DENO_INSTALL/bin:$GOPATH/bin:$AQUA_ROOT_DIR/bin:$PATH"
+export FPATH="$ZDOTDIR/completions:$FPATH"
 
 export SHELDON_CONFIG_DIR="$ZDOTDIR/sheldon"
