@@ -50,3 +50,5 @@ source $ZDOTDIR/rc/hooks.zsh
 if [ -f "$ZDOTDIR/local.zsh" ]; then
 	source "$ZDOTDIR/local.zsh"
 fi
+
+unset -f source
