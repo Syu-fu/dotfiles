@@ -36,3 +36,4 @@ export PATH="$DENO_INSTALL/bin:$GOPATH/bin:$AQUA_ROOT_DIR/bin:$PATH"
 export FPATH="$ZDOTDIR/completions:$FPATH"
 
 export SHELDON_CONFIG_DIR="$ZDOTDIR/sheldon"
+export ABBR_USER_ABBREVIATIONS_FILE="$ZDOTDIR/plugrc/abbreviations.zsh"

@@ -2,4 +2,5 @@
 .config/zsh/**/*.zwc
 .config/zsh/completions/**
 !/.config/zsh/completions/.gitkeep
+.config/zsh/plugrc/abbreviations.zsh
 .zcomp*
