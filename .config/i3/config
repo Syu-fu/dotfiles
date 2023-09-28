@@ -9,7 +9,7 @@ set $mod Mod4
 
 set $term_cmd "alacritty --config-file ~/.config/alacritty/alacritty.yml"
 
-exec --no-startup-id "feh --no-fehbg --bg-fill '/home/syu-fu/Dropbox/dev/wallpaper.jpg'"
+exec --no-startup-id "feh --no-fehbg --bg-fill '/home/syu-fu/Dropbox/wallpaper.jpg'"
 
 # Configure border style <normal|1pixel|pixel xx|none|pixel>
 default_border pixel 1
