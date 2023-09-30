@@ -36,10 +36,10 @@ diffutils
 dmidecode
 dmraid
 dnsmasq
-docker
 docker-compose
 dosfstools
 downgrade
+dropbox
 e2fsprogs
 ecryptfs-utils
 efibootmgr
@@ -49,6 +49,7 @@ f2fs-tools
 fcitx
 fcitx-configtool
 fcitx-mozc
+feh
 ffmpeg
 ffmpegthumbnailer
 file
@@ -63,7 +64,6 @@ gcolor2
 gettext
 gimp
 git
-github-cli
 glibc
 glibc-locales
 gnome-keyring
@@ -96,7 +96,6 @@ inxi
 iproute2
 iputils
 jfsutils
-jq
 kvantum-manjaro
 less
 lib32-flex
@@ -115,7 +114,6 @@ lightdm-settings
 lightdm-slick-greeter
 linux515
 logrotate
-lsd
 lsof
 lvm2
 lxappearance
@@ -158,7 +156,6 @@ nano
 nano-syntax-highlighting
 ncdu
 neofetch
-neovim
 netctl
 network-manager-applet
 networkmanager
@@ -167,7 +164,6 @@ networkmanager-openvpn
 networkmanager-pptp
 networkmanager-vpnc
 nfs-utils
-nodejs
 noto-fonts-cjk
 npm
 nss-mdns
@@ -180,7 +176,7 @@ otf-ipafont
 otf-ipamjfont
 p7zip
 pacman
-palemoon-bin
+palemoon
 pamac-gtk
 patch
 patchutils
@@ -200,8 +196,8 @@ pyenv
 python-pip
 qt5ct
 ranger
+rclone
 reiserfsprogs
-ripgrep
 rofi
 rsync
 s-nail
@@ -247,6 +243,7 @@ vulkan-intel
 vulkan-radeon
 w3m
 wallpapers-juhraya
+wezterm
 wget
 which
 wireless-regdb
