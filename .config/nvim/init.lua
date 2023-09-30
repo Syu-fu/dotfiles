@@ -2,8 +2,8 @@ require('plugins')
 require('keymaps')
 
 vim.opt.number = true
-vim.opt.laststatus = 2
-vim.opt.showtabline = 2
+vim.opt.laststatus = 3
+vim.opt.showtabline = 0
 vim.opt.termguicolors = true
 vim.opt.fileencodings = 'utf-8'
 vim.opt.clipboard:append({ 'unnamedplus' })
