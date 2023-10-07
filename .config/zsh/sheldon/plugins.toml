@@ -17,10 +17,12 @@ source $ZDOTDIR/plugrc/autosuggestion.zsh
 github = "zdharma-continuum/fast-syntax-highlighting"
 apply = ["defer"]
 
+[plugins.zsh-completions]
+github = "zsh-users/zsh-completions"
+apply = ["defer"]
+
 [plugins.zsh-abbr]
 github = "olets/zsh-abbr"
-hooks.post = '''
-'''
 
 [plugins.powerlevel10k]
 github = "romkatv/powerlevel10k"
@@ -31,6 +33,14 @@ source $ZDOTDIR/plugrc/p10k.zsh
 [plugins.fzf-tab]
 github = "Aloxaf/fzf-tab"
 apply = ["defer"]
+
+[plugins.ripgrep-completion]
+remote = "https://raw.githubusercontent.com/BurntSushi/ripgrep/master/complete/_rg"
+apply = ["fpath"]
+
+[plugins.ghq-completion]
+remote = "https://raw.githubusercontent.com/x-motemen/ghq/master/misc/zsh/_ghq"
+apply = ["fpath"]
 
 [plugins.sheldon-completion]
 remote = "https://raw.githubusercontent.com/rossmacarthur/sheldon/trunk/completions/sheldon.zsh"

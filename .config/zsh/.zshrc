@@ -4,9 +4,6 @@ bindkey -e
 setopt INC_APPEND_HISTORY
 setopt HIST_IGNORE_ALL_DUPS
 
-# comp
-autoload -U compinit
-compinit
 autoload -Uz add-zsh-hook
 autoload -Uz ignore-history-hook
 
@@ -52,3 +49,8 @@ if [ -f "$ZDOTDIR/local.zsh" ]; then
 fi
 
 unset -f source
+
+# comp
+# After loading Sheldon, you need to execute it in order for the fpath configured in Sheldon to take effect.
+autoload -U compinit
+compinit
