@@ -29,5 +29,5 @@ set new_mail_command="notify-send --icon='/usr/share/icons/hicolor/48x48/apps/ne
 
 set index_format="%4C %Z %<[y?%<[d?%[%H:%M           ]&%[%m/%d (%a) %H:%M]>&%[%Y/%m/%d %H:%M]> %-15.15L (%?l?%4l&%4c?) %s"
 # cache
-set header_cache     = "~/.mutt/cache/headers"
-set message_cachedir = "~/.mutt/cache/bodies"
+set header_cache     = "~/.local/share/neomutt/cache/headers"
+set message_cachedir = "~/.local/share/neomutt/cache/bodies"
