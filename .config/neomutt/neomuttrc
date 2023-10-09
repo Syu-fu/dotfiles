@@ -1,0 +1,33 @@
+source "gpg -d ~/Dropbox/passwords.gpg |"
+set realname = "Syu-fu"
+set hostname = "gmail.com"
+set from = "syu.fu.dev@gmail.com"
+set smtp_url  = "smtps://syu.fu.dev@gmail.com@smtp.gmail.com:465/"
+set imap_user = "syu.fu.dev@gmail.com"
+set folder    = "imaps://imap.gmail.com:993"
+
+set ssl_starttls = yes
+set ssl_force_tls = yes
+
+set sidebar_visible  = yes
+set sidebar_format = "%B%?F? [%F]?%* %?N?%N/?%S"
+set mail_check_stats
+set sort_aux = reverse-date
+set use_from = yes
+set editor = "nvim"
+
+set charset = "utf-8"
+set assumed_charset  = "utf-8:iso-2022-jp:euc-jp:shift_jis"
+set mbox_type = "maildir"
+
+set spoolfile        = "+INBOX"
+mailboxes            = "+INBOX" "+Sent"
+set certificate_file = "~/.mutt/certificates"
+set mailcap_path     = "~/.mutt/mailcap"
+auto_view text/html
+set new_mail_command="notify-send --icon='/usr/share/icons/hicolor/48x48/apps/neomutt.png' 'New Email' '%n new messages, %u unread.' &"
+
+set index_format="%4C %Z %<[y?%<[d?%[%H:%M           ]&%[%m/%d (%a) %H:%M]>&%[%Y/%m/%d %H:%M]> %-15.15L (%?l?%4l&%4c?) %s"
+# cache
+set header_cache     = "~/.mutt/cache/headers"
+set message_cachedir = "~/.mutt/cache/bodies"
