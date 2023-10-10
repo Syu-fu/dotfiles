@@ -26,7 +26,7 @@ vim.fn['ddu#custom#patch_global']({
     buffer = {
       matchers = {
         'matcher_fzf',
-        'matcher_ignore_current_buffer',
+        'matcher_ignores',
       },
       converters = {
         'converter_devicon',
@@ -69,7 +69,7 @@ vim.fn['ddu#custom#patch_global']({
   },
   sourceParams = {
     file_external = {
-      cmd = { 'fd', '--type', 'f', '--color', 'never', '--hidden', '--follow', '--exclude', '.git' },
+      cmd = { 'git', 'ls-files', '-co', '--exclude-standard' },
     },
     rg = {
       args = { '--column', '--no-heading', '--color', 'never' },
@@ -135,11 +135,15 @@ vim.fn['ddu#custom#patch_global']({
 })
 vim.fn['ddu#custom#patch_global']({
   filterParams = {
+    matcher_ignores = {
+      ignores = vim.fn.expand('%:p'),
+      actionKey = 'path',
+    },
     matcher_substring = {
-      highlightMatched = 'Search',
+      -- highlightMatched = 'Search',
     },
     matcher_fzf = {
-      highlightMatched = 'Search',
+      -- highlightMatched = 'Search',
     },
     converter_lsp_diagnostic = {
       iconMap = {
