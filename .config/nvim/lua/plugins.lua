@@ -21,6 +21,19 @@ require('lazy').setup({
   { 'nvim-lua/plenary.nvim' },
 
   {
+    'vim-denops/denops.vim',
+    config = function()
+      vim.g.denops_server_addr = '127.0.0.1:32123'
+    end,
+  },
+  {
+    'vim-denops/denops-shared-server.vim',
+    dependencies = {
+      { 'vim-denops/denops.vim' },
+    },
+  },
+
+  {
     'stevearc/dressing.nvim',
     config = function()
       require('pluginconfig/dressing')
@@ -195,7 +208,7 @@ require('lazy').setup({
       { 'Shougo/ddu-filter-matcher_substring' },
       { 'uga-rosa/ddu-filter-converter_devicon' },
       { 'Shougo/ddu-filter-matcher_hidden' },
-      { 'Shougo/ddu-filter-matcher_ignore_current_buffer' },
+      { 'Shougo/ddu-filter-matcher_ignores' },
       { 'matsui54/ddu-source-file_external' },
       { 'Shougo/ddu-source-buffer' },
       { 'Shougo/ddu-source-action' },
