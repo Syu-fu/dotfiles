@@ -12,7 +12,7 @@ alias mv='mv -i'
 alias rm='rm -i'
 
 abbr -S --quieter copypath='pwd | tr -d "\n" | xsel --clipboard --input'
-abbr -S --quieter lock='i3lock -i ~/.config/i3/wallpaper_lock.png && sleep 1'
+abbr -S --quieter lock='i3lock -i ~/Dropbox/wallpaper.jpg && sleep 1'
 abbr -S --quieter myip="ip -4 a show wlp0s20f3 | grep -oP '(?<=inet\s)\d+(\.\d+){3}'"
 
 abbr import-git-aliases -g --prefix --quieter "git "
