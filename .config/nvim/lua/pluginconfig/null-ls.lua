@@ -196,6 +196,11 @@ local sources = {
       return vim.fn.executable('markdownlint') > 0
     end,
   }),
+  null_ls.builtins.formatting.jq.with({
+    condition = function()
+      return vim.fn.executable('jq') > 0
+    end,
+  }),
   null_ls.builtins.diagnostics.textlint.with({
     condition = function()
       return vim.fn.executable('textlint') > 0
