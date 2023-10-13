@@ -286,6 +286,10 @@ require('lazy').setup({
     end,
   },
   {
+    'sindrets/diffview.nvim',
+    cmd = 'DiffviewOpen',
+  },
+  {
     'pwntester/octo.nvim',
     cmd = { 'Octo' },
     init = function()
