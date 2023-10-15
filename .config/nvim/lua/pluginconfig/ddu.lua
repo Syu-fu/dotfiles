@@ -26,7 +26,6 @@ vim.fn['ddu#custom#patch_global']({
     buffer = {
       matchers = {
         'matcher_fzf',
-        'matcher_ignores',
       },
       converters = {
         'converter_devicon',
@@ -135,10 +134,6 @@ vim.fn['ddu#custom#patch_global']({
 })
 vim.fn['ddu#custom#patch_global']({
   filterParams = {
-    matcher_ignores = {
-      ignores = vim.fn.expand('%:p'),
-      actionKey = 'path',
-    },
     matcher_substring = {
       -- highlightMatched = 'Search',
     },
@@ -254,6 +249,7 @@ vim.api.nvim_create_autocmd({ 'FileType' }, {
       vim.fn['ddu#ui#do_action']('openFilterWindow')
     end, { buffer = true })
     vim.keymap.set({ 'n' }, '>', function()
+      vim.cmd([[stopinsert]])
       vim.fn['ddu#ui#do_action']('chooseAction')
     end, { buffer = true })
 
@@ -303,6 +299,7 @@ vim.api.nvim_create_autocmd({ 'FileType' }, {
       vim.fn['ddu#ui#do_action']('itemAction')
     end, { buffer = true })
     vim.keymap.set({ 'n', 'i' }, '>', function()
+      vim.cmd([[stopinsert]])
       vim.fn['ddu#ui#do_action']('chooseAction')
     end, { buffer = true })
 
