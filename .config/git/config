@@ -26,4 +26,7 @@
 [ghq]
   root = "~/Documents/Projects"
 [credential]
-	helper = store
+  helper = store
+[alias]
+  co = checkout
+  sw = switch
