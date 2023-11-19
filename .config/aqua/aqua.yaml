@@ -10,7 +10,7 @@ registries:
 - type: standard
   ref: v4.89.0 # renovate: depName=aquaproj/aqua-registry
 packages:
-- name: junegunn/fzf@0.42.0
+- name: junegunn/fzf@0.44.1
 - name: junegunn/fzf/fzf-tmux@0.42.0
 - name: mattn/memo@v0.0.15
 - name: rossmacarthur/sheldon@0.7.3
