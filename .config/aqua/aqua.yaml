@@ -29,7 +29,7 @@ packages:
 - name: JohnnyMorganz/StyLua@v0.18.2
 - name: LuaLS/lua-language-server@3.7.3
 - name: google/yamlfmt@v0.10.0
-- name: gohugoio/hugo@v0.118.2
+- name: gohugoio/hugo@v0.120.4
 - name: jesseduffield/lazygit@v0.40.2
 - name: high-moctane/mocword@v0.2.0
 - name: golangci/misspell@v0.4.1
