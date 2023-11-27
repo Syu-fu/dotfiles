@@ -34,7 +34,7 @@ packages:
 - name: high-moctane/mocword@v0.2.0
 - name: golangci/misspell@v0.4.1
 - name: jqlang/jq@jq-1.7
-- name: sharkdp/bat@v0.23.0
+- name: sharkdp/bat@v0.24.0
 - name: shellspec/shellspec@0.28.1
 - name: mjibson/sqlfmt@v0.5.0
 - name: mikefarah/yq@v4.35.2
