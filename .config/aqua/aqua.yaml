@@ -41,4 +41,4 @@ packages:
 - name: sharkdp/fd@v8.7.1
 - name: mattn/efm-langserver@v0.0.49
 - name: neovim/neovim@stable
-- name: nektos/act@v0.2.54
+- name: nektos/act@v0.2.55
