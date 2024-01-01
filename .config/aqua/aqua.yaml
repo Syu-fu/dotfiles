@@ -38,7 +38,7 @@ packages:
 - name: shellspec/shellspec@0.28.1
 - name: mjibson/sqlfmt@v0.5.0
 - name: mikefarah/yq@v4.40.5
-- name: sharkdp/fd@v8.7.1
+- name: sharkdp/fd@v9.0.0
 - name: mattn/efm-langserver@v0.0.49
 - name: neovim/neovim@stable
 - name: nektos/act@v0.2.56
