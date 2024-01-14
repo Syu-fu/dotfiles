@@ -1,0 +1,8 @@
+#!/bin/sh
+
+if [ "$*" = "x-usage" ]; then
+	echo push memo from server
+	exit
+fi
+
+cd "$MEMODIR" && git pull origin main --rebase
