@@ -15,7 +15,7 @@ packages:
 - name: mattn/memo@v0.0.15
 - name: rossmacarthur/sheldon@0.7.4
 - name: rhysd/vim-startuptime@v1.3.1
-- name: denoland/deno@v1.39.2
+- name: denoland/deno@v1.39.4
 - name: lsd-rs/lsd@v1.0.0
 - name: x-motemen/ghq@v1.4.2
 - name: golang/tools/goimports@v0.16.1
