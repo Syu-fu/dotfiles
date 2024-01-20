@@ -1,32 +1,43 @@
 [user]
-  email = syu.fu.dev@gmail.com
-  name = Syu fu
+	email = syu.fu.dev@gmail.com
+	name = Syu fu
+	signingkey = 2A848AF41451D60503A0FBDB1A3DD02A712AEDDF
 [core]
-  editor = nvim -c \"set fenc=utf-8\"
-  commentChar = ";"
+	editor = nvim -c \"set fenc=utf-8\"
+	commentChar = ";"
 [diff]
-  tool = nvimdiff
-  algorithm = histogram
+	tool = nvimdiff
+	algorithm = histogram
 [difftool "nvimdiff"]
-  cmd = "nvim -R -d -c \"wincmd l\" -d \"$LOCAL\" \"$REMOTE\""
+	cmd = "nvim -R -d -c \"wincmd l\" -d \"$LOCAL\" \"$REMOTE\""
 [mergetool "nvimdiff"]
-  cmd = "nvim -d -c \"4wincmd w | wincmd J\" \"$LOCAL\" \"$BASE\" \"$REMOTE\"  \"$MERGED\""
+	cmd = "nvim -d -c \"4wincmd w | wincmd J\" \"$LOCAL\" \"$BASE\" \"$REMOTE\"  \"$MERGED\""
 [merge]
-  ff = false
+	ff = false
 [pull]
-  ff = only
-  rebase = false
+	ff = only
+	rebase = false
 [push]
-  useForceIfIncludes = true
+	useForceIfIncludes = true
+	autoSetupRemote = true
 [init]
   defaultBranch = main
 [commit]
-  template = "~/.config/git/.gitmessage"
-  verbose = true
+	template = "~/.config/git/.gitmessage"
+	verbose = true
+	gpgsign = true
 [ghq]
-  root = "~/Documents/Projects"
+	root = "~/Documents/Projects"
 [credential]
-  helper = store
+	helper = store
 [alias]
-  co = checkout
-  sw = switch
+	co = checkout
+	sw = switch
+	cm = commit
+	pl = pull
+	ps = push
+	a = add
+[gpg]
+	program = gpg
+[tag]
+	gpgsign = true
