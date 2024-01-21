@@ -45,7 +45,7 @@ init_neomutt:
 	@mkdir -p ${HOME}/.local/share/neomutt/cache/headers
 	@mkdir -p ${HOME}/.local/share/neomutt/cache/bodies
 
-.PHONY: tmuximum font
+.PHONY: tmuximum font chrome
 tmuximum:
 	@sudo curl -L https://raw.githubusercontent.com/arks22/tmuximum/master/tmuximum -o /usr/local/bin/tmuximum
 	@sudo chmod +x /usr/local/bin/tmuximum
@@ -57,6 +57,9 @@ font:
 	@sudo cp ./HackGen_NF_v2.9.0/HackGenConsoleNF-Bold.ttf /usr/share/fonts/TTF/HackGenConsoleNF-Bold.ttf
 	@sudo cp ./HackGen_NF_v2.9.0/HackGenConsoleNF-Regular.ttf /usr/share/fonts/TTF/HackGenConsoleNF-Regular.ttf
 	rm -rf HackGen_NF_v2.9.0 HackGen_NF_v2.9.0.zip
+
+chrome:
+	@./bin/open-browser.sh chromium ./chrome/extensions.txt
 
 allbackup: backup_pacman backup_yay backup_npm ## Backup all packages
 
