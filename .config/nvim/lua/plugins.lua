@@ -22,21 +22,12 @@ require('lazy').setup({
 
   {
     'vim-denops/denops.vim',
-    config = function()
-      vim.g.denops_server_addr = '127.0.0.1:32123'
-    end,
-  },
-  {
-    'vim-denops/denops-shared-server.vim',
-    dependencies = {
-      { 'vim-denops/denops.vim' },
-    },
   },
 
   {
     'stevearc/dressing.nvim',
     config = function()
-      require('pluginconfig/dressing')
+      --require('pluginconfig/dressing')
     end,
   },
 
@@ -95,7 +86,7 @@ require('lazy').setup({
     'nvimdev/lspsaga.nvim',
     event = 'VeryLazy',
     config = function()
-      require('pluginconfig/lspsaga')
+      --require('pluginconfig/lspsaga')
     end,
   },
   {
@@ -110,13 +101,13 @@ require('lazy').setup({
   -- Auto Completion
   {
     'hrsh7th/nvim-cmp',
-    event = { 'InsertEnter, CmdlineEnter' },
+    event = { 'InsertEnter', 'CmdlineEnter' },
     config = function()
       require('pluginconfig/nvim-cmp')
     end,
     dependencies = {
       { 'L3MON4D3/LuaSnip', event = { 'InsertEnter', 'CmdlineEnter' } },
-      { 'windwp/nvim-autopairs', lazy = true, event = { 'InsertEnter, CmdlineEnter' } },
+      { 'windwp/nvim-autopairs', lazy = true, event = { 'InsertEnter', 'CmdlineEnter' } },
       { 'hrsh7th/cmp-nvim-lsp', module = 'cmp_nvim_lsp', event = { 'InsertEnter' } },
       { 'hrsh7th/cmp-nvim-lsp-signature-help', event = { 'InsertEnter' } },
       { 'hrsh7th/cmp-nvim-lsp-document-symbol', event = { 'InsertEnter', 'CmdlineEnter' } },
@@ -208,7 +199,6 @@ require('lazy').setup({
       { 'Shougo/ddu-filter-matcher_substring' },
       { 'uga-rosa/ddu-filter-converter_devicon' },
       { 'Shougo/ddu-filter-matcher_hidden' },
-      { 'Shougo/ddu-filter-matcher_ignores' },
       { 'matsui54/ddu-source-file_external' },
       { 'Shougo/ddu-source-buffer' },
       { 'Shougo/ddu-source-action' },
@@ -254,7 +244,7 @@ require('lazy').setup({
     'akinsho/bufferline.nvim',
     event = 'VeryLazy',
     config = function()
-      require('pluginconfig/bufferline')
+      --require('pluginconfig/bufferline')
     end,
   },
 
@@ -284,6 +274,14 @@ require('lazy').setup({
     config = function()
       require('pluginconfig/gitsigns')
     end,
+  },
+  {
+    'rhysd/git-messenger.vim',
+    cmd = 'GitMessenger',
+  },
+  {
+    'TimUntersberger/neogit',
+    cmd = 'Neogit',
   },
   {
     'sindrets/diffview.nvim',
@@ -406,5 +404,29 @@ require('lazy').setup({
     config = function()
       require('pluginconfig/statuscol-nvim')
     end,
+  },
+  {
+    'lambdalisue/fern.vim',
+    cmd = 'Fern',
+    init = function()
+      vim.g['fern#renderer'] = 'nerdfont'
+      vim.g['fern#default_hidden'] = 1
+    end,
+    dependencies = {
+      {
+        'lambdalisue/fern-git-status.vim',
+      },
+      {
+        'lambdalisue/fern-renderer-nerdfont.vim',
+        dependencies = {
+          {
+            'lambdalisue/nerdfont.vim',
+          },
+        },
+      },
+    },
+  },
+  {
+    'lambdalisue/fern-hijack.vim',
   },
 })

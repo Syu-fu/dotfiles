@@ -1,7 +1,7 @@
 vim.keymap.set('n', '<Space>b', '<Cmd>Ddu buffer<CR>', { noremap = true, silent = true })
 vim.keymap.set('n', '<Space>p', '<Cmd>Ddu file_external<CR>', { noremap = true, silent = true })
 vim.keymap.set('n', '<Space>a', '<Cmd>Ddu rg<CR>', { noremap = true, silent = true })
-vim.keymap.set('n', '<Space>gs', '<Cmd>DduGitStatus<CR>', { noremap = true, silent = true })
+vim.keymap.set('n', '<Space>gs', '<Cmd>Ddu git_status<CR>', { noremap = true, silent = true })
 vim.keymap.set('n', '<Space>gb', '<Cmd>Ddu git_branch<CR>', { noremap = true, silent = true })
 vim.keymap.set('n', '<Space>gl', '<Cmd>Ddu git_log<CR>', { noremap = true, silent = true })
 vim.keymap.set('n', '<Space>d', '<Cmd>Ddu lsp_diagnostic<CR>', { noremap = true, silent = true })
@@ -105,7 +105,7 @@ vim.fn['ddu#custom#patch_global']({
         floatingCursorLine = 'Visual',
         filterText = 'Statement',
         floating = 'Normal',
-        floatingBorder = 'single',
+        floatingBorder = 'Single',
       },
     },
   },
@@ -177,35 +177,7 @@ vim.fn['ddu#custom#patch_global']({
     },
   },
 })
-local function set_ddu_git_status_keymaps()
-  vim.api.nvim_create_autocmd({ 'FileType' }, {
-    pattern = { 'ddu-ff-filter' },
-    callback = function()
-      vim.keymap.set({ 'n', 'i' }, '<C-a>', function()
-        vim.fn['ddu#ui#do_action']('itemAction', { name = 'add' })
-      end, { buffer = true })
-      vim.keymap.set({ 'n', 'i' }, '<C-r>', function()
-        vim.fn['ddu#ui#do_action']('itemAction', { name = 'reset' })
-      end, { buffer = true })
-    end,
-  })
-  vim.api.nvim_create_autocmd({ 'FileType' }, {
-    pattern = { 'ddu-ff' },
-    callback = function()
-      vim.keymap.set({ 'n', 'i' }, '<C-a>', function()
-        vim.fn['ddu#ui#do_action']('itemAction', { name = 'add' })
-      end, { buffer = true })
-      vim.keymap.set({ 'n', 'i' }, '<C-r>', function()
-        vim.fn['ddu#ui#do_action']('itemAction', { name = 'reset' })
-      end, { buffer = true })
-    end,
-  })
-end
-local function ddu_git_status()
-  vim.cmd('Ddu git_status')
-  set_ddu_git_status_keymaps()
-end
-vim.api.nvim_create_user_command('DduGitStatus', ddu_git_status, {})
+
 local function resize()
   local lines = vim.opt.lines:get()
   local height, row = math.floor(lines * 0.8), math.floor(lines * 0.1)
@@ -238,7 +210,7 @@ vim.api.nvim_create_autocmd({ 'FileType' }, {
     vim.opt_local.cursorline = true
 
     vim.keymap.set({ 'n' }, '<CR>', function()
-      vim.cmd([[stopinsert]])
+      vim.cmd('stopinsert')
       vim.fn['ddu#ui#do_action']('itemAction')
     end, { buffer = true })
     vim.keymap.set({ 'n' }, '<Space>', function()
@@ -249,7 +221,7 @@ vim.api.nvim_create_autocmd({ 'FileType' }, {
       vim.fn['ddu#ui#do_action']('openFilterWindow')
     end, { buffer = true })
     vim.keymap.set({ 'n' }, '>', function()
-      vim.cmd([[stopinsert]])
+      vim.cmd('stopinsert')
       vim.fn['ddu#ui#do_action']('chooseAction')
     end, { buffer = true })
 
@@ -257,11 +229,11 @@ vim.api.nvim_create_autocmd({ 'FileType' }, {
       vim.fn['ddu#ui#do_action']('quit')
     end, { buffer = true })
     vim.keymap.set({ 'n' }, '<Esc><Esc>', function()
-      vim.cmd([[stopinsert]])
+      vim.cmd('stopinsert')
       vim.fn['ddu#ui#do_action']('quit')
     end, { buffer = true })
     vim.keymap.set({ 'n', 'i' }, '<C-c>', function()
-      vim.cmd([[stopinsert]])
+      vim.cmd('stopinsert')
       vim.fn['ddu#ui#do_action']('quit')
     end, { buffer = true })
 
@@ -295,11 +267,11 @@ vim.api.nvim_create_autocmd({ 'FileType' }, {
   pattern = { 'ddu-ff-filter' },
   callback = function()
     vim.keymap.set({ 'n', 'i' }, '<CR>', function()
-      vim.cmd([[stopinsert]])
+      vim.cmd('stopinsert')
       vim.fn['ddu#ui#do_action']('itemAction')
     end, { buffer = true })
     vim.keymap.set({ 'n', 'i' }, '>', function()
-      vim.cmd([[stopinsert]])
+      vim.cmd('stopinsert')
       vim.fn['ddu#ui#do_action']('chooseAction')
     end, { buffer = true })
 
@@ -307,15 +279,15 @@ vim.api.nvim_create_autocmd({ 'FileType' }, {
       vim.fn['ddu#ui#do_action']('quit')
     end, { buffer = true })
     vim.keymap.set({ 'n' }, '<Esc><Esc>', function()
-      vim.cmd([[stopinsert]])
+      vim.cmd('stopinsert')
       vim.fn['ddu#ui#do_action']('quit')
     end, { buffer = true })
     vim.keymap.set({ 'n', 'i' }, '<C-g>', function()
-      vim.cmd([[stopinsert]])
+      vim.cmd('stopinsert')
       vim.fn['ddu#ui#do_action']('quit')
     end, { buffer = true, nowait = true })
     vim.keymap.set({ 'n', 'i' }, '<C-c>', function()
-      vim.cmd([[stopinsert]])
+      vim.cmd('stopinsert')
       vim.fn['ddu#ui#do_action']('quit')
     end, { buffer = true })
 
