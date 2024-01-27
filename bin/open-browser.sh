@@ -15,4 +15,4 @@ fi
 
 while IFS= read -r line; do
 	$BROWSER_COMMAND "$line"
-done < "$URL_FILE"
+done < <(yq eval '.urls.url[].url' "$URL_FILE")

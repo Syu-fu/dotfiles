@@ -1,0 +1,9 @@
+[[urls.url]]
+name = 'React Developer Tools'
+url = 'https://chromewebstore.google.com/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?hl=ja'
+[[urls.url]]
+name = 'Axe DevTools'
+url = 'https://chromewebstore.google.com/detail/axe-devtools-web-accessib/lhdoppojpmngadmnindnejefpokejbdd'
+[[urls.url]]
+name = 'Bitwarden - 無料パスワードマネージャー'
+url = 'https://chromewebstore.google.com/detail/bitwarden-%E7%84%A1%E6%96%99%E3%83%91%E3%82%B9%E3%83%AF%E3%83%BC%E3%83%89%E3%83%9E%E3%83%8D%E3%83%BC%E3%82%B8%E3%83%A3%E3%83%BC/nngceckbapebfimnlniiiahkandclblb?hl=ja'
