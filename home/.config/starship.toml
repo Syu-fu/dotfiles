@@ -1,0 +1,50 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+format = """
+ $os\
+ [](fg:#34BE5B bg:#DA627D)\
+ $directory\
+ [](fg:#DA627D bg:#FCA17D)\
+ $git_branch\
+ $git_status\
+ [](fg:#FCA17D bg:#86BBD8)\
+ [](fg:#86BBD8 bg:#06969A)\
+ $docker_context\
+ [](fg:#06969A bg:#33658A)\
+ $time\
+ [ ](fg:#33658A)
+ $character
+ """
+
+right_format = """
+ $time\
+"""
+
+# Disable the blank line at the start of the prompt
+add_newline = true
+
+# You can also replace your username with a neat symbol like   or disable this
+# and use the os module below
+
+# An alternative to the username module which displays a symbol that
+# represents the current operating system
+[os]
+style = "bg:#34BE5B"
+disabled = false
+symbols = { Manjaro = "   " }
+
+[directory]
+style = "fg:green bg:#DA627D"
+format = '[$path]($style)'
+truncation_length = 10000
+#truncation_symbol = "…/"
+
+
+[time]
+disabled = false
+time_format = "%R"            # Hour:Minute Format
+style = "bg:#33658A"
+format = '[  $time ]($style)'
+
+[character]
+success_symbol = "[❯](bold green)" # コマンド成功時
+error_symbol = "[❯](bold red)"     # コマンド失敗時
