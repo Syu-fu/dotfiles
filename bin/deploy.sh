@@ -4,7 +4,7 @@ set -eu
 
 DOTFILES_DIR=$(cd "$(dirname "$0")"/..; pwd)
 
-while IFS= read -r -d '' f
+while IFS= read -r f
 do
 	if [ -d "$f" ] && [ ! -e "$HOME/${f##"$DOTFILES_DIR"/home/}" ]; then
 		mkdir -p "$HOME/${f##"$DOTFILES_DIR"/home/}"
