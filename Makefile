@@ -9,6 +9,9 @@ init: ## Initial deploy dotfiles
 	test -L ${HOME}/.zshenv || rm -rf ${HOME}/.zshenv
 	ln -vsfn ${PWD}/.zshenv ${HOME}/.zshenv
 
+deploy:
+	@./bin/deploy.sh
+
 backup_pacman: ## Backup pacman packages
 	pacman -Qqe > ${PWD}/packages/pacman_pkglist
 	pacman -Qqem > ${PWD}/packages/aur_pkglist
@@ -59,7 +62,7 @@ font:
 	rm -rf HackGen_NF_v2.9.0 HackGen_NF_v2.9.0.zip
 
 chrome:
-	@./bin/open-browser.sh chromium ./chrome/extensions.txt
+	@./bin/open-browser.sh chromium ./chrome/extensions.toml
 
 allbackup: backup_pacman backup_yay backup_npm ## Backup all packages
 
