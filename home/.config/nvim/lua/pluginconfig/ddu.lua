@@ -49,7 +49,7 @@ vim.fn['ddu#custom#patch_global']({
     -- git
     git_status = {
       matchers = {
-        'matcher_fzf',
+        'matcher_substring',
       },
       converters = {
         'converter_git_status',
@@ -80,7 +80,7 @@ vim.fn['ddu#custom#patch_global']({
   },
   uiParams = {
     ff = {
-      startFilter = true,
+      -- startFilter = true,
       prompt = '> ',
       split = 'floating',
       floatingBorder = 'rounded',
@@ -92,7 +92,6 @@ vim.fn['ddu#custom#patch_global']({
       previewFloating = true,
       previewFloatingBorder = 'rounded',
       previewSplit = 'vertical',
-      previewFloatingTitle = 'Preview',
       previewWindowOptions = {
         { '&signcolumn', 'no' },
         { '&foldcolumn', 0 },
