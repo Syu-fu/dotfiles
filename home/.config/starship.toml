@@ -1,50 +1,119 @@
 "$schema" = 'https://starship.rs/config-schema.json'
 format = """
  $os\
- [](fg:#34BE5B bg:#DA627D)\
+ [](fg:os bg:black2)\
  $directory\
- [](fg:#DA627D bg:#FCA17D)\
+ ${custom.directory_mark_in_git}\
+ ${custom.directory_mark}\
+ ${custom.git_remote_exists}\
  $git_branch\
  $git_status\
- [](fg:#FCA17D bg:#86BBD8)\
- [](fg:#86BBD8 bg:#06969A)\
- $docker_context\
- [](fg:#06969A bg:#33658A)\
- $time\
- [ ](fg:#33658A)
- $character
+ ${custom.git_mark}\
+ $fill\
+ [](fg:magenta)\
+ $cmd_duration\
+ [](fg:white bg:magenta)\
+ $time
+ $character\
  """
 
-right_format = """
- $time\
-"""
 
-# Disable the blank line at the start of the prompt
-add_newline = true
+# Set 'foo' as custom color palette
+palette = 'gruvbox_material_dark'
+
+# Define custom colors
+[palettes.gruvbox_material_dark]
+os = '#34be5b'
+blue = '#7daea3'
+gray = '#504945'
+magenta = '#d3869b'
+black2 = '#3c3837'
+
+[fill]
+symbol = '─'
+style = 'gray'
 
 # You can also replace your username with a neat symbol like   or disable this
 # and use the os module below
 
 # An alternative to the username module which displays a symbol that
 # represents the current operating system
+
 [os]
-style = "bg:#34BE5B"
+style = "bg:os"                # Manjaro Green
+format = "[$symbol]($style)"
 disabled = false
 symbols = { Manjaro = "   " }
 
 [directory]
-style = "fg:green bg:#DA627D"
-format = '[$path]($style)'
-truncation_length = 10000
-#truncation_symbol = "…/"
+style = "fg:green bg:black2"
+format = "[$path]($style)"
+truncate_to_repo = false
+truncation_length = 100
+truncation_symbol = ""
+before_repo_root_style = 'fg:green bg:black2'
+repo_root_style = 'fg:green bold bg:black2'
+repo_root_format = '[ $before_root_path]($before_repo_root_style)[$repo_root]($repo_root_style)[$path ]($style)'
 
+[custom.directory_mark_in_git]
+when = "git status"
+style = 'fg:black2 bg:gray'
+format = '[$symbol]($style)'
+symbol = ''
+
+[custom.directory_mark]
+when = "not git status"
+style = 'fg:black2'
+format = '[$symbol]($style)'
+symbol = ''
+
+[custom.git_remote_exists]
+when = '''test "$(git remote -v | wc -l)" -gt 0'''
+symbol = ' '
+style = 'bg:gray fg:blue'
+format = '[ $symbol]($style)'
+
+[custom.git_remote_none]
+when = '''test "$(git remote -v | wc -l)" -lt 0'''
+symbol = ' '
+style = 'bg:gray fg:blue'
+format = '[ $symbol]($style)'
+
+[git_branch]
+style = "bg:gray fg:blue"
+symbol = ''
+format = '[$remote_branch $symbol $branch]($style)'
+
+[git_status]
+style = "bg:gray fg:blue"
+ahead = '⇡$count'
+behind = '⇣$count'
+diverged = '⇕$count'
+staged = ' +$count'
+untracked = ' !$count'
+format = '[$ahead_behind$staged$untracked ]($style)'
+
+[custom.git_mark]
+when = "git status"
+style = 'fg:gray'
+format = '[$symbol]($style)'
+symbol = ''
+
+[cmd_duration]
+style = "fg:black bg:magenta"
+format = '[ $duration   ]($style)'
+
+[custom.duration_mark]
+style = 'fg:black'
+format = '[$symbol]($style)'
+symbol = ''
 
 [time]
 disabled = false
-time_format = "%R"            # Hour:Minute Format
-style = "bg:#33658A"
-format = '[  $time ]($style)'
+time_format = "%H:%M:%S"
+style = "bg:white fg:black"
+format = '[ $time ]($style)'
 
 [character]
-success_symbol = "[❯](bold green)" # コマンド成功時
-error_symbol = "[❯](bold red)"     # コマンド失敗時
+success_symbol = "[❯](bold green)"
+error_symbol = "[❯](bold red)"

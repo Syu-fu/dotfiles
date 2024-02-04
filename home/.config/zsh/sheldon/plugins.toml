@@ -24,10 +24,9 @@ apply = ["defer"]
 [plugins.zsh-abbr]
 github = "olets/zsh-abbr"
 
-[plugins.powerlevel10k]
-github = "romkatv/powerlevel10k"
-hooks.post = '''
-source $ZDOTDIR/plugrc/p10k.zsh
+[plugins.starship]
+inline = '''
+eval "$(starship init zsh)"
 '''
 
 [plugins.fzf-tab]
@@ -35,7 +34,7 @@ github = "Aloxaf/fzf-tab"
 apply = ["defer"]
 
 [plugins.ripgrep-completion]
-remote = "https://raw.githubusercontent.com/BurntSushi/ripgrep/master/complete/_rg"
+remote = "https://raw.githubusercontent.com/BurntSushi/ripgrep/13.0.0/complete/_rg"
 apply = ["fpath"]
 
 [plugins.ghq-completion]
