@@ -47,7 +47,7 @@ symbols = { Manjaro = "   " }
 
 [directory]
 style = "fg:green bg:black2"
-format = "[$path]($style)"
+format = "[ $path ]($style)"
 truncate_to_repo = false
 truncation_length = 100
 truncation_symbol = ""
