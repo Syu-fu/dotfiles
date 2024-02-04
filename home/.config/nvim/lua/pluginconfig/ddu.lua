@@ -6,6 +6,7 @@ vim.keymap.set('n', '<Space>gb', '<Cmd>Ddu git_branch<CR>', { noremap = true, si
 vim.keymap.set('n', '<Space>gl', '<Cmd>Ddu git_log<CR>', { noremap = true, silent = true })
 vim.keymap.set('n', '<Space>d', '<Cmd>Ddu lsp_diagnostic<CR>', { noremap = true, silent = true })
 vim.keymap.set('n', '<Space>h', '<Cmd>Ddu help<CR>', { noremap = true, silent = true })
+
 vim.fn['ddu#custom#patch_global']({
   ui = 'ff',
   sourceOptions = {
@@ -19,6 +20,9 @@ vim.fn['ddu#custom#patch_global']({
       matchers = {
         'matcher_fzf',
       },
+      sorters = {
+        'sorter_fzf',
+      },
       converters = {
         'converter_devicon',
       },
@@ -26,6 +30,9 @@ vim.fn['ddu#custom#patch_global']({
     buffer = {
       matchers = {
         'matcher_fzf',
+      },
+      sorters = {
+        'sorter_fzf',
       },
       converters = {
         'converter_devicon',
@@ -39,6 +46,9 @@ vim.fn['ddu#custom#patch_global']({
       matchers = {
         'matcher_fzf',
       },
+      sorters = {
+        'sorter_fzf',
+      },
     },
     -- lsp
     lsp_diagnostic = {
@@ -46,10 +56,23 @@ vim.fn['ddu#custom#patch_global']({
         'converter_lsp_diagnostic',
       },
     },
+    lsp_documentSymbol = {
+      converters = {
+        'converter_lsp_symbol',
+      },
+    },
+    lsp_workspaceSymbol = {
+      converters = {
+        'converter_lsp_symbol',
+      },
+    },
     -- git
     git_status = {
       matchers = {
-        'matcher_substring',
+        'matcher_fzf',
+      },
+      sorters = {
+        'sorter_fzf',
       },
       converters = {
         'converter_git_status',
@@ -124,55 +147,66 @@ vim.fn['ddu#custom#patch_global']({
     git_branch = {
       defaultAction = 'switch',
     },
+    lsp = {
+      defaultAction = 'open',
+    },
+    lsp_codeAction = {
+      defaultAction = 'apply',
+    },
   },
   kindParams = {
     action = {
       quit = true,
     },
   },
-})
-vim.fn['ddu#custom#patch_global']({
   filterParams = {
     matcher_substring = {
-      -- highlightMatched = 'Search',
+      highlightMatched = 'GreenBold',
     },
     matcher_fzf = {
-      -- highlightMatched = 'Search',
+      highlightMatched = 'GreenBold',
     },
     converter_lsp_diagnostic = {
       iconMap = {
         Error = '',
-        Warn = ' ',
+        Warning = '',
         Hint = '',
-        Info = ' ',
+        Info = '',
+      },
+      hlGroupMap = {
+        Error = 'ErrorMsg',
+        Warning = 'WarningMsg',
+        Hint = 'HintFloat',
       },
     },
     converter_lsp_documentSymbol = {
-      Text = '󰉿',
-      Method = '󰆧',
-      Function = '󰊕',
-      Constructor = '',
-      Field = '󰜢',
-      Variable = '󰀫',
-      Class = '󰠱',
-      Interface = '',
-      Module = '',
-      Property = '󱈢',
-      Unit = '󰑭',
-      Value = '󰎠',
-      Enum = '',
-      Keyword = '󰌋',
-      Snippet = '',
-      Color = '󰏘',
-      File = '󰈙',
-      Reference = '󰈇',
-      Folder = '󰉋',
-      EnumMember = '',
-      Constant = '󰏿',
-      Struct = '󰙅',
-      Event = '',
-      Operator = '󰆕',
-      TypeParameter = '',
+      iconMap = {
+        Text = '󰉿',
+        Method = '󰆧',
+        Function = '󰊕',
+        Constructor = '',
+        Field = '󰜢',
+        Variable = '󰀫',
+        Class = '󰠱',
+        Interface = '',
+        Module = '',
+        Property = '󱈢',
+        Unit = '󰑭',
+        Value = '󰎠',
+        Enum = '',
+        Keyword = '󰌋',
+        Snippet = '',
+        Color = '󰏘',
+        File = '󰈙',
+        Reference = '󰈇',
+        Folder = '󰉋',
+        EnumMember = '',
+        Constant = '󰏿',
+        Struct = '󰙅',
+        Event = '',
+        Operator = '󰆕',
+        TypeParameter = '',
+      },
     },
   },
 })
