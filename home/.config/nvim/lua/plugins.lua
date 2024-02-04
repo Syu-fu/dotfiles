@@ -99,41 +99,65 @@ require('lazy').setup({
   },
 
   -- Auto Completion
+  --{
+  --  'hrsh7th/nvim-cmp',
+  --  event = { 'InsertEnter', 'CmdlineEnter' },
+  --  config = function()
+  --    require('pluginconfig/nvim-cmp')
+  --  end,
+  --  dependencies = {
+  --    { 'L3MON4D3/LuaSnip', event = { 'InsertEnter', 'CmdlineEnter' } },
+  --    { 'windwp/nvim-autopairs', lazy = true, event = { 'InsertEnter', 'CmdlineEnter' } },
+  --    { 'hrsh7th/cmp-nvim-lsp', event = { 'InsertEnter' } },
+  --    { 'hrsh7th/cmp-nvim-lsp-signature-help', event = { 'InsertEnter' } },
+  --    { 'hrsh7th/cmp-nvim-lsp-document-symbol', event = { 'InsertEnter', 'CmdlineEnter' } },
+  --    { 'hrsh7th/cmp-emoji', after = 'nvim-cmp', event = { 'InsertEnter' } },
+  --    { 'hrsh7th/cmp-buffer', after = 'nvim-cmp', event = { 'InsertEnter', 'CmdlineEnter' } },
+  --    { 'hrsh7th/cmp-path', after = 'nvim-cmp', event = { 'InsertEnter', 'CmdlineEnter' } },
+  --    { 'hrsh7th/cmp-nvim-lua', after = 'nvim-cmp', event = { 'InsertEnter' } },
+  --    { 'uga-rosa/cmp-dictionary', after = 'nvim-cmp', event = { 'InsertEnter' } },
+  --    { 'saadparwaiz1/cmp_luasnip', after = 'nvim-cmp', event = { 'InsertEnter' } },
+  --    { 'petertriho/cmp-git', after = 'nvim-cmp', ft = { 'gitcommit' } },
+  --    {
+  --      'zbirenbaum/copilot-cmp',
+  --      config = true,
+  --    },
+  --    {
+  --      'onsails/lspkind-nvim',
+  --      event = { 'InsertEnter', 'CmdlineEnter' },
+  --      config = function()
+  --        require('pluginconfig/lspkind-nvim')
+  --      end,
+  --    },
+  --  },
+  --},
   {
-    'hrsh7th/nvim-cmp',
-    event = { 'InsertEnter', 'CmdlineEnter' },
+    'Shougo/ddc.vim',
     config = function()
-      require('pluginconfig/nvim-cmp')
+      require('pluginconfig/ddc')
     end,
     dependencies = {
-      { 'L3MON4D3/LuaSnip', event = { 'InsertEnter', 'CmdlineEnter' } },
-      { 'windwp/nvim-autopairs', lazy = true, event = { 'InsertEnter', 'CmdlineEnter' } },
-      { 'hrsh7th/cmp-nvim-lsp', module = 'cmp_nvim_lsp', event = { 'InsertEnter' } },
-      { 'hrsh7th/cmp-nvim-lsp-signature-help', event = { 'InsertEnter' } },
-      { 'hrsh7th/cmp-nvim-lsp-document-symbol', event = { 'InsertEnter', 'CmdlineEnter' } },
-      { 'hrsh7th/cmp-emoji', after = 'nvim-cmp', event = { 'InsertEnter' } },
-      { 'hrsh7th/cmp-buffer', after = 'nvim-cmp', event = { 'InsertEnter', 'CmdlineEnter' } },
-      { 'hrsh7th/cmp-path', after = 'nvim-cmp', event = { 'InsertEnter', 'CmdlineEnter' } },
-      { 'hrsh7th/cmp-nvim-lua', after = 'nvim-cmp', event = { 'InsertEnter' } },
-      { 'uga-rosa/cmp-dictionary', after = 'nvim-cmp', event = { 'InsertEnter' } },
-      { 'saadparwaiz1/cmp_luasnip', after = 'nvim-cmp', event = { 'InsertEnter' } },
-      { 'petertriho/cmp-git', after = 'nvim-cmp', ft = { 'gitcommit' } },
+      { 'vim-denops/denops.vim' },
+      { 'matsui54/denops-popup-preview.vim' },
+      { 'hrsh7th/vim-vsnip' },
+      { 'Shougo/ddc-source-lsp' },
       {
-        'zbirenbaum/copilot-cmp',
-        config = true,
+        'uga-rosa/ddc-source-lsp-setup',
       },
-      {
-        'onsails/lspkind-nvim',
-        event = { 'InsertEnter', 'CmdlineEnter' },
-        config = function()
-          require('pluginconfig/lspkind-nvim')
-        end,
-      },
+
+      { 'Shougo/ddc-buffer' },
+      { 'Shougo/ddc-path' },
+      --{ 'Shougo/ddc-nvim-lua', event = { 'InsertEnter' } },
+      { 'uga-rosa/ddc-source-dictionary' },
+      { 'Shougo/ddc-filter-sorter_rank' },
+      { 'tani/ddc-fuzzy', event = { 'InsertEnter' } },
+      { 'Shougo/pum.vim', event = { 'InsertEnter', 'CmdlineEnter' } },
+      { 'Shougo/ddc-ui-pum', event = { 'InsertEnter', 'CmdlineEnter' } },
     },
   },
 
-  { 'hrsh7th/cmp-cmdline', event = 'CmdlineEnter' },
-  { 'dmitmel/cmp-cmdline-history', event = 'CmdlineEnter' },
+  -- { 'hrsh7th/cmp-cmdline', event = 'CmdlineEnter' },
+  --{ 'dmitmel/cmp-cmdline-history', event = 'CmdlineEnter' },
   {
     'zbirenbaum/copilot.lua',
     event = { 'InsertEnter', 'CmdlineEnter' },
@@ -282,6 +306,9 @@ require('lazy').setup({
   {
     'TimUntersberger/neogit',
     cmd = 'Neogit',
+    config = function()
+      require('neogit').setup()
+    end,
   },
   {
     'sindrets/diffview.nvim',
@@ -341,7 +368,6 @@ require('lazy').setup({
   {
     'folke/neodev.nvim',
     event = 'InsertEnter',
-    module = 'neodev',
   },
 
   --Test
