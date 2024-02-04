@@ -31,3 +31,11 @@ function github-new() {
 
 	echo "$1 was successfully created and cloned"
 }
+
+function mkf() {
+	mkdir -p "$(dirname "$1")" && touch "$1"
+}
+
+function mksc() {
+	mkf "$1" && chmod +x "$1"
+}
