@@ -89,9 +89,10 @@ style = "bg:gray fg:blue"
 ahead = '⇡$count'
 behind = '⇣$count'
 diverged = '⇕$count'
-staged = ' +$count'
-untracked = ' !$count'
-format = '[$ahead_behind$staged$untracked ]($style)'
+modified = ' +$count'
+staged = ' !$count'
+untracked = ' ?$count'
+format = '[$modified$untracked$staged$ahead_behind ]($style)'
 
 [custom.git_mark]
 when = "git status"
