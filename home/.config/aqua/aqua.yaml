@@ -43,3 +43,4 @@ packages:
 - name: neovim/neovim@v0.9.5
 - name: nektos/act@v0.2.57
 - name: starship/starship@v1.17.1
+- name: suzuki-shunsuke/pinact@v0.1.2
