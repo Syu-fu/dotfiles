@@ -1,97 +1,5 @@
 local null_ls = require('null-ls')
 
--- https://zenn.dev/kawarimidoll/articles/2e99432d27eda3
--- $XDG_CONFIG_HOME/cspell
-local cspell_config_dir = '~/.config/cspell'
--- $XDG_DATA_HOME/cspell
-local cspell_data_dir = '~/.local/share/cspell'
-local cspell_share_dir = '~/Dropbox/dev/cspell'
-local cspell_files = {
-  config = vim.call('expand', cspell_config_dir .. '/cspell.json'),
-  dotfiles = vim.call('expand', cspell_share_dir .. '/dotfiles.txt'),
-  vim = vim.call('expand', cspell_data_dir .. '/vim.txt.gz'),
-  user = vim.call('expand', cspell_share_dir .. '/user.txt'),
-}
---- vim辞書がなければダウンロード
-if vim.fn.filereadable(cspell_files.vim) ~= 1 then
-  local vim_dictionary_url = 'https://github.com/iamcco/coc-spell-checker/raw/master/dicts/vim/vim.txt.gz'
-  io.popen('curl -fsSLo ' .. cspell_files.vim .. ' --create-dirs ' .. vim_dictionary_url)
-end
-
--- ユーザー辞書がなければ作成
-if vim.fn.filereadable(cspell_files.user) ~= 1 then
-  io.popen('mkdir -p ' .. cspell_data_dir)
-  io.popen('touch ' .. cspell_files.user)
-end
-
--- cspellにwordを追加
-local cspell_append = function(opts)
-  local word = opts.args
-  if not word or word == '' then
-    -- 引数がなければcwordを取得
-    word = vim.call('expand', '<cword>'):lower()
-  end
-
-  -- bangの有無で保存先を分岐
-  local dictionary_name = opts.bang and 'dotfiles' or 'user'
-
-  -- shellのechoコマンドで辞書ファイルに追記
-  io.popen('echo ' .. word .. ' >> ' .. cspell_files[dictionary_name])
-
-  -- 追加した単語および辞書を表示
-  vim.notify('"' .. word .. '" is appended to ' .. dictionary_name .. ' dictionary.', vim.log.levels.INFO, {})
-
-  -- cspellをリロードするため、現在行を更新してすぐ戻す
-  if vim.api.nvim_get_option_value('modifiable', {}) then
-    vim.api.nvim_set_current_line(vim.api.nvim_get_current_line())
-    vim.api.nvim_command('silent! undo')
-  end
-end
-
-vim.api.nvim_create_user_command('CSpellAppend', cspell_append, { nargs = '?', bang = true })
-
-local cspell_custom_actions = {
-  name = 'cspell-dictionary',
-  method = null_ls.methods.CODE_ACTION,
-  filetypes = {},
-  generator = {
-    fn = function(_)
-      local lnum = vim.fn.getcurpos()[2] - 1
-      local col = vim.fn.getcurpos()[3]
-      local diagnostics = vim.diagnostic.get(0, { lnum = lnum })
-
-      local word = ''
-      local regex = '^%[%] Unknown word %((%w+)%) %(cspell%)'
-      for _, v in pairs(diagnostics) do
-        if v.source == 'cspell' and v.col < col and col <= v.end_col and string.match(v.message, regex) then
-          word = string.gsub(v.message, regex, '%1'):lower()
-          break
-        end
-      end
-
-      if word == '' then
-        return
-      end
-
-      return {
-        {
-          title = 'Append "' .. word .. '" to user dictionary',
-          action = function()
-            cspell_append({ args = word })
-          end,
-        },
-        {
-          title = 'Append "' .. word .. '" to dotfiles dictionary',
-          action = function()
-            cspell_append({ args = word, bang = true })
-          end,
-        },
-      }
-    end,
-  },
-}
-null_ls.register(cspell_custom_actions)
-
 local ignored_filetypes = {
   'TelescopePrompt',
   'diff',
@@ -176,20 +84,6 @@ local sources = {
     condition = function()
       return vim.fn.executable('shellcheck') > 0
     end,
-  }),
-  null_ls.builtins.diagnostics.cspell.with({
-    diagnostics_postprocess = function(diagnostic)
-      diagnostic.severity = vim.diagnostic.severity['WARN']
-      local formatted = '[#{c}] #{m} (#{s})'
-      formatted = formatted:gsub('#{m}', diagnostic.message)
-      formatted = formatted:gsub('#{s}', diagnostic.source)
-      formatted = formatted:gsub('#{c}', diagnostic.code or '')
-      diagnostic.message = formatted
-    end,
-    condition = function()
-      return vim.fn.executable('cspell') > 0
-    end,
-    extra_args = { '--config', cspell_files.config },
   }),
   null_ls.builtins.formatting.markdownlint.with({
     condition = function()
