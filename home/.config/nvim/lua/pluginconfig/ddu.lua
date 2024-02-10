@@ -177,6 +177,7 @@ vim.fn['ddu#custom#patch_global']({
         Error = 'ErrorMsg',
         Warning = 'WarningMsg',
         Hint = 'HintFloat',
+        Info = 'InfoFloat',
       },
     },
     converter_lsp_documentSymbol = {
