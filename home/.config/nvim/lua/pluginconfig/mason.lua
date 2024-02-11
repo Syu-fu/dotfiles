@@ -10,8 +10,6 @@ require('mason').setup({
 
 local packages = {
   'actionlint',
-  'beautysh',
-  'cspell',
   'docker-compose-language-service',
   'dockerfile-language-server',
   'eslint-lsp',
@@ -31,6 +29,7 @@ local packages = {
   'stylelint-lsp',
   'stylua',
   'taplo',
+  'typos-lsp',
   'vim-language-server',
   'vint',
   'vtsls',
