@@ -1,8 +1,13 @@
 # emacsmode
 bindkey -e
 
+setopt APPEND_HISTORY
 setopt INC_APPEND_HISTORY
+setopt HIST_IGNORE_DUPS
 setopt HIST_IGNORE_ALL_DUPS
+setopt HIST_NO_STORE
+setopt HIST_REDUCE_BLANKS
+setopt SHARE_HISTORY
 
 autoload -Uz add-zsh-hook
 autoload -Uz ignore-history-hook
@@ -11,7 +16,6 @@ autoload -Uz ignore-history-hook
 if [ -z $TMUX ]; then
 	tmux
 fi
-
 
 ## plugin manager ##
 function source {
@@ -33,7 +37,7 @@ sheldon_cache="$cache_dir/sheldon.zsh"
 sheldon_toml="$ZDOTDIR/sheldon/plugins.toml"
 if [[ ! -r "$sheldon_cache" || "$sheldon_toml" -nt "$sheldon_cache" ]]; then
 	mkdir -p $cache_dir
-	sheldon source > $sheldon_cache
+	sheldon source >$sheldon_cache
 fi
 source "$sheldon_cache"
 unset cache_dir sheldon_cache sheldon_toml
