@@ -99,38 +99,6 @@ require('lazy').setup({
   },
 
   -- Auto Completion
-  --{
-  --  'hrsh7th/nvim-cmp',
-  --  event = { 'InsertEnter', 'CmdlineEnter' },
-  --  config = function()
-  --    require('pluginconfig/nvim-cmp')
-  --  end,
-  --  dependencies = {
-  --    { 'L3MON4D3/LuaSnip', event = { 'InsertEnter', 'CmdlineEnter' } },
-  --    { 'windwp/nvim-autopairs', lazy = true, event = { 'InsertEnter', 'CmdlineEnter' } },
-  --    { 'hrsh7th/cmp-nvim-lsp', event = { 'InsertEnter' } },
-  --    { 'hrsh7th/cmp-nvim-lsp-signature-help', event = { 'InsertEnter' } },
-  --    { 'hrsh7th/cmp-nvim-lsp-document-symbol', event = { 'InsertEnter', 'CmdlineEnter' } },
-  --    { 'hrsh7th/cmp-emoji', after = 'nvim-cmp', event = { 'InsertEnter' } },
-  --    { 'hrsh7th/cmp-buffer', after = 'nvim-cmp', event = { 'InsertEnter', 'CmdlineEnter' } },
-  --    { 'hrsh7th/cmp-path', after = 'nvim-cmp', event = { 'InsertEnter', 'CmdlineEnter' } },
-  --    { 'hrsh7th/cmp-nvim-lua', after = 'nvim-cmp', event = { 'InsertEnter' } },
-  --    { 'uga-rosa/cmp-dictionary', after = 'nvim-cmp', event = { 'InsertEnter' } },
-  --    { 'saadparwaiz1/cmp_luasnip', after = 'nvim-cmp', event = { 'InsertEnter' } },
-  --    { 'petertriho/cmp-git', after = 'nvim-cmp', ft = { 'gitcommit' } },
-  --    {
-  --      'zbirenbaum/copilot-cmp',
-  --      config = true,
-  --    },
-  --    {
-  --      'onsails/lspkind-nvim',
-  --      event = { 'InsertEnter', 'CmdlineEnter' },
-  --      config = function()
-  --        require('pluginconfig/lspkind-nvim')
-  --      end,
-  --    },
-  --  },
-  --},
   {
     'Shougo/ddc.vim',
     config = function()
@@ -140,24 +108,22 @@ require('lazy').setup({
       { 'vim-denops/denops.vim' },
       { 'matsui54/denops-popup-preview.vim' },
       { 'hrsh7th/vim-vsnip' },
+      { 'uga-rosa/ddc-source-vsnip' },
       { 'Shougo/ddc-source-lsp' },
-      {
-        'uga-rosa/ddc-source-lsp-setup',
-      },
-
       { 'Shougo/ddc-buffer' },
-      { 'Shougo/ddc-path' },
-      --{ 'Shougo/ddc-nvim-lua', event = { 'InsertEnter' } },
+      { 'Shougo/ddc-source-around' },
+      { 'tani/ddc-path' },
+      { 'Shougo/ddc-line' },
       { 'uga-rosa/ddc-source-dictionary' },
-      { 'Shougo/ddc-filter-sorter_rank' },
+      { 'Shougo/ddc-source-cmdline', event = { 'CmdlineEnter' } },
+      { 'Shougo/ddc-source-cmdline-history', event = { 'CmdlineEnter' } },
+      { 'tani/ddc-git' },
+      { '4513ECHO/ddc-github' },
       { 'tani/ddc-fuzzy', event = { 'InsertEnter' } },
       { 'Shougo/pum.vim', event = { 'InsertEnter', 'CmdlineEnter' } },
       { 'Shougo/ddc-ui-pum', event = { 'InsertEnter', 'CmdlineEnter' } },
     },
   },
-
-  -- { 'hrsh7th/cmp-cmdline', event = 'CmdlineEnter' },
-  --{ 'dmitmel/cmp-cmdline-history', event = 'CmdlineEnter' },
   {
     'zbirenbaum/copilot.lua',
     event = { 'InsertEnter', 'CmdlineEnter' },
