@@ -41,6 +41,6 @@ packages:
 - name: sharkdp/fd@v9.0.0
 - name: mattn/efm-langserver@v0.0.49
 - name: neovim/neovim@v0.9.5
-- name: nektos/act@v0.2.57
+- name: nektos/act@v0.2.59
 - name: starship/starship@v1.17.1
 - name: suzuki-shunsuke/pinact@v0.1.2
