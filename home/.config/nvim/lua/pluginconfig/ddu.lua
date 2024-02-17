@@ -1,7 +1,7 @@
 vim.keymap.set('n', '<Space>b', '<Cmd>Ddu buffer<CR>', { noremap = true, silent = true })
 vim.keymap.set('n', '<Space>p', '<Cmd>Ddu file_external<CR>', { noremap = true, silent = true })
 vim.keymap.set('n', '<Space>a', '<Cmd>Ddu rg<CR>', { noremap = true, silent = true })
-vim.keymap.set('n', '<Space>gs', '<Cmd>Ddu git_status<CR>', { noremap = true, silent = true })
+-- vim.keymap.set('n', '<Space>gs', '<Cmd>Ddu git_status<CR>', { noremap = true, silent = true })
 vim.keymap.set('n', '<Space>gb', '<Cmd>Ddu git_branch<CR>', { noremap = true, silent = true })
 vim.keymap.set('n', '<Space>gl', '<Cmd>Ddu git_log<CR>', { noremap = true, silent = true })
 vim.keymap.set('n', '<Space>d', '<Cmd>Ddu lsp_diagnostic<CR>', { noremap = true, silent = true })

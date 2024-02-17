@@ -230,34 +230,8 @@ require('lazy').setup({
       require('pluginconfig/lualine')
     end,
   },
-  {
-    'akinsho/bufferline.nvim',
-    event = 'VeryLazy',
-    config = function()
-      --require('pluginconfig/bufferline')
-    end,
-  },
 
   -- Git
-  --{
-  --  'dinhhuy258/git.nvim',
-  --  cmd = 'Git',
-  --  config = function()
-  --    require('pluginconfig/git')
-  --  end,
-  --},
-  {
-    'lambdalisue/gin.vim',
-    cmd = 'Gin',
-    lazy = false,
-    dependencies = {
-      { 'vim-denops/denops.vim' },
-    },
-  },
-  {
-    'tpope/vim-fugitive',
-    cmd = 'Git',
-  },
   {
     'lewis6991/gitsigns.nvim',
     event = 'BufReadPre',
@@ -272,13 +246,18 @@ require('lazy').setup({
   {
     'TimUntersberger/neogit',
     cmd = 'Neogit',
-    config = function()
-      require('neogit').setup()
+    init = function()
+      require('pluginconfig/keymap/neogit')
     end,
-  },
-  {
-    'sindrets/diffview.nvim',
-    cmd = 'DiffviewOpen',
+    config = function()
+      require('pluginconfig/neogit')
+    end,
+    dependencies = {
+      {
+        'sindrets/diffview.nvim',
+        cmd = 'DiffviewOpen',
+      },
+    },
   },
   {
     'pwntester/octo.nvim',
@@ -420,5 +399,9 @@ require('lazy').setup({
   },
   {
     'lambdalisue/fern-hijack.vim',
+  },
+  {
+    'stevearc/oil.nvim',
+    dependencies = { 'nvim-tree/nvim-web-devicons' },
   },
 })

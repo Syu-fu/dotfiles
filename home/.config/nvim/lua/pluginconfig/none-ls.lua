@@ -41,7 +41,6 @@ vim.api.nvim_create_autocmd({ 'FileType' }, {
 })
 
 local sources = {
-  -- LuaFormatter off
   null_ls.builtins.formatting.trim_whitespace.with({
     disabled_filetypes = ignored_filetypes,
     runtime_condition = function()
@@ -61,11 +60,14 @@ local sources = {
       return vim.fn.executable('prettier') > 0 or vim.fn.executable('./node_modules/.bin/prettier') > 0
     end,
   }),
-  null_ls.builtins.diagnostics.eslint.with({
-    condition = function()
-      vim.o.fixendofline = true -- Error: [prettier/prettier] Insert `⏎`
-      return vim.fn.executable('eslint') > 0 or vim.fn.executable('./node_modules/.bin/eslint') > 0
-    end,
+  -- null_ls.builtins.diagnostics.eslint.with({
+  --   condition = function()
+  --     vim.o.fixendofline = true -- Error: [prettier/prettier] Insert `⏎`
+  --     return vim.fn.executable('eslint') > 0 or vim.fn.executable('./node_modules/.bin/eslint') > 0
+  --   end,
+  -- }),
+  null_ls.builtins.diagnostics.stylelint.with({
+    filetypes = { 'css', 'scss', 'sass', 'less' },
   }),
   null_ls.builtins.formatting.stylelint.with({
     condition = function()
@@ -74,11 +76,12 @@ local sources = {
     filetypes = { 'css', 'scss', 'sass', 'less' },
   }),
   null_ls.builtins.diagnostics.zsh,
-  null_ls.builtins.formatting.beautysh.with({
-    extra_args = { '-t' },
+  null_ls.builtins.formatting.shfmt.with({
+    -- extra_args = { '-t' },
     condition = function()
-      return vim.fn.executable('beautysh') > 0
+      return vim.fn.executable('shfmt') > 0
     end,
+    filetypes = { 'sh', 'bash', 'zsh' },
   }),
   null_ls.builtins.diagnostics.shellcheck.with({
     condition = function()
@@ -101,6 +104,7 @@ local sources = {
     end,
     filetypes = { 'markdown' },
   }),
+  null_ls.builtins.diagnostics.actionlint,
   --require('typescript.extensions.null-ls.code-actions'),
 }
 

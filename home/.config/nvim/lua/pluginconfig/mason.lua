@@ -26,7 +26,7 @@ local packages = {
   'python-lsp-server',
   'shellcheck',
   'shfmt',
-  'stylelint-lsp',
+  --'stylelint-lsp',
   'stylua',
   'taplo',
   'typos-lsp',

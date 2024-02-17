@@ -4,12 +4,12 @@ vim.keymap.set('n', '<Space>h', '<Cmd>Telescope help_tags<CR>', { noremap = true
 vim.keymap.set('n', '<Space>a', '<Cmd>Telescope live_grep<CR>', { noremap = true, silent = true })
 vim.keymap.set('n', '<Space>d', '<Cmd>Telescope diagnostics<CR>', { noremap = true, silent = true })
 -- git
-vim.keymap.set(
-  'n',
-  '<Space>gs',
-  "<Cmd>lua require('telescope.builtin').git_status()<CR>",
-  { noremap = true, silent = true }
-)
+--vim.keymap.set(
+--  'n',
+--  '<Space>gs',
+--  "<Cmd>lua require('telescope.builtin').git_status()<CR>",
+--  { noremap = true, silent = true }
+--)
 vim.keymap.set(
   'n',
   '<Space>gl',
