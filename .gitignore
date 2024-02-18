@@ -4,3 +4,4 @@
 !/.config/zsh/completions/.gitkeep
 .config/zsh/plugrc/abbreviations.zsh
 .zcomp*
+lazy-lock.json

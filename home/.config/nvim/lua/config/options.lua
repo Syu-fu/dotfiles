@@ -1,0 +1,24 @@
+vim.opt.number = true
+vim.opt.laststatus = 3
+vim.opt.showtabline = 0
+vim.opt.termguicolors = true
+vim.opt.fileencodings = 'utf-8'
+vim.opt.clipboard:append({ 'unnamedplus' })
+vim.opt.signcolumn = 'yes'
+vim.opt.syntax = 'enable'
+vim.opt.background = 'dark'
+vim.opt.hidden = true
+vim.opt.showcmd = true
+vim.opt.smartindent = true
+vim.opt.expandtab = true
+vim.opt.tabstop = 4
+vim.opt.shiftwidth = 4
+vim.opt.list = true
+vim.opt.listchars = 'tab:▸-'
+vim.opt.backup = false
+vim.opt.swapfile = false
+vim.g.loaded_python3_provider = 0
+vim.g.loaded_perl_provider = 0
+vim.g.loaded_ruby_provider = 0
+vim.g.loaded_node_provider = 0
+vim.cmd.colorscheme('gruvbox-material')
