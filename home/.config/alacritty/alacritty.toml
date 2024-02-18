@@ -1,0 +1,148 @@
+live_config_reload = true
+winpty_backend = false
+working_directory = "None"
+
+[bell]
+animation = "EaseOutExpo"
+color = "0xffffff"
+duration = 0
+
+[colors]
+draw_bold_text_with_bright_colors = true
+
+[colors.bright]
+black = "0x928374"
+blue = "0x7daea3"
+cyan = "0x89b482"
+green = "0xa9b665"
+magenta = "0xd3869b"
+red = "0xea6962"
+white = "0xdfbf8e"
+yellow = "0xe3a84e"
+
+[colors.normal]
+black = "0x665c54"
+blue = "0x7daea3"
+cyan = "0x89b482"
+green = "0xa9b665"
+magenta = "0xd3869b"
+red = "0xea6962"
+white = "0xdfbf8e"
+yellow = "0xe78a4e"
+
+[colors.primary]
+background = "0x282828"
+foreground = "0xdfbf8e"
+
+[cursor]
+blinking = "Off"
+style = "Block"
+unfocused_hollow = true
+
+[debug]
+log_level = "Warn"
+persistent_logging = false
+print_events = false
+render_timer = false
+
+[env]
+TERM = "xterm-256color"
+WINIT_X11_SCALE_FACTOR = "1.0"
+
+[font]
+size = 14.0
+
+[font.bold]
+family = "HackGenConsoleNF"
+style = "bold"
+
+[font.bold_italic]
+family = "HackGenConsoleNF"
+style = "italic-bold"
+
+[font.glyph_offset]
+x = 0
+y = 0
+
+[font.italic]
+family = "HackGenConsoleNF"
+style = "italic"
+
+[font.normal]
+family = "HackGenConsoleNF"
+style = "Regular"
+
+[font.offset]
+x = 0
+y = 0
+
+[[keyboard.bindings]]
+action = "Paste"
+key = "V"
+mods = "Control|Shift"
+
+[[keyboard.bindings]]
+action = "Copy"
+key = "C"
+mods = "Control|Shift"
+
+[[keyboard.bindings]]
+action = "Paste"
+key = "V"
+mods = "Control|Alt"
+
+[[keyboard.bindings]]
+action = "Copy"
+key = "C"
+mods = "Control|Alt"
+
+[[keyboard.bindings]]
+chars = "\u001B[110;6u"
+key = "N"
+mods = "Control|Shift"
+
+[[keyboard.bindings]]
+chars = "\u001B[112;6u"
+key = "P"
+mods = "Control|Shift"
+
+[[keyboard.bindings]]
+chars = "\u001B[98;6u"
+key = "B"
+mods = "Control|Shift"
+
+[mouse]
+hide_when_typing = false
+
+[[mouse.bindings]]
+action = "PasteSelection"
+mouse = "Middle"
+
+[mouse.double_click]
+threshold = 300
+
+[mouse.triple_click]
+threshold = 300
+
+[scrolling]
+history = 10000
+multiplier = 3
+
+[selection]
+save_to_clipboard = false
+semantic_escape_chars = ",│`|:\"' ()[]{}<>="
+
+[window]
+"Values for `startup_mode`" = ["Fullscreen"]
+decorations = "none"
+dynamic_padding = false
+dynamic_title = true
+startup_mode = "Windowed"
+
+[window.dimensions]
+columns = 0
+lines = 0
+
+[window.padding]
+x = 0
+y = 0
