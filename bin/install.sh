@@ -1,9 +1,17 @@
 #!/bin/bash
 
+# if macos homebrew install
+if [ "$(uname)" == 'Darwin' ]; then
+	/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+fi
+echo -e "\e[32mSuccess install homebrew!\e[0m"
+
+brew install git
+
 # clone dotfiles
-if command -v "git" &> /dev/null; then
+if command -v "git" &>/dev/null; then
 	git clone https://github.com/Syu-fu/dotfiles.git "$HOME"/src/github.com/Syu-fu/dotfiles
-elif command -v "curl" &> /dev/null || command -v "wget" &> /dev/null; then
+elif command -v "curl" &>/dev/null || command -v "wget" &>/dev/null; then
 	TARBALL="https://github.com/Syu-fu/dotfiles/archive/main.tar.gz"
 	if has "curl"; then
 		curl -L ${TARBALL} -o main.tar.gz
