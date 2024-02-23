@@ -1,0 +1,8 @@
+bin/
+chrome/
+packages/
+.gitignore
+LICENSE
+Makefile
+README.md
+removate.json
