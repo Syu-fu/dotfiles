@@ -1,6 +1,0 @@
-abbr -g "git a"="git add"
-abbr -g "git cm"="git commit"
-abbr -g "git co"="git checkout"
-abbr -g "git pl"="git pull"
-abbr -g "git ps"="git push"
-abbr -g "git sw"="git switch"

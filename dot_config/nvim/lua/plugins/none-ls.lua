@@ -8,6 +8,8 @@ return {
       local ignored_filetypes = {
         'diff',
         'gitcommit',
+        'NeogitCommitMessage',
+        'markdown',
         'qf',
         'help',
         'lsp-installer',

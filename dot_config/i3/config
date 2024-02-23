@@ -7,7 +7,7 @@ set $mod Mod4
 # set default desktop layout (default is tiling)
 # workspace_layout tabbed <stacking|tabbed>
 
-set $term_cmd "alacritty --config-file ~/.config/alacritty/alacritty.yml"
+set $term_cmd "alacritty --config-file ~/.config/alacritty/alacritty.toml"
 
 exec --no-startup-id "feh --no-fehbg --bg-fill '/home/syu-fu/Dropbox/wallpaper.jpg'"
 
