@@ -5,4 +5,4 @@ if [ "$*" = "x-usage" ]; then
 	exit
 fi
 
-cd "$MEMODIR" && git pull origin main --rebase
+cd "$MEMODIR" && git stash && git pull origin main --rebase && git stash pop
