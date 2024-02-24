@@ -25,6 +25,7 @@ export PAGER=less
 export BAT_THEME="gruvbox-dark"
 export RIPGREP_CONFIG_PATH="$XDG_CONFIG_HOME/ripgrep/config"
 export MEMODIR="$HOME/Documents/Projects/github.com/Syu-fu/memo"
+export GHQ_ROOT="$HOME/Documents/Projects"
 
 # history
 export HISTFILE=~/Dropbox/dev/zsh/.zsh_history
