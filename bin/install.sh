@@ -10,7 +10,7 @@ brew install git
 
 # clone dotfiles
 if command -v "git" &>/dev/null; then
-	git clone https://github.com/Syu-fu/dotfiles.git "$HOME"/src/github.com/Syu-fu/dotfiles
+	git clone https://github.com/Syu-fu/dotfiles.git "$HOME"/.local/share/chezmoi
 elif command -v "curl" &>/dev/null || command -v "wget" &>/dev/null; then
 	TARBALL="https://github.com/Syu-fu/dotfiles/archive/main.tar.gz"
 	if has "curl"; then
@@ -20,7 +20,7 @@ elif command -v "curl" &>/dev/null || command -v "wget" &>/dev/null; then
 	fi
 	tar -zxvf main.tar.gz
 	rm -f main.tar.gz
-	mv -f dotfiles-main "$HOME"/src/github.com/Syu-fu/dotfiles
+	mv -f dotfiles-main "$HOME"/.local/share/chezmoi
 
 else
 	echo -e "\e[31mcurl or wget or git required \e[m"
@@ -29,7 +29,23 @@ fi
 
 echo -e "\e[32mSuccess clone dotfiles!\e[0m"
 
-echo -e "\e[34mMove directory \e[0m"
-cd "$HOME"/src/github.com/Syu-fu/dotfiles || exit 1
+# apply dotfiles
 
-make setup
+brew install chezmoi
+
+chezmoi apply
+
+echo -e "\e[32mSuccess apply dotfiles!\e[0m"
+
+# setup zsh
+
+brew install zsh
+brew install sheldon
+
+echo -e "\e[32mSuccess install zsh and sheldon!\e[0m"
+
+brew bundle --file="$HOME"/.local/share/chezmoi/Brewfile
+
+echo -e "\e[32mSuccess install Brewfile!\e[0m"
+
+.~/.local/share/chezmoi/bin/open-browser.sh chromium ~/.local/share/chezmoi/chrome/extensions.toml
