@@ -4,7 +4,7 @@
 if [ "$(uname)" == 'Darwin' ]; then
 	/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 fi
-echo -e "\e[32mSuccess install homebrew!\e[0m"
+echo $'\e[32;1mSuccess install homebrew!\e[m'
 
 brew install git
 
@@ -23,11 +23,11 @@ elif command -v "curl" &>/dev/null || command -v "wget" &>/dev/null; then
 	mv -f dotfiles-main "$HOME"/.local/share/chezmoi
 
 else
-	echo -e "\e[31mcurl or wget or git required \e[m"
+	echo $'\e[31;1mPlease install curl or wget or git\e[m'
 	exit 1
 fi
 
-echo -e "\e[32mSuccess clone dotfiles!\e[0m"
+echo $'\e[32;1mSuccess clone dotfiles!\e[m'
 
 # apply dotfiles
 
@@ -35,17 +35,14 @@ brew install chezmoi
 
 chezmoi apply
 
-echo -e "\e[32mSuccess apply dotfiles!\e[0m"
+echo $'\e[32;1mSuccess apply dotfiles!\e[m'
 
 # setup zsh
 
 brew install zsh
-brew install sheldon
-
-echo -e "\e[32mSuccess install zsh and sheldon!\e[0m"
 
 brew bundle --file="$HOME"/.local/share/chezmoi/Brewfile
 
-echo -e "\e[32mSuccess install Brewfile!\e[0m"
+echo $'\e[32;1mSuccess install Brewfile!\e[m'
 
-.~/.local/share/chezmoi/bin/open-browser.sh chromium ~/.local/share/chezmoi/chrome/extensions.toml
+aqua install
