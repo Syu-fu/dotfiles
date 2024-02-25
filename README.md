@@ -3,7 +3,5 @@
 ## Install
 
 ```bash
-git clone https://github.com/Syu-fu/dotfiles.git
-cd dotfiles
-make setup
+curl -L https://raw.githubusercontent.com/Syu-fu/dotfiles/main/bin/install.sh | bash
 ```
