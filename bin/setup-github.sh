@@ -1,4 +1,7 @@
 #!/usr/bin/bash
 
+gh auth login
 gh auth setup-git
-gh gpg-key add ~/Dropbox/pub.asc
+
+# open browser
+~/.local/share/chezmoi/bin/open-browser.sh chromium ~/.local/share/chezmoi/chrome/extensions.toml
