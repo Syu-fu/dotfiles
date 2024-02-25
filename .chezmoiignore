@@ -2,6 +2,7 @@ bin/
 chrome/
 packages/
 .gitignore
+Brewfile
 LICENSE
 Makefile
 README.md
