@@ -184,6 +184,9 @@ return {
           matcher_fzf = {
             highlightMatched = 'GreenBold',
           },
+          matcher_kensaku = {
+            highlightMatched = 'GreenBold',
+          },
           converter_lsp_diagnostic = {
             iconMap = {
               Error = '',
@@ -394,6 +397,14 @@ return {
       { 'kyoh86/ddu-source-github' },
       { 'uga-rosa/ddu-source-help' },
       { 'Shougo/ddu-commands.vim' },
+      {
+        'Milly/ddu-filter-kensaku',
+        dependencies = {
+          {
+            'lambdalisue/kensaku.vim',
+          },
+        }
+      }
     },
   },
 }
