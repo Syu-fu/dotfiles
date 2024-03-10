@@ -29,6 +29,11 @@ inline = '''
 eval "$(starship init zsh)"
 '''
 
+[plugins.mise]
+inline = '''
+eval "$(mise activate zsh)"
+'''
+
 [plugins.fzf-tab]
 github = "Aloxaf/fzf-tab"
 apply = ["defer"]

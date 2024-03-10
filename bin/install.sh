@@ -46,3 +46,9 @@ brew bundle --file="$HOME"/.local/share/chezmoi/Brewfile
 echo $'\e[32;1mSuccess install Brewfile!\e[m'
 
 aqua install
+
+echo $'\e[32;1mSuccess install aqua!\e[m'
+
+mise install
+
+echo $'\e[32;1mSuccess install mise!\e[m'
