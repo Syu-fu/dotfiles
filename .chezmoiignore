@@ -6,4 +6,4 @@ Brewfile
 LICENSE
 Makefile
 README.md
-removate.json
+renovate.json
