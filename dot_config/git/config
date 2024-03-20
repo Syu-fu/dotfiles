@@ -37,6 +37,8 @@
 	pl = pull
 	ps = push
 	a = add
+	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%dCreset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+	lga = log --graph --all --pretty=format:'%Cred%h%Creset -%C(yellow)%dCreset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
 [gpg]
 	program = gpg
 [tag]
