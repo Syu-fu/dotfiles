@@ -24,9 +24,10 @@ apply = ["defer"]
 [plugins.zsh-abbr]
 github = "olets/zsh-abbr"
 
-[plugins.starship]
-inline = '''
-eval "$(starship init zsh)"
+[plugins.powerlevel10k]
+github = "romkatv/powerlevel10k"
+hooks.post = '''
+source $ZDOTDIR/plugrc/p10k.zsh
 '''
 
 [plugins.mise]
