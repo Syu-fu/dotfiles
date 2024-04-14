@@ -52,6 +52,11 @@ if [ -f "$ZDOTDIR/local.zsh" ]; then
 	source "$ZDOTDIR/local.zsh"
 fi
 
+# nix
+if [ -e $HOME/.nix-profile/etc/profile.d/nix.sh ]; then
+	bash $HOME/.nix-profile/etc/profile.d/nix.sh
+fi
+
 unset -f source
 
 # comp
