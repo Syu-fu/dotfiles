@@ -44,15 +44,6 @@ return {
       })
 
       local sources = {
-        null_ls.builtins.formatting.trim_whitespace.with({
-          disabled_filetypes = ignored_filetypes,
-          runtime_condition = function()
-            local count = tonumber(vim.api.nvim_exec("execute 'silent! %s/\\v\\s+$//gn'", true):match('%w+'))
-            if count then
-              return vim.fn.confirm('Whitespace found, delete it?', '&No\n&Yes', 1, 'Question') == 2
-            end
-          end,
-        }),
         null_ls.builtins.formatting.stylua.with({
           condition = function()
             return vim.fn.executable('stylua') > 0
@@ -80,21 +71,21 @@ return {
           end,
           filetypes = { 'sh', 'bash', 'zsh' },
         }),
-        null_ls.builtins.diagnostics.shellcheck.with({
-          condition = function()
-            return vim.fn.executable('shellcheck') > 0
-          end,
-        }),
+        --null_ls.builtins.diagnostics.shellcheck.with({
+        --  condition = function()
+        --    return vim.fn.executable('shellcheck') > 0
+        --  end,
+        --}),
         null_ls.builtins.formatting.markdownlint.with({
           condition = function()
             return vim.fn.executable('markdownlint') > 0
           end,
         }),
-        null_ls.builtins.formatting.jq.with({
-          condition = function()
-            return vim.fn.executable('jq') > 0
-          end,
-        }),
+        --null_ls.builtins.formatting.jq.with({
+        --  condition = function()
+        --    return vim.fn.executable('jq') > 0
+        --  end,
+        --}),
         null_ls.builtins.diagnostics.textlint.with({
           condition = function()
             return vim.fn.executable('textlint') > 0
