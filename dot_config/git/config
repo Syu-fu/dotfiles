@@ -27,7 +27,7 @@
 	verbose = true
 	gpgsign = true
 [ghq]
-	root = "~/Documents/Projects"
+	root = "~/repos"
 [credential]
 	helper = store
 [alias]
