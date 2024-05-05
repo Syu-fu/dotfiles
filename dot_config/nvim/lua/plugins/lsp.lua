@@ -174,6 +174,35 @@ return {
                 filetypes = { 'css', 'scss', 'sass', 'less' },
               })
             end,
+            ['denols'] = function()
+              lspconfig.denols.setup({
+                capabilities = capabilities,
+                on_attach = on_attach,
+                auto_start = lspconfig.util.root_pattern('deno.json') == nil,
+                root_dir = lspconfig.util.root_pattern('deno.json', 'tsconfig.json', '.git'),
+                init_options = {
+                  lint = true,
+                  unstable = true,
+                },
+              })
+            end,
+            ['vtsls'] = function()
+              lspconfig.vtsls.setup({
+                capabilities = capabilities,
+                on_attach = on_attach,
+                single_file_support = false,
+                auto_start = lspconfig.util.root_pattern('deno.json') ~= nil,
+                root_dir = lspconfig.util.root_pattern('package.json', 'node_modules'),
+              })
+            end,
+            ['eslint'] = function()
+              lspconfig.eslint.setup({
+                capabilities = capabilities,
+                on_attach = on_attach,
+                auto_start = lspconfig.util.root_pattern('deno.json') ~= nil,
+                root_dir = lspconfig.util.root_pattern('package.json', 'node_modules'),
+              })
+            end,
           })
         end,
       },
