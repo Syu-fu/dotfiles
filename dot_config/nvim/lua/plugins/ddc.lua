@@ -86,8 +86,6 @@ return {
             paths = { '/usr/share/dict/words' },
             firstCaseInsensitive = true,
             documentCommand = { 'wn', '${item.word}', '-over' },
-            databasePath = vim.fn.stdpath('data') .. '/ddc-source-dictionary.db',
-            --databasePath = vim.fs.joinpath(vim.fn.stdpath('data'), 'ddc-source-dictionary.db'),
           },
         },
         filterParams = {
@@ -193,6 +191,7 @@ return {
         if vimx.fn.pum.visible() then
           return '<Cmd>call pum#map#insert_relative(+1)<CR>'
         end
+        return '<Tab>'
       end, { expr = true })
       vim.keymap.set({ 'i', 'c' }, '<s-tab>', function()
         if vimx.fn.pum.visible() then
