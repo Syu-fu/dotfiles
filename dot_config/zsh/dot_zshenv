@@ -25,16 +25,15 @@ export PAGER=less
 export BAT_THEME="gruvbox-dark"
 export RIPGREP_CONFIG_PATH="$XDG_CONFIG_HOME/ripgrep/config"
 export MEMODIR="$HOME/Documents/Projects/github.com/Syu-fu/memo"
-export GHQ_ROOT="$HOME/Documents/Projects"
+export GHQ_ROOT="$HOME/repos"
 
 # history
-export HISTFILE=~/Dropbox/dev/zsh/.zsh_history
+export HISTFILE="$XDG_DATA_HOME/zsh/.zsh_history"
 export HISTSIZE=10000000
 export SAVEHIST=10000000
-export LISTMAX=10000
+export LISTMAX=10000000
 
 export PATH="$DENO_INSTALL/bin:$GOPATH/bin:$AQUA_ROOT_DIR/bin:$PATH"
-export FPATH="$ZDOTDIR/completions:$FPATH"
+export FPATH="/opt/homebrew/share/zsh/site-functions:$ZDOTDIR/completions:$FPATH"
 
 export SHELDON_CONFIG_DIR="$ZDOTDIR/sheldon"
-export ABBR_USER_ABBREVIATIONS_FILE="$ZDOTDIR/plugrc/abbreviations.zsh"

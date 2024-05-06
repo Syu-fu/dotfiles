@@ -1,0 +1,13 @@
+.contexts:
+  - &global ^git\s
+  - &subcommand ^git\s\S+$
+  - &bisect-command ^git(\s+\S+)*\s+bisect\s+\S+$
+  - &push ^git(\s+\S+)*\s+push\s
+
+abbrevs:
+  # git
+  - name: g
+    abbr: g
+    snippet: git
+    if: |-
+      [[ "$KEYS" != $'\r' ]]

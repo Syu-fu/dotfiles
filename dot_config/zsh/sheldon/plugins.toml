@@ -2,6 +2,7 @@ shell = "zsh"
 
 [templates]
 defer = "{{ hooks?.pre | nl }}{% for file in files %}zsh-defer source \"{{ file }}\"\n{% endfor %}{{ hooks?.post | nl }}"
+PATH = 'export PATH="$PATH:{{ dir }}"'
 
 [plugins.zsh-defer]
 github = "romkatv/zsh-defer"
@@ -21,8 +22,10 @@ apply = ["defer"]
 github = "zsh-users/zsh-completions"
 apply = ["defer"]
 
-[plugins.zsh-abbr]
-github = "olets/zsh-abbr"
+[plugins.zabrze]
+inline = '''
+eval "$(zabrze init --bind-keys)"
+'''
 
 [plugins.powerlevel10k]
 github = "romkatv/powerlevel10k"
@@ -37,28 +40,4 @@ eval "$(mise activate zsh)"
 
 [plugins.fzf-tab]
 github = "Aloxaf/fzf-tab"
-apply = ["defer"]
-
-[plugins.ripgrep-completion]
-remote = "https://raw.githubusercontent.com/BurntSushi/ripgrep/13.0.0/complete/_rg"
-apply = ["fpath"]
-
-[plugins.ghq-completion]
-remote = "https://raw.githubusercontent.com/x-motemen/ghq/master/misc/zsh/_ghq"
-apply = ["fpath"]
-
-[plugins.sheldon-completion]
-remote = "https://raw.githubusercontent.com/rossmacarthur/sheldon/trunk/completions/sheldon.zsh"
-apply = ["defer"]
-
-[plugins.fzf-completion]
-remote = "https://raw.githubusercontent.com/junegunn/fzf/master/shell/completion.zsh"
-apply = ["defer"]
-
-[plugins.fzf-keybind]
-remote = "https://raw.githubusercontent.com/junegunn/fzf/master/shell/key-bindings.zsh"
-apply = ["defer"]
-
-[plugins.memo-completion]
-remote = "https://raw.githubusercontent.com/mattn/memo/master/misc/zsh-completion/completion.zsh"
 apply = ["defer"]
