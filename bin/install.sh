@@ -52,3 +52,8 @@ echo $'\e[32;1mSuccess install aqua!\e[m'
 mise install
 
 echo $'\e[32;1mSuccess install mise!\e[m'
+
+# macOS settings
+if [ "$(uname)" == 'Darwin' ]; then
+	defaults write com.apple.finder AppleShowAllFiles TRUE
+fi
