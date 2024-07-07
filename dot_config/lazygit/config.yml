@@ -1,0 +1,23 @@
+notARepository: quit
+
+git:
+  autoFetch: false
+  disableForcePushing: true
+  parseEmoji: true
+  paging:
+    colorArg: always
+    pager: delta --paging=never
+  log:
+    showGraph: always
+
+gui:
+  language: en
+  timeFormat: 2006-01-02 15:04
+  showRandomTip: false
+  showBottomLine: false
+  showIcons: true
+
+os:
+  editCommand: "nvim"
+  editCommandTemplate: '{{editor}} --server /tmp/nvim-server.pipe --remote-tab "$(pwd)/{{filename}}"'
+  editPreset: "nvim-remote"
