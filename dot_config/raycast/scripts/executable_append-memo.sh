@@ -11,4 +11,4 @@
 
 current_time=$(date +"%H:%M")
 memo=$(echo "$1" | sed 's/ /%20/g')
-open --background "obsidian://advanced-uri?vault=Uxie&daily=true&mode=append&data=-%20$current_time%20$memo"
+open --background "obsidian://advanced-uri?vault=db4dfe06b0d9daac&daily=true&mode=append&data=-%20$current_time%20$memo"
