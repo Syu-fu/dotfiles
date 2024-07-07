@@ -14,11 +14,3 @@ abbrevs:
     snippet: --save-dev
     global: true
     context: *install
-
-  - name: <npx>
-    abbr-pattern: ""
-    snippet: npx $abbr
-    evaluate: true
-    if: >
-      (( ! ${+commands[$abbr]} && ! ${+functions[$abbr]} && ! ${+aliases[$abbr]} && ! ${+builtins[$abbr]} ))
-      && [[ -x "$(monkeywrench node toplevel --root)/node_modules/.bin/$abbr" ]]
