@@ -6,6 +6,10 @@ PATH = 'export PATH="$PATH:{{ dir }}"'
 
 [plugins.zsh-defer]
 github = "romkatv/zsh-defer"
+hooks.post = '''
+zsh-defer source $ZDOTDIR/rc/function.zsh
+zsh-defer source $ZDOTDIR/rc/completion.zsh
+'''
 
 [plugins.zsh-autosuggestions]
 github = "zsh-users/zsh-autosuggestions"

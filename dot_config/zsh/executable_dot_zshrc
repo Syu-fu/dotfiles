@@ -43,8 +43,6 @@ source "$sheldon_cache"
 unset cache_dir sheldon_cache sheldon_toml
 
 source $ZDOTDIR/rc/alias.zsh
-zsh-defer source $ZDOTDIR/rc/function.zsh
-zsh-defer source $ZDOTDIR/rc/completion.zsh
 source $ZDOTDIR/rc/hooks.zsh
 
 ## local ##
