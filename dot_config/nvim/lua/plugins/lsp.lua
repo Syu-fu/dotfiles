@@ -68,16 +68,28 @@ return {
       {
         'williamboman/mason-lspconfig.nvim',
         config = function()
-          -- Use an on_attach function to only map the following keys
-          -- after the language server attaches to the current buffer
-          local on_attach = function(_, bufnr)
-            local function buf_set_option(...)
-              vim.api.nvim_buf_set_option(bufnr, ...)
+          local function format_diagnostics(diag)
+            if diag.code then
+              return string.format('[%s](%s): %s', diag.source, diag.code, diag.message)
+            else
+              return string.format('[%s]: %s', diag.source, diag.message)
             end
-
-            -- Enable completion triggered by <c-x><c-o>
-            buf_set_option('omnifunc', 'v:lua.vim.lsp.omnifunc')
           end
+
+          vim.diagnostic.config({
+            underline = true,
+            update_in_insert = true,
+            float = {
+              focusable = true,
+              border = 'rounded',
+              format = format_diagnostics,
+              header = {},
+              source = true,
+              scope = 'line',
+            },
+            signs = true,
+            severity_sort = true,
+          })
 
           local lspconfig = require('lspconfig')
 
@@ -108,16 +120,12 @@ return {
             return paths
           end
 
-          local capabilities = require('ddc_source_lsp').make_client_capabilities()
-
           require('mason-lspconfig').setup_handlers({
             function(server_name)
-              lspconfig[server_name].setup({ capabilities = capabilities, on_attach = on_attach })
+              lspconfig[server_name].setup({})
             end,
             ['lua_ls'] = function()
               lspconfig.lua_ls.setup({
-                capabilities = capabilities,
-                on_attach = on_attach,
                 settings = {
                   Lua = {
                     diagnostics = {
@@ -138,8 +146,6 @@ return {
             end,
             ['jsonls'] = function()
               lspconfig.jsonls.setup({
-                capabilities = capabilities,
-                on_attach = on_attach,
                 schemaStore = {
                   enable = false,
                 },
@@ -148,8 +154,6 @@ return {
             end,
             ['yamlls'] = function()
               lspconfig.yamlls.setup({
-                capabilities = capabilities,
-                on_attach = on_attach,
                 schemaStore = {
                   enable = false,
                 },
@@ -158,8 +162,6 @@ return {
             end,
             ['gopls'] = function()
               lspconfig.gopls.setup({
-                capabilities = capabilities,
-                on_attach = on_attach,
                 settings = {
                   gopls = {
                     gofumpt = true,
@@ -169,15 +171,11 @@ return {
             end,
             ['stylelint_lsp'] = function()
               lspconfig.stylelint_lsp.setup({
-                capabilities = capabilities,
-                on_attach = on_attach,
                 filetypes = { 'css', 'scss', 'sass', 'less' },
               })
             end,
             ['denols'] = function()
               lspconfig.denols.setup({
-                capabilities = capabilities,
-                on_attach = on_attach,
                 auto_start = lspconfig.util.root_pattern('deno.json') == nil,
                 root_dir = lspconfig.util.root_pattern('deno.json', 'tsconfig.json', '.git'),
                 init_options = {
@@ -188,8 +186,6 @@ return {
             end,
             ['vtsls'] = function()
               lspconfig.vtsls.setup({
-                capabilities = capabilities,
-                on_attach = on_attach,
                 single_file_support = false,
                 auto_start = lspconfig.util.root_pattern('deno.json') ~= nil,
                 root_dir = lspconfig.util.root_pattern('package.json', 'node_modules'),
@@ -197,8 +193,6 @@ return {
             end,
             ['eslint'] = function()
               lspconfig.eslint.setup({
-                capabilities = capabilities,
-                on_attach = on_attach,
                 auto_start = lspconfig.util.root_pattern('deno.json') ~= nil,
                 root_dir = lspconfig.util.root_pattern('package.json', 'node_modules'),
               })
