@@ -5,7 +5,7 @@ abbrevs:
     evaluate: true
     if: '[[ -z "$RBUFFER" ]]'
   - name: neovim
-    abbr-pattern: nv
+    abbr: nv
     snippet: nvim
   - name: trash
     abbr: rm
