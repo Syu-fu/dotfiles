@@ -11,7 +11,7 @@ return {
         segments = {
           {
             sign = {
-              name = { 'Diagnostic.*' },
+              namespace = { 'diagnostic/signs' },
               maxwidth = 1,
             },
           },
