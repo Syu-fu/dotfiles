@@ -181,7 +181,17 @@
   #typeset -g POWERLEVEL9K_OS_ICON_FOREGROUND=223#d4be98
   typeset -g POWERLEVEL9K_OS_ICON_FOREGROUND=#d4be98
   #typeset -g POWERLEVEL9K_OS_ICON_BACKGROUND=208
-  typeset -g POWERLEVEL9K_OS_ICON_BACKGROUND=#34be5b
+  if [[ "$OSTYPE" == "darwin"* ]]; then
+    typeset -g POWERLEVEL9K_OS_ICON_BACKGROUND=#a89984
+  elif [[ "$OSTYPE" == "linux-gnu"* ]]; then
+    if [[ -f /etc/os-release ]]; then
+      if [[ "$ID" == "ubuntu" ]]; then
+        typeset -g POWERLEVEL9K_OS_ICON_BACKGROUND=#e95420
+      elif [[ "$ID" == "manjaro" ]]; then
+        typeset -g POWERLEVEL9K_OS_ICON_BACKGROUND=#34be5b
+      fi
+    fi
+  fi
   # Custom icon.
   # typeset -g POWERLEVEL9K_OS_ICON_CONTENT_EXPANSION='⭐'
 
