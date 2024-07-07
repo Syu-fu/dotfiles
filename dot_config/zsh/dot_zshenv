@@ -21,6 +21,7 @@ export AQUA_GLOBAL_CONFIG="$XDG_CONFIG_HOME/aqua/aqua.yaml"
 export EDITOR=nvim
 export VISUAL=nvim
 export PAGER=less
+export REACT_EDITOR=nvim
 
 export BAT_THEME="gruvbox-dark"
 export RIPGREP_CONFIG_PATH="$XDG_CONFIG_HOME/ripgrep/config"
