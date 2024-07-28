@@ -1,7 +1,7 @@
 [user]
 	email = syu.fu.dev@gmail.com
 	name = Syu fu
-	signingkey = 2A848AF41451D60503A0FBDB1A3DD02A712AEDDF
+	signingkey = 1D6505310110B5B8BD33D812ABC41001BC030833
 [core]
 	editor = nvim -c \"set fenc=utf-8\"
 	commentChar = ";"
