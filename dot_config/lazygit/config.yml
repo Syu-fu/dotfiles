@@ -18,6 +18,8 @@ gui:
   showIcons: true
 
 os:
-  editCommand: "nvim"
-  editCommandTemplate: '{{editor}} --server /tmp/nvim-server.pipe --remote-tab "$(pwd)/{{filename}}"'
-  editPreset: "nvim-remote"
+  editPreset: "nvim"
+  edit: "nvr -l --remote {{filename}}"
+  editAtLine: "nvr -l --remote {{filename}} -c G{{line}}"
+
+promptToReturnFromSubprocess: false
