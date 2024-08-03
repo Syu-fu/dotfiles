@@ -29,10 +29,12 @@ export MEMODIR="$HOME/Documents/Projects/github.com/Syu-fu/memo"
 export GHQ_ROOT="$HOME/repos"
 
 # history
-export HISTFILE="$XDG_DATA_HOME/zsh/.zsh_history"
+export HISTFILE="$XDG_CONFIG_HOME/zsh/.zsh_history"
 export HISTSIZE=10000000
 export SAVEHIST=10000000
 export LISTMAX=10000000
+
+export HISTORY_IGNORE="(cd|pwd|l[sal]|nvim|vim|less|which|whois|lazygit|xdg-open)"
 
 export PATH="$DENO_INSTALL/bin:$GOPATH/bin:$AQUA_ROOT_DIR/bin:$PATH"
 export FPATH="/opt/homebrew/share/zsh/site-functions:$ZDOTDIR/completions:$FPATH"
