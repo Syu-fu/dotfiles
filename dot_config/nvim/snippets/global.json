@@ -1,0 +1,8 @@
+{
+  "uuid": {
+    "prefix": "uuid",
+    "body": [
+      "${VIM:system('uuidgen | tr -d \"\\n\"')}"
+    ]
+  }
+}

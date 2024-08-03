@@ -4,7 +4,6 @@ return {
     config = function()
       local cmp = require('cmp')
       local types = require('cmp.types')
-      local luasnip = require('luasnip')
       local dict = require('cmp_dictionary')
 
       cmp.setup({
@@ -15,7 +14,7 @@ return {
               copilot = '[Copilot]',
               buffer = '[Buffer]',
               nvim_lsp = '[LSP]',
-              luasnip = '[LuaSnip]',
+              vsnip = '[VSnip]',
               nvim_lua = '[NeovimLua]',
               path = '[Path]',
               emoji = '[Emoji]',
@@ -26,7 +25,7 @@ return {
         },
         snippet = {
           expand = function(args)
-            luasnip.lsp_expand(args.body)
+            vim.fn['vsnip#anonymous'](args.body)
           end,
         },
         sorting = {
@@ -75,7 +74,7 @@ return {
         sources = cmp.config.sources({
           { name = 'copilot', priority = 90 },
           { name = 'nvim_lsp', priority = 100 },
-          { name = 'luasnip', priority = 20 },
+          { name = 'vsnip', priority = 20 },
           { name = 'path', priority = 100 },
           { name = 'emoji', insert = true, priority = 60 },
           { name = 'nvim_lua', priority = 50 },
@@ -147,7 +146,7 @@ return {
     end,
 
     dependencies = {
-      { 'L3MON4D3/LuaSnip', event = { 'InsertEnter', 'CmdlineEnter' } },
+      -- { 'L3MON4D3/LuaSnip', event = { 'InsertEnter', 'CmdlineEnter' } },
       { 'windwp/nvim-autopairs', lazy = true, event = { 'InsertEnter', 'CmdlineEnter' } },
       { 'hrsh7th/cmp-nvim-lsp', event = { 'InsertEnter' } },
       { 'hrsh7th/cmp-nvim-lsp-signature-help', event = { 'InsertEnter' } },
@@ -157,10 +156,17 @@ return {
       { 'hrsh7th/cmp-path', after = 'nvim-cmp', event = { 'InsertEnter', 'CmdlineEnter' } },
       { 'hrsh7th/cmp-nvim-lua', after = 'nvim-cmp', event = { 'InsertEnter' } },
       { 'uga-rosa/cmp-dictionary', after = 'nvim-cmp', event = { 'InsertEnter' } },
-      { 'saadparwaiz1/cmp_luasnip', after = 'nvim-cmp', event = { 'InsertEnter' } },
+      { 'hrsh7th/cmp-vsnip', event = { 'InsertEnter' } },
+      { 'hrsh7th/vim-vsnip-integ', event = { 'InsertEnter' } },
       { 'petertriho/cmp-git', after = 'nvim-cmp', ft = { 'gitcommit' } },
       { 'hrsh7th/cmp-cmdline', after = 'nvim-cmp', event = { 'CmdlineEnter' } },
       { 'dmitmel/cmp-cmdline-history', after = 'nvim-cmp', event = { 'CmdlineEnter' } },
+      {
+        'hrsh7th/vim-vsnip',
+        config = function()
+          vim.g.vsnip_snippet_dir = vim.fn.stdpath('config') .. '/snippets'
+        end,
+      },
       {
         'zbirenbaum/copilot-cmp',
         config = true,
