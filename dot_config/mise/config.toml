@@ -1,5 +1,5 @@
 [tools]
 node = "20"
-deno = "1.42"
+deno = "1.45.5"
 go = "1.21"
 bun = "1.0"
