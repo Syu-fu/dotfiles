@@ -1,7 +1,7 @@
 return {
   {
     'CopilotC-Nvim/CopilotChat.nvim',
-    branch = 'canary',
+    branch = 'main',
     event = { 'InsertEnter', 'CmdlineEnter' },
     dependencies = {
       {
@@ -31,12 +31,10 @@ return {
           end, 100)
         end,
       },
-      { 'nvim-lua/plenary.nvim' }, -- for curl, log wrapper
+      { 'nvim-lua/plenary.nvim' },
     },
     opts = {
-      debug = true, -- Enable debugging
-      -- See Configuration section for rest
+      debug = false,
     },
-    -- See Commands section for default commands if you want to lazy load on them
   },
 }
