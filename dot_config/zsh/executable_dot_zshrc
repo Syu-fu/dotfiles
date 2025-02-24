@@ -1,16 +1,12 @@
 # emacsmode
 bindkey -e
 
-setopt APPEND_HISTORY
-setopt INC_APPEND_HISTORY
-setopt HIST_IGNORE_DUPS
 setopt HIST_IGNORE_ALL_DUPS
-setopt HIST_NO_STORE
 setopt HIST_REDUCE_BLANKS
 setopt SHARE_HISTORY
+setopt HIST_NO_STORE
 
 autoload -Uz add-zsh-hook
-autoload -Uz ignore-history-hook
 
 ## term ##
 if [ -z $TMUX ]; then
@@ -72,5 +68,5 @@ unset -f source
 
 # comp
 # After loading Sheldon, you need to execute it in order for the fpath configured in Sheldon to take effect.
-autoload -U compinit
+autoload -Uz compinit
 compinit
