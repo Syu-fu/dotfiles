@@ -146,21 +146,6 @@ return {
     end,
 
     dependencies = {
-      -- { 'L3MON4D3/LuaSnip', event = { 'InsertEnter', 'CmdlineEnter' } },
-      { 'windwp/nvim-autopairs', lazy = true, event = { 'InsertEnter', 'CmdlineEnter' } },
-      { 'hrsh7th/cmp-nvim-lsp', event = { 'InsertEnter' } },
-      { 'hrsh7th/cmp-nvim-lsp-signature-help', event = { 'InsertEnter' } },
-      { 'hrsh7th/cmp-nvim-lsp-document-symbol', event = { 'InsertEnter', 'CmdlineEnter' } },
-      { 'hrsh7th/cmp-emoji', after = 'nvim-cmp', event = { 'InsertEnter' } },
-      { 'hrsh7th/cmp-buffer', after = 'nvim-cmp', event = { 'InsertEnter', 'CmdlineEnter' } },
-      { 'hrsh7th/cmp-path', after = 'nvim-cmp', event = { 'InsertEnter', 'CmdlineEnter' } },
-      { 'hrsh7th/cmp-nvim-lua', after = 'nvim-cmp', event = { 'InsertEnter' } },
-      { 'uga-rosa/cmp-dictionary', after = 'nvim-cmp', event = { 'InsertEnter' } },
-      { 'hrsh7th/cmp-vsnip', event = { 'InsertEnter' } },
-      { 'hrsh7th/vim-vsnip-integ', event = { 'InsertEnter' } },
-      { 'petertriho/cmp-git', after = 'nvim-cmp', ft = { 'gitcommit' } },
-      { 'hrsh7th/cmp-cmdline', after = 'nvim-cmp', event = { 'CmdlineEnter' } },
-      { 'dmitmel/cmp-cmdline-history', after = 'nvim-cmp', event = { 'CmdlineEnter' } },
       {
         'hrsh7th/vim-vsnip',
         config = function()
@@ -168,60 +153,126 @@ return {
         end,
       },
       {
-        'zbirenbaum/copilot-cmp',
-        config = true,
-      },
-      {
-        'onsails/lspkind-nvim',
-        event = { 'InsertEnter', 'CmdlineEnter' },
-        config = function()
-          require('lspkind').init({
-            -- enables text annotations
-            --
-            -- default: true
-            mode = 'symbol_text',
-
-            -- default symbol map
-            -- can be either 'default' (requires nerd-fonts font) or
-            -- 'codicons' for codicon preset (requires vscode-codicons font)
-            --
-            -- default: 'default'
-            preset = 'codicons',
-
-            -- override preset symbols
-            --
-            -- default: {}
-            symbol_map = {
-              Text = '󰉿',
-              Method = '󰆧',
-              Function = '󰊕',
-              Constructor = '',
-              Field = '󰜢',
-              Variable = '󰀫',
-              Class = '󰠱',
-              Interface = '',
-              Module = '',
-              Property = '󱈢',
-              Unit = '󰑭',
-              Value = '󰎠',
-              Enum = '',
-              Keyword = '󰌋',
-              Snippet = '',
-              Color = '󰏘',
-              File = '󰈙',
-              Reference = '󰈇',
-              Folder = '󰉋',
-              EnumMember = '',
-              Constant = '󰏿',
-              Struct = '󰙅',
-              Event = '',
-              Operator = '󰆕',
-              TypeParameter = '',
-              Copilot = '',
-            },
-          })
-        end,
+        'hrsh7th/vim-vsnip-integ',
+        event = { 'InsertEnter' },
       },
     },
+  },
+
+  {
+    'windwp/nvim-autopairs',
+    lazy = true,
+    event = { 'InsertEnter', 'CmdlineEnter' },
+  },
+  {
+    'hrsh7th/cmp-nvim-lsp',
+    event = { 'InsertEnter' },
+  },
+  {
+    'hrsh7th/cmp-nvim-lsp-signature-help',
+    event = { 'InsertEnter' },
+  },
+  {
+    'hrsh7th/cmp-nvim-lsp-document-symbol',
+    event = { 'InsertEnter', 'CmdlineEnter' },
+  },
+  {
+    'hrsh7th/cmp-emoji',
+    after = 'nvim-cmp',
+    event = { 'InsertEnter' },
+  },
+  {
+    'hrsh7th/cmp-buffer',
+    after = 'nvim-cmp',
+    event = { 'InsertEnter', 'CmdlineEnter' },
+  },
+  {
+    'hrsh7th/cmp-path',
+    after = 'nvim-cmp',
+    event = { 'InsertEnter', 'CmdlineEnter' },
+  },
+  {
+    'hrsh7th/cmp-nvim-lua',
+    after = 'nvim-cmp',
+    event = { 'InsertEnter' },
+  },
+  {
+    'uga-rosa/cmp-dictionary',
+    after = 'nvim-cmp',
+    event = { 'InsertEnter' },
+  },
+  {
+    'hrsh7th/cmp-vsnip',
+    event = { 'InsertEnter' },
+  },
+  {
+    'petertriho/cmp-git',
+    after = 'nvim-cmp',
+    ft = { 'gitcommit' },
+  },
+  {
+    'hrsh7th/cmp-cmdline',
+    after = 'nvim-cmp',
+    event = { 'CmdlineEnter' },
+  },
+  {
+    'dmitmel/cmp-cmdline-history',
+    after = 'nvim-cmp',
+    event = { 'CmdlineEnter' },
+  },
+  {
+    'zbirenbaum/copilot-cmp',
+    config = true,
+  },
+  {
+    'onsails/lspkind-nvim',
+    event = { 'InsertEnter', 'CmdlineEnter' },
+    config = function()
+      require('lspkind').init({
+        -- enables text annotations
+        --
+        -- default: true
+        mode = 'symbol_text',
+
+        -- default symbol map
+        -- can be either 'default' (requires nerd-fonts font) or
+        -- 'codicons' for codicon preset (requires vscode-codicons font)
+        --
+        -- default: 'default'
+        preset = 'codicons',
+
+        -- override preset symbols
+        --
+        -- default: {}
+        symbol_map = {
+          Text = '󰉿',
+          Method = '󰆧',
+          Function = '󰊕',
+          Constructor = '',
+          Field = '󰜢',
+          Variable = '󰀫',
+          Class = '󰠱',
+          Interface = '',
+          Module = '',
+          Property = '󱈢',
+          Unit = '󰑭',
+          Value = '󰎠',
+          Enum = '',
+          Keyword = '󰌋',
+          Snippet = '',
+          Color = '󰏘',
+          File = '󰈙',
+          Reference = '󰈇',
+          Folder = '󰉋',
+          EnumMember = '',
+          Constant = '󰏿',
+          Struct = '󰙅',
+          Event = '',
+          Operator = '󰆕',
+          TypeParameter = '',
+          Copilot = '',
+        },
+      })
+    end,
   },
 }

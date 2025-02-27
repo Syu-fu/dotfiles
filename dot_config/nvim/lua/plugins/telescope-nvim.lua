@@ -117,16 +117,14 @@ return {
       end
       require('telescope').load_extension('fzf')
     end,
-
-    dependencies = {
-      {
-        'nvim-lua/plenary.nvim',
-        {
-          'nvim-telescope/telescope-fzf-native.nvim',
-          build = 'make',
-        },
-        { 'LukasPietzschmann/telescope-tabs' },
-      },
-    },
+  },
+  {
+    'nvim-telescope/telescope-fzf-native.nvim',
+    build = 'make',
+    lazy = true,
+  },
+  {
+    'LukasPietzschmann/telescope-tabs',
+    lazy = true,
   },
 }

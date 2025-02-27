@@ -1,13 +1,6 @@
 return {
   {
     'nvim-neotest/neotest',
-    dependencies = {
-      'nvim-neotest/nvim-nio',
-      'nvim-lua/plenary.nvim',
-      'antoinemadec/FixCursorHold.nvim',
-      'nvim-treesitter/nvim-treesitter',
-      'fredrikaverpil/neotest-golang',
-    },
     event = 'VeryLazy',
     config = function()
       vim.keymap.set('n', '<space>,', '<cmd>lua Neotest_watch()<cr>', { silent = true, desc = 'neotest summary' })
@@ -43,5 +36,17 @@ return {
         end
       end
     end,
+  },
+  {
+    'nvim-neotest/nvim-nio',
+    lazy = true,
+  },
+  {
+    'antoinemadec/FixCursorHold.nvim',
+    lazy = true,
+  },
+  {
+    'fredrikaverpil/neotest-golang',
+    lazy = true,
   },
 }

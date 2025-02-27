@@ -124,12 +124,9 @@ return {
         on_attach = on_attach,
       })
     end,
-    dependencies = {
-      {
-        'jose-elias-alvarez/typescript.nvim',
-        lazy = true,
-      },
-      { 'nvim-lua/plenary.nvim' },
-    },
+  },
+  {
+    'jose-elias-alvarez/typescript.nvim',
+    lazy = true,
   },
 }
