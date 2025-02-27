@@ -32,7 +32,7 @@ packages:
 - name: gohugoio/hugo@v0.124.1
 - name: jesseduffield/lazygit@v0.40.2
 - name: high-moctane/mocword@v0.2.0
-- name: golangci/misspell@v0.4.1
+- name: golangci/misspell@v0.6.0
 - name: jqlang/jq@jq-1.7.1
 - name: sharkdp/bat@v0.24.0
 - name: shellspec/shellspec@0.28.1
