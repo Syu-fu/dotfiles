@@ -1,0 +1,40 @@
+[user]
+	email = syu.fu.dev@gmail.com
+	name = Syu fu
+	signingkey = 1D6505310110B5B8BD33D812ABC41001BC030833
+[core]
+	editor = nvim -c \"set fenc=utf-8\"
+	commentChar = ";"
+[diff]
+	tool = nvimdiff
+	algorithm = histogram
+[difftool "nvimdiff"]
+	cmd = "nvim -R -d -c \"wincmd l\" -d \"$LOCAL\" \"$REMOTE\""
+[mergetool "nvimdiff"]
+	cmd = "nvim -d -c \"4wincmd w | wincmd J\" \"$LOCAL\" \"$BASE\" \"$REMOTE\"  \"$MERGED\""
+[merge]
+	ff = false
+[pull]
+	ff = only
+	rebase = false
+[push]
+	useForceIfIncludes = true
+	autoSetupRemote = true
+[init]
+	defaultBranch = main
+[commit]
+	template = "~/.config/git/.gitmessage"
+	verbose = true
+	gpgsign = true
+[credential]
+{{- if eq .chezmoi.os "darwin" }}
+	helper = osxkeychain
+{{- else }}
+	helper = store
+{{- end }}
+[gpg]
+	program = gpg
+[tag]
+	gpgsign = true
+[rebase]
+	autoSquash = true
