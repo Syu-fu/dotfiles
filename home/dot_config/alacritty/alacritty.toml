@@ -38,3 +38,30 @@ yellow = "0xe78a4e"
 [colors.primary]
 background = "0x282828"
 foreground = "0xdfbf8e"
+
+[font]
+size = 16.0
+
+[font.bold]
+family = "HackGen Console NF"
+style = "bold"
+
+[font.bold_italic]
+family = "HackGen Console NF"
+style = "italic-bold"
+
+[font.glyph_offset]
+x = 0
+y = 0
+
+[font.italic]
+family = "HackGen Console NF"
+style = "italic"
+
+[font.normal]
+family = "HackGen Console NF"
+style = "Regular"
+
+[font.offset]
+x = 0
+y = 0
