@@ -65,3 +65,26 @@ style = "Regular"
 [font.offset]
 x = 0
 y = 0
+
+[bell]
+animation = "EaseOutExpo"
+color = "0xffffff"
+duration = 0
+
+[cursor]
+style = "Block"
+unfocused_hollow = true
+
+[window]
+decorations = "none"
+dynamic_padding = false
+dynamic_title = true
+startup_mode = "Windowed"
+
+[window.dimensions]
+columns = 0
+lines = 0
+
+[window.padding]
+x = 0
+y = 0
