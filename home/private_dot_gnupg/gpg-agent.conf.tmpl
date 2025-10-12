@@ -1,0 +1,22 @@
+# GPG agent configuration
+
+# Enable SSH support
+enable-ssh-support
+
+# Cache settings
+default-cache-ttl 600
+max-cache-ttl 7200
+
+# Pinentry program (GUI for password entry)
+{{- if eq .chezmoi.os "darwin" }}
+{{-   if eq .chezmoi.arch "arm64" }}
+# Apple Silicon Mac
+pinentry-program /opt/homebrew/bin/pinentry-mac
+{{-   else }}
+# Intel Mac
+pinentry-program /usr/local/bin/pinentry-mac
+{{-   end }}
+{{- else if eq .chezmoi.os "linux" }}
+# Linux
+pinentry-program /usr/bin/pinentry-gtk-2
+{{- end }}
