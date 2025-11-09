@@ -1,2 +1,3 @@
 brew "git"
 brew "tmux"
+cask "alacritty"
