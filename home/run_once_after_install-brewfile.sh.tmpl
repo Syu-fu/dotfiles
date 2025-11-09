@@ -1,0 +1,18 @@
+#!/bin/bash
+set -euo pipefail
+
+{{- if eq .chezmoi.os "darwin" }}
+
+echo "Installing packages from Brewfile..."
+
+if ! command -v brew &> /dev/null; then
+    echo "Error: Homebrew is not installed"
+    exit 1
+fi
+
+cd "{{ .chezmoi.sourceDir }}"
+brew bundle --file=Brewfile
+
+echo "Brewfile installation complete"
+
+{{- end }}
