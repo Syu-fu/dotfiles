@@ -1,5 +1,6 @@
 brew "git"
 brew "tmux"
 brew "chezmoi"
+brew "ghq"
 cask "alacritty"
 cask "font-hackgen-nerd"
