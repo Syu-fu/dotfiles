@@ -36,3 +36,8 @@ function github-new() {
 function mkf() {
 	mkdir -p "$(dirname "$1")" && touch "$1"
 }
+
+# Create executable script file with parent directories
+function mksc() {
+	mkf "$1" && chmod +x "$1"
+}
