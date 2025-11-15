@@ -14,7 +14,10 @@ for i in $(seq 1 $RUNS); do
     # Measure startup time using date command (more portable)
     # Set TMUX to skip auto-start, but load all rc files and plugins
     start=$(date +%s%N)
-    env TMUX=benchmark zsh -i -c 'exit' >/dev/null 2>&1
+    # Capture both stdout and stderr to see any errors
+    if ! env TMUX=benchmark zsh -i -c 'exit' 2>&1 | grep -v "command not found" >/dev/null; then
+        echo "Warning: zsh startup had some issues, but continuing..." >&2
+    fi
     end=$(date +%s%N)
     
     # Calculate time in milliseconds
