@@ -9,6 +9,9 @@ github = "romkatv/zsh-defer"
 [plugins.zsh-autosuggestions]
 github = "zsh-users/zsh-autosuggestions"
 apply = ["defer"]
+hooks.post = '''
+source $ZDOTDIR/plugrc/autosuggestion.zsh
+'''
 
 [plugins.zsh-syntax-highlighting]
 github = "zdharma-continuum/fast-syntax-highlighting"
@@ -25,6 +28,9 @@ eval "$(zabrze init --bind-keys)"
 
 [plugins.powerlevel10k]
 github = "romkatv/powerlevel10k"
+hooks.post = '''
+source $ZDOTDIR/plugrc/p10k.zsh
+'''
 
 [plugins.mise]
 inline = '''
