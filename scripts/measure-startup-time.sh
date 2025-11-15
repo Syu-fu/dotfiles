@@ -12,8 +12,9 @@ declare -a times
 # Run zsh startup multiple times
 for i in $(seq 1 $RUNS); do
     # Measure startup time using date command (more portable)
+    # Set TMUX to skip auto-start, but load all rc files and plugins
     start=$(date +%s%N)
-    zsh -i -c 'exit' >/dev/null 2>&1
+    env TMUX=benchmark zsh -i -c 'exit' >/dev/null 2>&1
     end=$(date +%s%N)
     
     # Calculate time in milliseconds
@@ -36,7 +37,7 @@ echo "Average: ${average}ms" >&2
 cat << EOF
 [
   {
-    "name": "zsh startup time",
+    "name": "zsh startup time (with plugins)",
     "unit": "ms",
     "value": ${average}
   }
