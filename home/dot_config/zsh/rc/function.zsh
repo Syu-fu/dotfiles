@@ -31,3 +31,8 @@ function github-new() {
 
 	echo "$1 was successfully created and cloned"
 }
+
+# Create file with parent directories
+function mkf() {
+	mkdir -p "$(dirname "$1")" && touch "$1"
+}
