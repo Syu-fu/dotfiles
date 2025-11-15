@@ -22,3 +22,6 @@ apply = ["defer"]
 inline = '''
 eval "$(zabrze init --bind-keys)"
 '''
+
+[plugins.powerlevel10k]
+github = "romkatv/powerlevel10k"
