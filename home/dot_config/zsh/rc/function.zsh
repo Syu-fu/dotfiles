@@ -41,3 +41,23 @@ function mkf() {
 function mksc() {
 	mkf "$1" && chmod +x "$1"
 }
+
+# List parent directories
+function bd_list() {
+	local dir=$PWD
+	for i in {1..20}; do
+		dir=$(dirname "$dir")
+		echo $dir
+		if [[ $dir = "/" ]]; then
+			break
+		fi
+	done
+}
+
+# Interactive parent directory navigation with fzf
+function bd() {
+	local dir=$(bd_list | fzf --reverse --prompt="bd > ")
+	if [ -n "$dir" ]; then
+		cd $dir
+	fi
+}
