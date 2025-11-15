@@ -1,0 +1,38 @@
+# Locale
+export LANG=ja_JP.UTF-8
+
+# XDG Base Directory
+export XDG_CONFIG_HOME=$HOME/.config
+export XDG_DATA_HOME=$HOME/.local/share
+export XDG_STATE_HOME=$HOME/.local/state
+export XDG_CACHE_HOME=$HOME/.cache
+
+# Editor
+export EDITOR=nvim
+export VISUAL=nvim
+export PAGER=less
+
+# Tool configurations
+export BAT_THEME="gruvbox-dark"
+export GHQ_ROOT="$HOME/repos"
+
+# History
+export HISTFILE="$XDG_CONFIG_HOME/zsh/.zsh_history"
+export HISTSIZE=1000
+export SAVEHIST=10000000
+export HISTORY_IGNORE="(cd|pwd|l[sal]|nvim|vim|less|which|whois|lazygit|xdg-open)"
+
+# Language-specific paths
+export GOPATH="$HOME/go"
+export DENO_INSTALL="$HOME/.deno"
+export CARGO_HOME="$HOME/.cargo"
+export RUSTUP_HOME="$HOME/.rustup"
+
+# PATH
+export PATH="$HOME/.local/bin:$CARGO_HOME/bin:$DENO_INSTALL/bin:$GOPATH/bin:$PATH"
+
+# FPATH (for completions)
+export FPATH="/opt/homebrew/share/zsh/site-functions:$ZDOTDIR/completions:$FPATH"
+
+# Sheldon plugin manager
+export SHELDON_CONFIG_DIR="$ZDOTDIR/sheldon"
