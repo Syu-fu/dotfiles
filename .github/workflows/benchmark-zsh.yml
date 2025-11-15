@@ -10,7 +10,7 @@ on:
 
 jobs:
   benchmark:
-    runs-on: macos-latest
+    runs-on: ubuntu-latest
     permissions:
       contents: write
     steps:
@@ -35,7 +35,7 @@ jobs:
       - name: Store benchmark result
         uses: benchmark-action/github-action-benchmark@4bdcce38c94cec68da58d012ac24b7b1155efe8b # v1.20.7
         with:
-          tool: 'customBiggerIsBetter'
+          tool: 'customSmallerIsBetter'
           output-file-path: benchmark-result.json
           github-token: ${{ secrets.GITHUB_TOKEN }}
           auto-push: true
