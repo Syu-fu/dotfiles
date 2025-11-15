@@ -1,0 +1,16 @@
+.contexts:
+  - &subcommand ^(git\s+exec\s+)?(npm|pnpm)\s+\S+$
+  - &install ^(git\s+exec\s+)?(npm|pnpm)\s+install\s
+
+abbrevs:
+  - name: npm i
+    abbr: i
+    snippet: install
+    global: true
+    context: *subcommand
+
+  - name: npm -D
+    abbr: -D
+    snippet: --save-dev
+    global: true
+    context: *install

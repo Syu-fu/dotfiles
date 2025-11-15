@@ -1,0 +1,19 @@
+abbrevs:
+  - name: cd
+    abbr-pattern: (\.\.|/)$
+    snippet: cd $abbr
+    evaluate: true
+    if: '[[ -z "$RBUFFER" ]]'
+  - name: neovim
+    abbr: nv
+    snippet: nvim
+  - name: trash
+    abbr: rm
+    snippet: trash
+    if: (( ${+commands[trash]} ))
+  - name: lazygit
+    abbr-pattern: lg
+    snippet: lazygit
+  - name: copypath
+    abbr-pattern: copypath
+    snippet: pwd | tr -d "\n" | pbcopy
