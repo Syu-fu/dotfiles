@@ -9,3 +9,7 @@ github = "romkatv/zsh-defer"
 [plugins.zsh-autosuggestions]
 github = "zsh-users/zsh-autosuggestions"
 apply = ["defer"]
+
+[plugins.zsh-syntax-highlighting]
+github = "zdharma-continuum/fast-syntax-highlighting"
+apply = ["defer"]
