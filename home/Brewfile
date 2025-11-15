@@ -6,5 +6,9 @@ brew "fzf"
 brew "bat"
 brew "sheldon"
 brew "mise"
+
+tap "ryooooooga/tap"
+brew "ryooooooga/tap/zabrze"
+
 cask "alacritty"
 cask "font-hackgen-nerd"
