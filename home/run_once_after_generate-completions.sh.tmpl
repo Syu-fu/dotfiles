@@ -1,0 +1,56 @@
+#!/bin/bash
+set -euo pipefail
+
+{{- if eq .chezmoi.os "darwin" }}
+
+echo "Generating shell completions..."
+
+completion_dir="$HOME/.config/zsh/completions"
+mkdir -p "$completion_dir"
+
+# GitHub CLI
+if command -v gh >/dev/null 2>&1; then
+	echo "Generating gh completions..."
+	gh completion --shell zsh > "$completion_dir/_gh" 2>/dev/null || true
+fi
+
+# fd (find alternative)
+if command -v fd >/dev/null 2>&1; then
+	echo "Generating fd completions..."
+	fd --gen-completions > "$completion_dir/_fd" 2>/dev/null || true
+fi
+
+# Deno
+if command -v deno >/dev/null 2>&1; then
+	echo "Generating deno completions..."
+	deno completions zsh > "$completion_dir/_deno" 2>/dev/null || true
+fi
+
+# Hugo
+if command -v hugo >/dev/null 2>&1; then
+	echo "Generating hugo completions..."
+	hugo completion zsh > "$completion_dir/_hugo" 2>/dev/null || true
+fi
+
+# yq (YAML processor)
+if command -v yq >/dev/null 2>&1; then
+	echo "Generating yq completions..."
+	yq shell-completion zsh > "$completion_dir/_yq" 2>/dev/null || true
+fi
+
+# golangci-lint
+if command -v golangci-lint >/dev/null 2>&1; then
+	echo "Generating golangci-lint completions..."
+	golangci-lint completion zsh > "$completion_dir/_golangci-lint" 2>/dev/null || true
+fi
+
+# Rustup
+if command -v rustup >/dev/null 2>&1; then
+	echo "Generating rustup completions..."
+	rustup completions zsh > "$completion_dir/_rustup" 2>/dev/null || true
+	rustup completions zsh cargo > "$completion_dir/_cargo" 2>/dev/null || true
+fi
+
+echo "Shell completions generated"
+
+{{- end }}
