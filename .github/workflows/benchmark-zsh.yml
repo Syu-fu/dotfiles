@@ -31,6 +31,8 @@ jobs:
         run: |
           chezmoi init --source "$GITHUB_WORKSPACE"
           chezmoi apply --verbose
+          # Disable GPG signing for CI
+          git config --global commit.gpgsign false
         shell: bash
 
       - name: Measure zsh startup time
